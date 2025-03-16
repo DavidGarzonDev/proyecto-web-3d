@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "vercel --prod",
+    "deploy": "vercel --prod",
     "login": "vercel login"
   },
   "dependencies": {
