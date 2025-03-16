@@ -6,7 +6,7 @@ const Header = () => {
     <header className="header-container">
       <nav className="navbar">
         <Link to="/" className="logo-link">
-          <img src="/public/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
+          <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
         <ul>
           <li>
