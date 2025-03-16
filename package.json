@@ -9,11 +9,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "vercel --prod",
+    "deploy": "vercel --prod",
     "login": "vercel login"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.3.0",
     "vercel": "^41.2.2",
     "vite": "^6.1.0"
   },
