@@ -6,7 +6,7 @@ import Layout from "./Layout/Layout";
 import Disease from "./Pages/Disiases/Disease";
 
 //import paths from link of the diseases
-import PulmonaryFibrosis from "./Pages/Disiases/pulmonary-fibrosis/PulmonaryFibrosis";
+import PulmonaryFibrosis from "./Pages/Disiases/pulmonary-fibrosis/PulmonaryFibrosis.jsx";
 import Asthma from "./Pages/Disiases/asthma/Asthma";
 import LungCancer from "./Pages/Disiases/lung-cancer/lungCancer";
 import PulmonaryHypertension from "./Pages/Disiases/pulmonary-hypertension/PulmonaryHypertension";
