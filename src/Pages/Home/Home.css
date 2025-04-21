@@ -14,7 +14,7 @@
     --scale-factor: 1.05;
 }
 
-/* Estilos Base */
+
 body {
     margin: 0;
     font-family: 'Poppins', serif;
@@ -27,13 +27,12 @@ body {
     padding: 0 20px;
 }
 
-/* Estilos Comunes para Secciones */
+
 .section-common {
     text-align: center;
     padding: var(--section-padding);
 }
 
-/* Main Section */
 .main-section {
     background-color: var(--color-secondary);
     color: var(--color-primary);
@@ -87,7 +86,7 @@ body {
     transform: scale(var(--scale-factor));
 }
 
-/* Diseases Section - Bento Grid */
+
 .diseases-section {
     background-color: var(--color-secondary);
     padding: var(--section-padding);
@@ -145,7 +144,7 @@ body {
     font-weight: 600;
 }
 
-/* Quiz Section */
+
 .quiz-section {
     background-color: var(--color-primary);
     color: var(--color-secondary);
@@ -169,7 +168,7 @@ body {
     line-height: 1.6;
 }
 
-/* Estilos de Botones */
+
 .explore-btn {
     background-color: transparent;
     border: 2px solid currentColor;
@@ -211,7 +210,7 @@ body {
     transform: scale(var(--scale-factor));
 }
 
-/* Media Queries */
+
 @media (min-width: 768px) {
     .bento-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -260,3 +259,4 @@ body {
         font-size: 1.75rem;
     }
 }
+
