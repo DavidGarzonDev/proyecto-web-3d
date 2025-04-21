@@ -1,0 +1,262 @@
+:root {
+    --color-primary: #d32f2f;
+    --color-secondary: #ffffff;
+    --color-text: #333333;
+    --color-border: #e0e0e0;
+    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-gray: #808080;
+
+    --section-padding: 80px 40px;
+    --card-padding: 40px;
+    --mobile-padding: 60px 24px;
+
+    --transition-time: 0.3s;
+    --scale-factor: 1.05;
+}
+
+/* Estilos Base */
+body {
+    margin: 0;
+    font-family: 'Poppins', serif;
+    color: var(--color-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos Comunes para Secciones */
+.section-common {
+    text-align: center;
+    padding: var(--section-padding);
+}
+
+/* Main Section */
+.main-section {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: var(--section-padding);
+}
+
+.main-section h1 {
+    font-size: 2.625rem;
+    /* 42px */
+    margin-bottom: 0.625rem;
+    /* 10px */
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.main-section .subtitle {
+    font-size: 1.25rem;
+    /* 20px */
+    margin-bottom: 1.875rem;
+    /* 30px */
+    font-weight: 300;
+    color: var(--color-text);
+}
+
+.main-section .description {
+    font-size: 1rem;
+    /* 16px */
+    max-width: 700px;
+    margin: 0 auto 1.875rem;
+    /* 30px */
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.info-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1.25rem;
+    /* 20px */
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 60px;
+    transition: all var(--transition-time) ease;
+}
+
+.info-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: scale(var(--scale-factor));
+}
+
+/* Diseases Section - Bento Grid */
+.diseases-section {
+    background-color: var(--color-secondary);
+    padding: var(--section-padding);
+}
+
+.diseases-section h2 {
+    font-size: 2rem;
+    /* 32px */
+    margin-bottom: 2.5rem;
+    /* 40px */
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.bento-grid {
+    text-decoration: none ;
+    display: grid;
+    gap: 1rem;
+    /* 16px */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bento-item {
+    text-decoration: none;
+    border-radius: 12px;
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+}
+
+.bento-item:hover {
+    transform: scale(0.98);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.red-card {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.white-card {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.bento-item h3 {
+    font-size: 1.375rem;
+    /* 22px */
+    margin-bottom: 1.25rem;
+    /* 20px */
+    font-weight: 600;
+}
+
+/* Quiz Section */
+.quiz-section {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: var(--section-padding);
+}
+
+.quiz-section h2 {
+    font-size: 2rem;
+    /* 32px */
+    margin-bottom: 1.875rem;
+    /* 30px */
+    font-weight: 700;
+}
+
+.quiz-section .description {
+    font-size: 1rem;
+    /* 16px */
+    max-width: 700px;
+    margin: 0 auto 1.875rem;
+    /* 30px */
+    line-height: 1.6;
+}
+
+/* Estilos de Botones */
+.explore-btn {
+    background-color: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    /* 14px */
+    margin-top: 1.25rem;
+    /* 20px */
+    align-self: center;
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+}
+
+.explore-btn:hover {
+    background-color: var(--color-hover);
+    transform: scale(var(--scale-factor));
+}
+
+.quiz-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: 1.25rem 1.25rem;
+    /* 20px 20px */
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 1rem;
+    /* 16px */
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+}
+
+.quiz-btn:hover {
+    background-color: var(--color-gray);
+    transform: scale(var(--scale-factor));
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1.25rem;
+        /* 20px */
+    }
+
+    .bento-item-0 {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .bento-item-1 {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .bento-item-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .bento-item-3 {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-common {
+        padding: var(--mobile-padding);
+    }
+
+    .bento-item {
+        grid-column: 1 / span 2 !important;
+        min-height: 180px;
+    }
+
+    .main-section h1 {
+        font-size: 2rem;
+    }
+
+    .diseases-section h2,
+    .quiz-section h2 {
+        font-size: 1.75rem;
+    }
+}
