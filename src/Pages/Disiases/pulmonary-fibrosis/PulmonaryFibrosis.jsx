@@ -1,5 +1,4 @@
 
-import './PulmonaryFibrosis.css'
 
 const PulmonaryFibrosis = () => {
   return (
