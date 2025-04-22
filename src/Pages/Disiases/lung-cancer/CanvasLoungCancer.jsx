@@ -1,6 +1,6 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
-import "./LungCancer.css";
+import "./lungCancer.css";
 import LoungCancerModelo3D from "./modelos-3d-cancer/LoungCancerModelo3D.jsx";
 import Lights from "./lights-cancer/Lights.jsx";
 import { OrbitControls } from "@react-three/drei";
