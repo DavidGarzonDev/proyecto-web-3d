@@ -1,5 +1,5 @@
 import React from "react";
-import "./LungCancer.css";
+import "./lungCancer.css";
 import CanvasLoungCancer from "./CanvasLoungCancer.jsx";
 import { IoIosMove } from "react-icons/io";
 
