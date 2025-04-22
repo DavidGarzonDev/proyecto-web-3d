@@ -4,7 +4,9 @@ import { Outlet } from "react-router";
 const Disease = () => {
   return (
     <>
-      <div>Disease</div>
+      <div className="body">
+        <h1>Enfermedades</h1>
+      </div>
       <Outlet />
     </>
   );

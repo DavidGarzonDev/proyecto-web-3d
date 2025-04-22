@@ -1,0 +1,22 @@
+:root {
+    --color-primary: #d32f2f;
+    --color-secondary: #ffffff;
+    --color-text: #333333;
+    --color-border: #e0e0e0;
+    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-gray: #808080;
+
+    --section-padding: 80px 40px;
+    --card-padding: 40px;
+    --mobile-padding: 60px 24px;
+
+    --transition-time: 0.3s;
+    --scale-factor: 1.05;
+}
+
+.body h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}

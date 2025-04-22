@@ -1,8 +1,8 @@
-import React from 'react'
+
 
 const PulmonaryFibrosis = () => {
   return (
-    <div>PulmonaryFibrosis</div>
+    <h1>Hello</h1>
   )
 }
 
