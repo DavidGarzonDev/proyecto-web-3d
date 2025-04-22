@@ -1,12 +1,13 @@
 // Asthma.jsx
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, SoftShadows } from '@react-three/drei';
-import Lungs from '../../Home/models-3d-asthma/Lungs';
+import Lungs from './models-3d-asthma/Lungs';
 import './Asthma.css';
 
 const Asthma = () => {
   return (
     <>
+    <h1>ASMA</h1>
     
     <Canvas shadows camera={{ position: [0, 0, 0], fov: 50 }}>
       <ambientLight intensity={0.5} />
