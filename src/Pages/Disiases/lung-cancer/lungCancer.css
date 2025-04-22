@@ -1,0 +1,72 @@
+
+:root {
+    --color-primary: #d32f2f;
+    --color-secondary: #ffffff;
+    --color-text: #333333;
+    --color-border: #e0e0e0;
+    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-gray: #808080;
+}
+
+
+canvas{
+    touch-action: none;
+    display: block;
+    width: 600px; 
+    height: 600px; 
+   
+}
+
+.canvas-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.move-icon-wrapper {
+    position: absolute; 
+    top: 10px;          
+    right: 10px;         
+    z-index: 10;         
+    color: #000000;         
+    font-size: 2rem;    
+    cursor: pointer;     
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 5px;
+    border-radius: 50%; 
+    display: flex;       
+    align-items: center;
+    justify-content: center;
+  }
+
+.move-icon-wrapper h1 {
+    margin: 0; 
+    padding: 10px;
+    font-size: 1rem; 
+    color: #000000; 
+    font-weight: normal; 
+}
+
+.lung-cancer-container {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lung-cancer-title {
+    color : var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.lung-cancer-description {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
