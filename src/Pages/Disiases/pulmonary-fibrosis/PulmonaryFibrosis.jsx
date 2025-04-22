@@ -1,8 +1,9 @@
-import React from 'react'
+
+import './PulmonaryFibrosis.css'
 
 const PulmonaryFibrosis = () => {
   return (
-    <div>PulmonaryFibrosis</div>
+    <h1>Hello</h1>
   )
 }
 
