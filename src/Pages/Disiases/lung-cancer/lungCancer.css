@@ -8,22 +8,25 @@
     --color-gray: #808080;
 }
 
+/* loung-cancer */
 
-canvas{
+.canvas-loung-cancer canvas{
     touch-action: none;
-    display: block;
-    width: 600px; 
-    height: 600px; 
-   
+
 }
 
 .canvas-container{
     position: relative;
+    display: grid;
+}
+
+.canvas-content-flex {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
+
+
 
 .move-icon-wrapper {
     position: absolute; 
@@ -50,11 +53,17 @@ canvas{
 }
 
 .lung-cancer-container {
-    display: flex;
-    width: 800px;
+    display: grid;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(200px, 1fr));
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 30px;
+}
+
+lung-cancer-content-flex {
+    display: flex;
 }
 
 .lung-cancer-title {
@@ -64,9 +73,445 @@ canvas{
 
 }
 
+
+
 .lung-cancer-description {
     color: var(--color-text);
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* what is lung cancer */
+
+.what-is-cancer-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 500px;
+    background-color: var(--color-primary);
+}
+
+.what-is-cancer-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.what-is-cancer-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 900px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.what-is-cancer-content {
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.what-is-cancer-container {
+    position: relative;
+    display: grid;
+}
+
+.what-is-cancer-content-flex{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/*symptoms cancer css*/
+
+.canvas-symptoms-cancer canvas{
+    touch-action: none; 
+    
+}
+
+.symptoms-cancer-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-secondary);
+}
+
+.symptoms-cancer-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.symptoms-cancer-text {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.symptoms-cancer-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.symptoms-cancer-container {
+    position: relative;
+    display: grid;
+}
+
+.symptoms-cancer-content-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.symptoms-cancer-canvas-content {
+    padding-top: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+/* Treatment Cancer CSS */
+
+.canvas-treatment-cancer canvas{
+    touch-action: none; 
+    
+}
+
+.treatment-cancer-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.treatment-cancer-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.treatment-cancer-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.treatment-cancer-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.treatment-cancer-container {
+    position: relative;
+    display: grid;
+}
+
+/* Treatment Cancer CSS */
+
+
+
+@media (max-width: 780px) {
+    .canvas-loung-cancer canvas{
+        width: 300px; 
+        height: 300px; 
+    }
+    .canvas-container{
+        width: 200px;
+        height: 400px;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 0.8rem; 
+    }
+    .lung-cancer-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 300px;
+    }
+    .canvas-treatment-cancer canvas{
+        width: 300px; 
+        height: 500px;   
+    }
+
+    .treatment-cancer-canvas-content{
+        padding-top: 20px;
+        width: 100%;
+        height: 500px;
+    }
+    .treatment-cancer-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .treatment-cancer-container {
+        display: grid;
+        height: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .treatment-cancer-title {
+        font-size: 2rem;
+    }
+
+    .treatment-cancer-text {
+        width: 300px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .what-is-cancer-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-cancer-container {
+        display: grid;
+        height: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+    }
+
+    .what-is-cancer-title {
+        width: 300px;
+        font-size: 2rem;
+    }
+    .what-is-cancer-text {
+        width: 300px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
+    }
+
+    .canvas-symptoms-cancer canvas{
+        width: 200px; 
+        height: 400px;
+    }
+
+    .symptoms-cancer-container {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        width: 350px;
+    }
+
+    .symptoms-cancer-title {
+        font-size: 2rem;
+    }
+    .symptoms-cancer-text {
+        width: 100%;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .symptoms-cancer-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .symptoms-cancer-canvas-content {
+        width: 200px;
+        height: 300px;
+    }
+    .symptoms-cancer-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+}
+
+@media (min-width: 790px) {
+    .canvas-loung-cancer canvas{
+        width: 600px; 
+        height: 500px; 
+    }
+    .canvas-container{
+        height: 100vh;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1rem; 
+    }
+    .lung-cancer-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 600px;
+    }
+    .canvas-treatment-cancer canvas{
+        width: 300px; 
+        height: 100px;   
+    }
+
+    .treatment-cancer-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .treatment-cancer-canvas-content{ 
+        padding-top: 20px;
+        width: 150px;
+        height: 500px;
+    }
+    
+    .treatment-cancer-container {
+        display: flex;
+    }
+    .treatment-cancer-title {
+        font-size: 1.8rem;
+    }
+
+    .treatment-cancer-text {
+        width: 600px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+
+    .what-is-cancer-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-cancer-container {
+        display: grid;
+        height: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+    }
+
+    .what-is-cancer-title {
+        width: 300px;
+        font-size: 2rem;
+    }
+    .what-is-cancer-text {
+        width: 300px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
+    }
+
+    .canvas-symptoms-cancer canvas{
+        width: 200px; 
+        height: 400px;
+    }
+
+    .symptoms-cancer-container {
+        display: flex;
+    }
+
+    .symptoms-cancer-title {
+        font-size: 2rem;
+    }
+    .symptoms-cancer-text {
+        width: 450px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    .symptoms-cancer-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:300px;
+    }
+
+    .symptoms-cancer-canvas-content {
+        width: 250px;
+        height: 300px;
+    }
+    .symptoms-cancer-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .canvas-loung-cancer canvas{
+        width: 700px; 
+        width: 700px;
+    }
+    .canvas-container{
+        height: 100vh;
+        padding-top: 5px;
+    }
+    .move-icon-wrapper {
+        font-size: 1.8rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1.1rem; 
+    }
+    .lung-cancer-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(200px, 1fr));
+        width: 1000px;
+    }
+    .canvas-treatment-cancer canvas{
+        width: 400px; 
+        height: 300px;   
+    }
+
+    .treatment-cancer-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .treatment-cancer-canvas-content{ 
+        padding-top: 20px;
+        width: 400px;
+        height: 500px;
+    }
+    
+    .treatment-cancer-container {
+        display: flex;
+    }
+    .treatment-cancer-title {
+        font-size: 1.8rem;
+    }
+
+    .treatment-cancer-text {
+        width: 600px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
 }
