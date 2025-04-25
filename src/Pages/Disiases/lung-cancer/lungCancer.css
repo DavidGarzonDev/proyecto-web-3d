@@ -409,17 +409,17 @@ lung-cancer-content-flex {
 
     .what-is-cancer-container {
         display: grid;
-        height: 1000px;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        height: 600px;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
         
     }
 
     .what-is-cancer-title {
-        width: 300px;
+        width: 100%;
         font-size: 2rem;
     }
     .what-is-cancer-text {
-        width: 300px;
+        width: 600px;
         justify-content: center;
         align-items: center ;
         font-size: 1.5rem;
@@ -513,5 +513,30 @@ lung-cancer-content-flex {
         align-items: center ;
         justify-content: center;
         font-size: 1.4rem;
+    }
+
+    .what-is-cancer-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-cancer-container {
+        display: grid;
+        height: 500px;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        
+    }
+
+    .what-is-cancer-title {
+        width: 100%;
+        font-size: 2rem;
+    }
+    .what-is-cancer-text {
+        width: 1100px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
     }
 }
