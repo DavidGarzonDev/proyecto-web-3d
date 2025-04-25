@@ -8,7 +8,7 @@ const Asthma = () => {
   return (
     <>
     
-    <Canvas shadows camera={{ position: [0, 0, 0], fov: 50 }}>
+    <Canvas className='canvas-asthma' shadows camera={{ position: [0, 0, 0], fov: 50 }}>
       <ambientLight intensity={0.5} />
       <directionalLight
         position={[10, 10, 5]}

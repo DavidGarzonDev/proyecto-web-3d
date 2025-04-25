@@ -14,7 +14,7 @@ const Header = () => {
           </li>
           <li className="dropdown">
             <span className="dropdown-link">Enfermedades</span>
-            <lu className="dropdown-menu">
+            <ol className="dropdown-menu">
               <li>
                 <Link to="/enfermedades/fibrosis-pulmonar">
                   Fibrosis Pulmonar
@@ -32,7 +32,7 @@ const Header = () => {
                   Hipertension Pulmonar
                 </Link>
               </li>
-            </lu>
+            </ol>
           </li>
           <li>
             <Link to="/quiz">Quiz</Link>
