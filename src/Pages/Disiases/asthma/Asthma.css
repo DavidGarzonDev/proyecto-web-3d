@@ -1,5 +1,177 @@
-canvas {
-    touch-action: none;
+:root {
+  --color-primary: #d32f2f;
+  --color-secondary: #ffffff;
+  --color-text: #333333;
+  --color-border: #e0e0e0;
+  --color-hover: rgba(255, 255, 255, 0.1);
+  --color-gray: #808080;
+}
+
+/* Estilos generales del canvas */
+.canvas-asthma canvas,
+.canvas-symptoms-asthma canvas,
+.canvas-treatment-asthma canvas {
+  touch-action: none;
+}
+
+.canvas-container {
+  position: relative;
+  display: grid;
+}
+
+.canvas-content-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-icon-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  color: #000000;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.move-icon-wrapper h1 {
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Sección: ¿Qué es el Asma? */
+.what-is-asthma-container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 2rem 0;
+}
+
+.what-is-asthma-title {
+  color: var(--color-secondary);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.what-is-asthma-text {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Sección: Síntomas */
+.symptoms-asthma-container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  background-color: var(--color-secondary);
+  padding: 2rem 0;
+}
+
+.symptoms-asthma-title {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.symptoms-asthma-text {
+  color: var(--color-text);
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.symptoms-asthma-content-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.symptoms-asthma-canvas-content {
+  width: 400px;
+  height: 400px;
+  margin: 1rem;
+}
+
+/* Sección: Tratamiento */
+.treatment-asthma-container {
+  position: relative;
+  display: grid;
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 2rem 0;
+}
+
+.treatment-asthma-title {
+  color: var(--color-secondary);
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.treatment-asthma-text {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.treatment-asthma-content-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.treatment-asthma-canvas-content {
+  width: 400px;
+  height: 400px;
+  margin: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .canvas-asthma canvas {
     width: 600px;
-    height: 600px;
+    height: 400px;
+  }
+  
+  .symptoms-asthma-canvas-content,
+  .treatment-asthma-canvas-content {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .what-is-asthma-text,
+  .symptoms-asthma-text,
+  .treatment-asthma-text {
+    width: 90%;
+    font-size: 1rem;
+  }
+  
+  .symptoms-asthma-content-flex,
+  .treatment-asthma-content-flex {
+    flex-direction: column;
+  }
 }

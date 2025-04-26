@@ -13,7 +13,7 @@ const Lungs = (props) => {
     }, [camera]);
 
     return (
-        <group {...props} dispose={null} scale={5} position={[0, 0, 0]}>
+        <group {...props} dispose={null} scale={20} position={[0, 0, 0]}>
             <mesh 
                 geometry={nodes.Lungs.geometry} 
                 material={materials.LungsMaterial}

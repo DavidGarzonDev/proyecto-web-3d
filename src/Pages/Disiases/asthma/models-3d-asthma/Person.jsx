@@ -7,7 +7,7 @@ const Person = (props) => {
   const { actions } = useAnimations(animations, group)
   
   return (
-    <group ref={group} {...props} dispose={null} scale={1}>
+    <group ref={group} {...props} dispose={null} scale={2}>
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh
