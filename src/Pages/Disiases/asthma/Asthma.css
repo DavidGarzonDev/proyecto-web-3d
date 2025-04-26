@@ -1,5 +1,37 @@
-canvas {
-    touch-action: none;
-    width: 600px;
-    height: 600px;
+/* Estilos para el contenedor principal */
+.asthma-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Canvas de pantalla completa */
+.fullscreen-canvas {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Altura aumentada al 80% del viewport */
+  min-height: 2000px; /* Altura mínima garantizada */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1024px) {
+  .fullscreen-canvas {
+    height: 75vh;
+    min-height: 2000px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen-canvas {
+    height: 70vh;
+    min-height: 2000px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-canvas {
+    height: 65vh;
+    min-height: 2000px;
+  }
 }
