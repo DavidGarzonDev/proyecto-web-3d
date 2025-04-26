@@ -21,10 +21,15 @@
   padding: 0;
 }
 
-.navbar ul li a,
+
+
+.navbar ul li a ,
 .dropdown-menu {
   color: var(--color-whithe);
+  
+  
 }
+
 
 .dropdown {
   position: relative;
@@ -64,3 +69,4 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
