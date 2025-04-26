@@ -1,0 +1,420 @@
+.canvas-loung-fibrosis canvas{
+    touch-action: none;
+}
+
+.canvas-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.move-icon-wrapper {
+    position: absolute; 
+    top: 10px;          
+    right: 10px;         
+    z-index: 10;         
+    color: #000000;         
+    font-size: 2rem;    
+    cursor: pointer;     
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 5px;
+    border-radius: 50%; 
+    display: flex;       
+    align-items: center;
+    justify-content: center;
+  }
+
+.move-icon-wrapper h1 {
+    margin: 0; 
+    padding: 10px;
+    font-size: 1rem; 
+    color: #000000; 
+    font-weight: normal; 
+}
+
+.lung-fibrosis-container {
+    display: flex;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(200px, 1fr));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+lung-fibrosis-content-flex {
+    display: flex;
+}
+
+.lung-fibrosis-title {
+    color : var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.lung-fibrosis-description {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.what-is-fibrosis-container {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    background-color: var(--color-primary);
+}
+
+.what-is-fibrosis-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.what-is-fibrosis-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.what-is-fibrosis-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.canvas-symptoms-fibrosis canvas{
+    touch-action: none; 
+    
+}
+
+.symptoms-fibrosis-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-secondary);
+}
+
+.symptoms-fibrosis-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.symptoms-fibrosis-text {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.symptoms-fibrosis-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.symptoms-fibrosis-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.symptoms-fibrosis-canvas-content {
+    padding-top: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+
+/* Treatment Cancer CSS */
+
+.canvas-treatment-fibrosis canvas{
+    touch-action: none; 
+    
+}
+
+.treatment-fibrosis-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.treatment-fibrosis-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.treatment-fibrosis-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.treatment-fibrosis-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.treatment-fibrosis-container {
+    position: relative;
+    display: grid;
+}
+
+/* Treatment Cancer CSS */
+
+@media (max-width: 780px) {
+    .canvas-loung-fibrosis canvas{
+        width: 300px; 
+        height: 300px; 
+    }
+    .canvas-container{
+        width: 200px;
+        height: 400px;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 0.8rem; 
+    }
+    .lung-fibrosis-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 300px;
+    }
+    .canvas-treatment-fibrosis canvas{
+        width: 300px; 
+        height: 500px;   
+    }
+
+    .treatment-fibrosis-canvas-content{
+        padding-top: 20px;
+        width: 100%;
+        height: 500px;
+    }
+    .treatment-fibrosis-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .treatment-fibrosis-container {
+        display: grid;
+        height: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .treatment-fibrosis-title {
+        font-size: 2rem;
+    }
+
+    .treatment-fibrosis-text {
+        width: 300px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .canvas-symptoms-fibrosis canvas{
+        width: 200px; 
+        height: 400px;
+    }
+
+    .symptoms-fibrosis-container {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        width: 350px;
+    }
+
+    .symptoms-fibrosis-title {
+        font-size: 2rem;
+    }
+    .symptoms-fibrosis-text {
+        width: 100%;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .symptoms-fibrosis-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .symptoms-fibrosis-canvas-content {
+        width: 200px;
+        height: 300px;
+    }
+    .symptoms-fibrosis-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+}
+
+@media (min-width: 790px) {
+    .canvas-loung-fibrosis canvas{
+        width: 600px; 
+        height: 500px; 
+    }
+    .canvas-container{
+        height: 100vh;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1rem; 
+    }
+    .lung-fibrosis-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 600px;
+    }
+    .canvas-treatment-fibrosis canvas{
+        width: 300px; 
+        height: 100px;   
+    }
+
+    .treatment-fibrosis-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .treatment-fibrosis-canvas-content{ 
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .treatment-fibrosis-container {
+        display: flex;
+    }
+    .treatment-fibrosis-title {
+        font-size: 2.5rem;
+    }
+
+    .treatment-fibrosis-text {
+        width: 600px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .canvas-symptoms-fibrosis canvas{
+        width: 400; 
+        height: 600px;
+    }
+
+    .symptoms-fibrosis-container {
+        display: flex;
+    }
+
+    .symptoms-fibrosis-title {
+        font-size: 2,5rem;
+    }
+    .symptoms-fibrosis-text {
+        width: 700px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    .symptoms-fibrosis-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:600px;
+    }
+
+    .symptoms-fibrosis-canvas-content {
+        width: 300px;
+        height: 500px;
+    }
+    .symptoms-fibrosis-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .canvas-loung-fibrosis canvas{
+        width: 700px; 
+        width: 700px;
+    }
+    .canvas-container{
+        height: 100vh;
+        padding-top: 5px;
+    }
+    .move-icon-wrapper {
+        font-size: 1.8rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1.1rem; 
+    }
+    .lung-fibrosis-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(200px, 1fr));
+        width: 1000px;
+    }
+
+
+    .canvas-treatment-fibrosis canvas{
+        width: 400px; 
+        height: 300px;   
+    }
+
+    .treatment-fibrosis-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .treatment-fibrosis-canvas-content{ 
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .treatment-fibrosis-container {
+        display: flex;
+    }
+    .treatment-fibrosis-title {
+        font-size: 2.5rem;
+    }
+
+    .treatment-fibrosis-text {
+        width: 100%;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+}

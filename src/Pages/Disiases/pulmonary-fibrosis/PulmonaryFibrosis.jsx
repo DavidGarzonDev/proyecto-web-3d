@@ -1,9 +1,79 @@
-
+import "./PulmonaryFibrosis.css";
+import CanvasLoungFibrosis from "./content/CanvasLoungFibrosis.jsx";
+import { IoIosMove } from "react-icons/io";
+import TreatmentFibrosis from "./content/TreatmentFibrosis.jsx";
+import SymptomsFibrosis from "./content/SymptomsFibrosis.jsx";
 
 const PulmonaryFibrosis = () => {
   return (
-    <h1>Hello</h1>
-  )
-}
+    <>
+      <div className="canvas-container">
+        <div className="move-icon-wrapper" title="Mueve usando el mouse">
+          <h1>¡Mueve con el raton!</h1>
+          <IoIosMove />
+        </div>
+        <div className="canvas-pulmonary-fibrosis">
+          <CanvasLoungFibrosis />
+        </div>
+      </div>
 
-export default PulmonaryFibrosis
+      <div className="what-is-fibrosis-container">
+        <div className="what-is-fibrosis-content">
+          <h1 className="what-is-fibrosis-title">
+            ¿Qué es la Fibrosis Pulmonar?
+          </h1>
+          <p className="what-is-fibrosis-text">
+            La fibrosis pulmonar es una enfermedad que causa cicatrización en
+            los pulmones, dificultando la respiración. Esta cicatrización daña
+            los alvéolos, lo que reduce la capacidad pulmonar para oxigenar la
+            sangre. Los síntomas incluyen tos seca, fatiga y dificultad para
+            respirar, especialmente al hacer esfuerzo. Sus causas pueden ser
+            desconocidas (idiopática) o estar relacionadas con la exposición a
+            contaminantes, enfermedades autoinmunes o ciertos medicamentos.
+          </p>
+        </div>
+      </div>
+
+      <div className="symptoms-fibrosis-container">
+        <div className="symptoms-fibrosis-content">
+          <h1 className="symptoms-fibrosis-title">Sintomas</h1>
+          <p className="symptoms-fibrosis-text">
+            Los síntomas de la fibrosis pulmonar pueden incluir dificultad para
+            respirar, tos seca persistente, fatiga, pérdida de peso sin causa
+            aparente, dolor en el pecho y acropaquia (dedos en forma de palillo
+            de tambor). Estos síntomas suelen empeorar con el tiempo y pueden
+            afectar la calidad de vida. Es fundamental acudir al médico si se
+            presentan, sobre todo si hay antecedentes de exposición a sustancias
+            tóxicas o enfermedades autoinmunes.
+          </p>
+        </div>
+        <div className="symptoms-fibrosis-canvas-container">
+          <div className="symptoms-fibrosis-canvas-content">
+            <SymptomsFibrosis />
+          </div>
+        </div>
+      </div>
+
+      <div className="treatment-fibrosis-container">
+        <div className="treatment-fibrosis-canvas-content">
+          <TreatmentFibrosis />
+        </div>
+        <div className="treatment-fibrosis-content">
+          <h1 className="treatment-fibrosis-title">Tratamiento</h1>
+          <p className="treatment-fibrosis-text">
+            El tratamiento de la fibrosis pulmonar depende de la causa y la
+            gravedad de la enfermedad. Puede incluir medicamentos antifibróticos
+            para ralentizar la progresión, oxigenoterapia para mejorar la
+            respiración y rehabilitación pulmonar para aumentar la resistencia
+            física. En casos graves, se puede considerar un trasplante de
+            pulmón. Aunque no existe una cura definitiva, un diagnóstico
+            temprano y el manejo adecuado pueden mejorar la calidad de vida del
+            paciente.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default PulmonaryFibrosis;
