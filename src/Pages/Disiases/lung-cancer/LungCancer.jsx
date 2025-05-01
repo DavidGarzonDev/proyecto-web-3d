@@ -4,6 +4,7 @@ import CanvasLoungCancer from "./content/CanvasLoungCancer.jsx";
 import { IoIosMove } from "react-icons/io";
 import TreatmentCancer from "./content/TreatmentCancer.jsx";
 import SymptomsCancer from "./content/SymptomsCancer.jsx";
+import PrecautionCancer from "./content/PrecautionCancer.jsx";
 
 const LungCancer = () => {
   return (
@@ -43,7 +44,7 @@ const LungCancer = () => {
       <div className="symptoms-cancer-container">
         <div className="symptoms-cancer-content-flex">
           <div className="symptoms-cancer-content">
-            <h1 className="symptoms-cancer-title">Sintomas</h1>
+            <h1 className="symptoms-cancer-title">Síntomas</h1>
             <p className="symptoms-cancer-text">
               Los síntomas del cáncer de pulmón pueden incluir tos persistente,
               dolor en el pecho, dificultad para respirar, sibilancias, pérdida
@@ -75,6 +76,27 @@ const LungCancer = () => {
               tratamiento depende del tipo y la etapa del cáncer, así como de la
               salud general del paciente. Es importante consultar a un oncólogo
               para determinar el mejor enfoque de tratamiento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Nueva sección: Precaución */}
+      <div className="precaution-cancer-container">
+        <div className="precaution-cancer-content-flex">
+          <div className="precaution-cancer-canvas-content">
+            <PrecautionCancer />
+          </div>
+          <div className="precaution-cancer-content">
+            <h1 className="precaution-cancer-title">Precaución</h1>
+            <p className="precaution-cancer-text">
+              Para prevenir el cáncer de pulmón y mantener una buena salud, es
+              sustancias nocivas como el tabaco y contaminantes ambientales, fundamental evitar la exposición a sustancias nocivas como el
+              tabaco y contaminantes ambientales. Además, es importante llevar
+              un estilo de vida saludable, que incluya una dieta equilibrada,
+              ejercicio regular y buenas rutinas de sueño. Realiza chequeos
+              médicos periódicos para la detección temprana y sigue siempre las
+              indicaciones de tu médico.
             </p>
           </div>
         </div>
