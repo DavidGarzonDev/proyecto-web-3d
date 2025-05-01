@@ -1,12 +1,5 @@
 
-:root {
-    --color-primary: #d32f2f;
-    --color-secondary: #ffffff;
-    --color-text: #333333;
-    --color-border: #e0e0e0;
-    --color-hover: rgba(255, 255, 255, 0.1);
-    --color-gray: #808080;
-}
+
 
 /* loung-cancer */
 
@@ -147,13 +140,14 @@ lung-cancer-content-flex {
     color: var(--color-primary);
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .symptoms-cancer-text {
     color: var(--color-text);
     font-size: 1.2rem;
     width: 500px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -200,13 +194,15 @@ lung-cancer-content-flex {
     color: var(--color-secondary);
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: right;
 }
 
 .treatment-cancer-text {
     color: var(--color-secondary);
     font-size: 1.2rem;
     width: 500px;
-    text-align: center;
+    text-align: right;
+
     margin-bottom: 20px;
 }
 
