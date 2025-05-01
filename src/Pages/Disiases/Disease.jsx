@@ -1,11 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router";
+import "./Disease.css";
 
 const Disease = () => {
   return (
     <>
 
-      <div className="body">
+      <div className="body-disease">
         <h1>Enfermedades</h1>
       </div>
 
