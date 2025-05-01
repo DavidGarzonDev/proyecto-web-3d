@@ -12,12 +12,14 @@ import LungCancer from "./Pages/Disiases/lung-cancer/LungCancer";
 import PulmonaryHypertension from "./Pages/Disiases/pulmonary-hypertension/PulmonaryHypertension";
 
 import "./index.css";
+import KnowYourLungs from "./Pages/Loungs/KnowYourLungs.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/explorar" element={<KnowYourLungs />} />
         <Route path="enfermedades" element={<Disease />}>
           <Route path="fibrosis-pulmonar" element={<PulmonaryFibrosis />} />
           <Route path="asma" element={<Asthma />} />
