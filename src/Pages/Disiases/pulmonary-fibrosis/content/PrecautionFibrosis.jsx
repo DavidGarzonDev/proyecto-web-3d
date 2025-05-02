@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Lights from "../lights-fibrosis/LightsFibrosis.jsx";
-import "../PulmonaryFibrosis.css";
+import "../pulmonaryFibrosis.css";
 import FibrosisSalad from "../models-3d-fibrosis/SaladFibrosis.jsx";
 import RecipeFibrosis from "../models-3d-fibrosis/RecipeFibrosis.jsx";
 

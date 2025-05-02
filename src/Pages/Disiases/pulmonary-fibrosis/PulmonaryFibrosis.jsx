@@ -1,4 +1,4 @@
-import "./PulmonaryFibrosis.css";
+import "./pulmonaryFibrosis.css";
 import CanvasLoungFibrosis from "./content/CanvasLoungFibrosis.jsx";
 import { IoIosMove } from "react-icons/io";
 import TreatmentFibrosis from "./content/TreatmentFibrosis.jsx";
