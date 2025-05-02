@@ -21,8 +21,7 @@ const LoungCancerModelo3D = (props) => {
         receiveShadow
         geometry={nodes.LoungCancer.geometry}
         material={materials.LoungCancerMaterial}
-        scale={2.2}
-      />
+        scale={2.2}      />
     </group>
   )
 }

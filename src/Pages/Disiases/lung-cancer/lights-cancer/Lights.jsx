@@ -3,16 +3,24 @@ import { useHelper } from "@react-three/drei";
 import React, { useRef } from "react";
 import { DirectionalLight } from "three";
 
-const Lights = () => {
+const Lights = ({ lightPosition = [0, 5, 0], ambIntensity = 2, dirIntensity = 0.5 }) => {
     const directionalLightRef = useRef(null);
     useHelper(directionalLightRef, DirectionalLight);
 
   return (
     <>
-      <ambientLight intensity={2} color="white" />
+      <ambientLight intensity={ambIntensity} color="white" />
       <directionalLight
         ref={directionalLightRef}
-       color="white" intensity={0.5} />
+        color="white"
+        intensity={dirIntensity}
+        castShadow={true}
+        position={lightPosition}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-near={0.5}
+        shadow-camera-far={20}
+      />
     </>
   );
 };

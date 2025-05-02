@@ -1,13 +1,3 @@
-
-:root {
-    --color-primary: #d32f2f;
-    --color-secondary: #ffffff;
-    --color-text: #333333;
-    --color-border: #e0e0e0;
-    --color-hover: rgba(255, 255, 255, 0.1);
-    --color-gray: #808080;
-}
-
 /* loung-cancer */
 
 .canvas-loung-cancer canvas{
@@ -147,13 +137,14 @@ lung-cancer-content-flex {
     color: var(--color-primary);
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .symptoms-cancer-text {
     color: var(--color-text);
     font-size: 1.2rem;
     width: 500px;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -200,13 +191,15 @@ lung-cancer-content-flex {
     color: var(--color-secondary);
     font-weight: bold;
     margin-bottom: 20px;
+    text-align: right;
 }
 
 .treatment-cancer-text {
     color: var(--color-secondary);
     font-size: 1.2rem;
     width: 500px;
-    text-align: center;
+    text-align: right;
+
     margin-bottom: 20px;
 }
 
@@ -226,6 +219,48 @@ lung-cancer-content-flex {
 
 /* Treatment Cancer CSS */
 
+/* Precaution cancer css */
+
+.precaution-cancer-container {
+    display: grid;
+    width: 100%;
+    background-color: var(--color-secondary);
+    padding: 2rem 0;
+  }
+  .precaution-cancer-content-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+  }
+  .precaution-cancer-canvas-content {
+    flex: 0 0 500px;  
+    height: 300px;
+  }
+  .canvas-precaution-cancer canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .precaution-cancer-content {
+    flex: 1 1 300px;
+    max-width: 500px;
+    padding: 0 1rem;
+  }
+  .precaution-cancer-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .precaution-cancer-text {
+    color: var(--color-text);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* Precaution cancer css */
 
 
 @media (max-width: 780px) {
@@ -346,6 +381,16 @@ lung-cancer-content-flex {
         align-items: center;
         width: 100%;
     }
+    .precaution-cancer-content-flex {
+        flex-direction: column;
+      }
+      .precaution-cancer-canvas-content,
+      .precaution-cancer-content {
+        max-width: 100%;
+      }
+      .precaution-cancer-canvas-content {
+        height: 250px;
+      }
     
 }
 
