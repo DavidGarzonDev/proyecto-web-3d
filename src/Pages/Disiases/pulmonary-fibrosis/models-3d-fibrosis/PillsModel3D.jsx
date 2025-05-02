@@ -1,0 +1,142 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unknown-property */
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+
+export function PillsModel3D(props) {
+  const { nodes, materials } = useGLTF('/models-3d-fibrosis/Pill.glb')
+  return (
+    <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Blister1001.geometry}
+        material={materials.BlisterColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Blister2001.geometry}
+        material={materials.BlisterColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cover1001.geometry}
+        material={materials.CoverColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cover2001.geometry}
+        material={materials.CoverColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.label1001.geometry}
+        material={materials.LabelColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.label2001.geometry}
+        material={materials.LabelColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill1001.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill100.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill110.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill120.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill130.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill140.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill150.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill200.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill300.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill400.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill50.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill60.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill70.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill80.geometry}
+        material={materials.PillColor}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Pill90.geometry}
+        material={materials.PillColor}
+      />
+    </group>
+  )
+}
+
+useGLTF.preload('/Pill.glb')
+
+export default PillsModel3D;
