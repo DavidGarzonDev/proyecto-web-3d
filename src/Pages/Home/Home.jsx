@@ -12,7 +12,7 @@ const Home = () => {
           Nam dictum est vibed, enem sodales patillum.
         </p>
         <Link to="/explorar">
-          <a className="info-link">Ver más información</a>
+          <div className="info-link">Ver más información</div>
         </Link>
         
       </section>

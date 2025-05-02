@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 // Asthma.jsx
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, SoftShadows } from '@react-three/drei';
-import Lungs from '../../Home/models-3d-asthma/Lungs';
+import { OrbitControls} from '@react-three/drei';
+import Lungs from "../asthma/models-3d-asthma/Lungs";
 import './Asthma.css';
 
 const Asthma = () => {
