@@ -4,16 +4,25 @@ import { DirectionalLight } from "three";
 
 const Lights = () => {
   const directionalLightRef = useRef(null);
-  useHelper(directionalLightRef, DirectionalLight);
+  useHelper(directionalLightRef, DirectionalLight, 1, "red");
 
   return (
     <>
-      <ambientLight intensity={2} color="white" />
+      <ambientLight intensity={1.5} color="white" />
       <directionalLight
         ref={directionalLightRef}
-        color="white" 
-        intensity={0.5}
-        position={[5, 5, 5]} 
+        color="white"
+        intensity={1}
+        castShadow
+        position={[5, 10, 5]}
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-near={0.5}
+        shadow-camera-far={50}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
       />
     </>
   );

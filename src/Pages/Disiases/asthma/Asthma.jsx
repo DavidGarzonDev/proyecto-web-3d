@@ -4,11 +4,12 @@ import CanvasAsthma from "./components/CanvasAsthma";
 import { IoIosMove } from "react-icons/io";
 import TreatmentAsthma from "./components/TreatmentAsthma";
 import SymptomsAsthma from "./components/SymptomsAsthma";
+import PrecautionAsthma from "./components/PrecautionAsthma";
 
 const Asthma = () => {
   return (
     <>
-      {/* Sección principal con modelo 3D */}
+      
       <div className="canvas-container">
         <div className="canvas-content-flex">
           <div className="move-icon-wrapper" title="Mueve usando el mouse">
@@ -68,6 +69,26 @@ const Asthma = () => {
               (corticosteroides inhalados) y medicamentos de alivio rápido (broncodilatadores). 
               También es importante identificar y evitar los desencadenantes y tener un plan 
               de acción para ataques agudos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Nueva sección: Prevención */}
+      <div className="precaution-asthma-container">
+        <div className="precaution-asthma-content-flex">
+          <div className="precaution-asthma-canvas-content">
+          <PrecautionAsthma />
+          </div>
+          <div className="precaution-asthma-content">
+            <h1 className="precaution-asthma-title">Prevención</h1>
+            <p className="precaution-asthma-text">
+              Para prevenir crisis de asma se recomienda: evitar desencadenantes 
+              como alérgenos (ácaros, polen, mascotas), humo de tabaco y contaminación; 
+              usar correctamente los medicamentos prescritos; vacunarse contra la gripe; 
+              mantener un peso saludable; realizar ejercicio moderado; y tener un plan 
+              de acción para crisis. Es fundamental seguir las indicaciones médicas y 
+              llevar siempre el inhalador de rescate.
             </p>
           </div>
         </div>
