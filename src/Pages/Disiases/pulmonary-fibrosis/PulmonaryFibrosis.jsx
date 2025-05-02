@@ -3,6 +3,7 @@ import CanvasLoungFibrosis from "./content/CanvasLoungFibrosis.jsx";
 import { IoIosMove } from "react-icons/io";
 import TreatmentFibrosis from "./content/TreatmentFibrosis.jsx";
 import SymptomsFibrosis from "./content/SymptomsFibrosis.jsx";
+import PrecautionFibrosis from "./content/PrecautionFibrosis.jsx";
 
 const PulmonaryFibrosis = () => {
   return (
@@ -70,6 +71,27 @@ const PulmonaryFibrosis = () => {
             temprano y el manejo adecuado pueden mejorar la calidad de vida del
             paciente.
           </p>
+        </div>
+      </div>
+      <div className="precaution-fibrosis-container">
+        <div className="precaution-fibrosis-content-flex">
+          <div className="precaution-fibrosis-canvas-content">
+            <PrecautionFibrosis />
+          </div>
+          <div className="precaution-fibrosis-content">
+            <h1 className="precaution-fibrosis-title">Precaución</h1>
+            <p className="precaution-fibrosis-text">
+              Para prevenir el cáncer de pulmón y mantener una buena salud, es
+              Las precauciones para la fibrosis pulmonar incluyen evitar la
+              exposición a contaminantes, humo de tabaco y productos químicos
+              irritantes. Es importante mantener un estilo de vida saludable, lo
+              que incluye comer comida sana, rica en frutas, verduras y
+              proteínas magras, para fortalecer el sistema inmunológico. También
+              se recomienda vacunarse contra la gripe y la neumonía, hacer
+              ejercicio moderado y seguir el tratamiento médico al pie de la
+              letra para controlar los síntomas y prevenir complicaciones.
+            </p>
+          </div>
         </div>
       </div>
     </>

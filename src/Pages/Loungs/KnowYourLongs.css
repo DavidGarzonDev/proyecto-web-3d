@@ -1,0 +1,313 @@
+:root {
+    --color-primary: #d32f2f;
+    --color-secondary: #ffffff;
+    --color-text: #333333;
+    --color-border: #e0e0e0;
+    --color-hover: rgba(255, 255, 255, 0.1);
+    --color-gray: #808080;
+}
+
+
+.canvas-loung-cancer-know canvas {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pulmones-container {
+    font-family: Arial, sans-serif;
+    width: 100%;
+  }
+
+  .pulmones-content-flex{
+    
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    background-color: var(--color-secondary);
+  }
+
+  .text-content-container {
+    width: 500px;
+    padding-left: 100px;
+    padding-top: 50px;
+  }
+
+  .content-3d {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--color-secondary);
+    width: 100%;
+    
+  }
+
+  .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  
+  .title {
+    font-size: 4rem;
+    margin: 0.5rem 0;
+    color: var(--color-primary);
+    text-align: left;
+    white-space: pre-line;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+    
+    color: #666;
+    margin-top: 1rem;
+    text-align: left;
+    
+  }
+  .text-loungs{
+    color: var(--color-text);
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  .text-content {
+    margin-bottom: 2rem;
+    
+  }
+  
+  .text-content p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  .highlight-box {
+    flex : 3;
+    background-color: var(--color-primary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 100%;
+    
+  }
+  
+  .highlight-title {
+    font-size: 3.5rem;
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-content {
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    
+  }
+
+  .highlight-box p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    color: var(--color-secondary);
+  }
+
+  .cuosirity-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--color-secondary);
+  }
+
+  .cuosirity-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    overflow-x: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: y mandatory;
+    
+  }
+
+  .card-scroll {
+    list-style: none;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .cuosirity-content::scroll-button(*) {
+    border: 0;
+    font-size: 2rem;
+    background: none;
+    color: rgb(0 0 0 / 0.7);
+    cursor: pointer;
+  }
+
+  .cuosirity-content::scroll-button(*):hover,
+  .cuosirity-content::scroll-button(*):focus {
+    color: var(--color-primary);
+  }
+
+  .cuosirity-content::scroll-button(*):active {
+    translate: 0 2px;
+  }
+
+  .cuosirity-content::scroll-button(*):disabled {
+    color: rgb(0 0 0 / 0.2);
+    cursor: unset;
+  }
+  
+
+  .curisority-content::scroll-button(left) {
+    content: "❮";
+    font-size: 2rem;
+    color: rgb(0 0 0 / 0.7);
+    cursor: pointer;
+  }
+  .curisority-content::scroll-button(right) {
+    content: "❯";
+    font-size: 2rem;
+    color: rgb(0 0 0 / 0.7);
+    cursor: pointer;
+  }
+
+  .cuosirity-title{
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .highlight-text-workingloungs {
+    color: var(--color-text);
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .img-loungs-curiosity{
+    width: 300px;
+    height: 350px;
+    padding: 10%;
+    
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title{
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .card-rotation{
+    width: 500px;
+    height: 600px;
+    margin: 1rem auto;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+
+  .cuosirity-title-container{
+    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+    .card-rotation:hover .card-inner:hover {
+        transform: rotateY(180deg);
+    }
+
+  .card-curiosity-front, 
+  .card-curiosity-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .card-curiosity-front{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    font-size: 1.5rem;
+  }
+
+
+
+    .card-curiosity-back{
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+        transform: rotateY(180deg);
+    }
+
+  .card-text{
+    width: 70%;
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+.scroll-container {
+    width: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.scroll-button.left { left: 0.5rem; }
+.scroll-button.right { right: 0.5rem; }
+.kyl-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.kyl-grid::-webkit-scrollbar {
+  display: none;
+}

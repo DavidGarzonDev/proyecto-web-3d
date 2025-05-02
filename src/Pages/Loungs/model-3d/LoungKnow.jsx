@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
-const LoungCancerModelo3D = (props) => {
+const LoungKnow = (props) => {
   const { nodes, materials } = useGLTF('/models-3d-cancer/loung-cancer.glb')
-  const loung = useGLTF('/models-3d-cancer/loung-cancer.glb')
 
   const refLoung = useRef()
 
@@ -21,7 +20,10 @@ const LoungCancerModelo3D = (props) => {
         receiveShadow
         geometry={nodes.LoungCancer.geometry}
         material={materials.LoungCancerMaterial}
-        scale={2.2}      />
+        scale={4.2}
+        position={[1, -0.6, 0]}
+        rotation={[-Math.PI / 0.5, 0.32, 0]}
+      />
     </group>
   )
 }
@@ -30,4 +32,4 @@ const LoungCancerModelo3D = (props) => {
 useGLTF.preload('/models-3d-cancer/loung-cancer.glb')
 
 
-export default LoungCancerModelo3D;
+export default LoungKnow;

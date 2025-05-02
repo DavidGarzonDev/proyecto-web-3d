@@ -53,6 +53,7 @@ body {
     /* 20px */
     margin-bottom: 1.875rem;
     /* 30px */
+    text-align: center;
     font-weight: 300;
     color: var(--color-text);
 }

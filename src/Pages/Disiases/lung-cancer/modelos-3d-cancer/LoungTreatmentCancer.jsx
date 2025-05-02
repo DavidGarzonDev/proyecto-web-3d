@@ -21,7 +21,7 @@ const LoungTreatmentCancer = (props) => {
         receiveShadow
         geometry={nodes.IvPole.geometry}
         material={materials.IvPoleMaterial}
-        rotation={[-Math.PI / 2, 0, 2]}
+        rotation={[-Math.PI / 2.2, 0, 3]}
         position={[0, -2, 0]}
         scale={0.35}
       />

@@ -9,10 +9,11 @@ const SymptomsFibrosis = () => {
    return (
      <Canvas
          className="canvas-symptoms-fibrosis"
-       camera={{ position: [0, -2, 0], fov: 20 }}
+       camera={{ position: [0, -2, 0], fov: 40 }}
      >
        <LightsFibrosis />
-       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
+       
+       <OrbitControls enableZoom={true} enablePan={true}  />
          <LoungSymptoms />
      </Canvas>
    );

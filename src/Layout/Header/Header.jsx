@@ -1,41 +1,60 @@
-import { Link } from "react-router";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+
+  const [shrink, setShrink] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setShrink(window.scrollY > 50)
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
-    <header className="header-container">
+    <header className={`header-container${shrink ? ' shrink' : ''}`}>
       <nav className="navbar">
         <Link to="/" className="logo-link">
           <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
         <ul>
           <li>
-            <Link to="/">Inicio</Link>
+            <NavLink to="/" className={({isActive}) => isActive ? 'active' : ''} end>
+              Inicio
+            </NavLink>
           </li>
           <li className="dropdown">
-            <span className="dropdown-link">Enfermedades</span>
+            <NavLink to="/enfermedades" className={({isActive}) => isActive ? 'dropdown-link active' : 'dropdown-link'} end>
+              Enfermedades
+            </NavLink>
             <ol className="dropdown-menu">
               <li>
-                <Link to="/enfermedades/fibrosis-pulmonar">
+                <NavLink to="/enfermedades/fibrosis-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
                   Fibrosis Pulmonar
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to="/enfermedades/asma">Asma</Link>
+                <NavLink to="/enfermedades/asma" className={({isActive}) => isActive ? 'active' : ''}>
+                  Asma
+                </NavLink>
               </li>
               <li>
-                <Link to="/enfermedades/cancer-pulmonar">Cancer Pulmonar</Link>
+                <NavLink to="/enfermedades/cancer-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
+                  Cancer Pulmonar
+                </NavLink>
               </li>
-
               <li>
-                <Link to="/enfermedades/hipertension-pulmonar">
+                <NavLink to="/enfermedades/hipertension-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
                   Hipertension Pulmonar
-                </Link>
+                </NavLink>
               </li>
             </ol>
           </li>
           <li>
-            <Link to="/quiz">Quiz</Link>
+            <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''}>
+              Quiz
+            </NavLink>
           </li>
         </ul>
       </nav>
