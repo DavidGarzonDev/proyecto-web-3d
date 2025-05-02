@@ -25,9 +25,7 @@ const Asthma = () => {
       <div className="what-is-asthma-container">
         <div className="what-is-asthma-content-flex">
           <div className="what-is-asthma-content">
-            <h1 className="what-is-asthma-title">
-              ¿Qué es el Asma?
-            </h1>
+            <h1 className="what-is-asthma-title">¿Qué es el Asma?</h1>
             <p className="what-is-asthma-text">
               El asma es una enfermedad crónica de las vías respiratorias que causa inflamación 
               y estrechamiento de los bronquios. Es una condición común que afecta a personas 

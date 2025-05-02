@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { useHelper } from "@react-three/drei";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { DirectionalLight } from "three";
 
-const Lights = ({ lightPosition = [0, 5, 0], ambIntensity = 2, dirIntensity = 0.5 }) => {
+const LightsHypertension = ({ lightPosition = [0, 5, 0], ambIntensity = 2, dirIntensity = 0.5 }) => {
     const directionalLightRef = useRef(null);
     useHelper(directionalLightRef, DirectionalLight);
 
@@ -25,4 +26,4 @@ const Lights = ({ lightPosition = [0, 5, 0], ambIntensity = 2, dirIntensity = 0.
   );
 };
 
-export default Lights;
+export default LightsHypertension;

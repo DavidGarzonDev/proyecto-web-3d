@@ -1,0 +1,586 @@
+/* loung-hypertension */
+
+.canvas-pulmonary-hypertension canvas{
+    touch-action: none;
+
+}
+
+.canvas-container{
+    position: relative;
+    display: grid;
+}
+
+.canvas-content-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.move-icon-wrapper {
+    position: absolute; 
+    top: 10px;          
+    right: 10px;         
+    z-index: 10;         
+    color: #000000;         
+    font-size: 2rem;    
+    cursor: pointer;     
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 5px;
+    border-radius: 50%; 
+    display: flex;       
+    align-items: center;
+    justify-content: center;
+  }
+
+.move-icon-wrapper h1 {
+    margin: 0; 
+    padding: 10px;
+    font-size: 1rem; 
+    color: #000000; 
+    font-weight: normal; 
+}
+
+.pulmonary-hypertension-container {
+    display: grid;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(200px, 1fr));
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+pulmonary-hypertension-content-flex {
+    display: flex;
+}
+
+.pulmonary-hypertension-title {
+    color : var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+
+
+.pulmonary-hypertension-description {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* what is pulmonary hipertension */
+
+.what-is-hypertension-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 500px;
+    background-color: var(--color-primary);
+}
+
+.what-is-hypertension-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.what-is-hypertension-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 900px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.what-is-hypertension-content {
+    display: grid;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.what-is-hypertension-container {
+    position: relative;
+    display: grid;
+}
+
+.what-is-hypertension-content-flex{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/*symptoms hypertension css*/
+
+.canvas-symptoms-hypertension canvas{
+    touch-action: none; 
+    
+}
+
+.symptoms-hypertension-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-secondary);
+}
+
+.symptoms-hypertension-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.symptoms-hypertension-text {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+.symptoms-hypertension-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.symptoms-hypertension-container {
+    position: relative;
+    display: grid;
+}
+
+.symptoms-hypertension-content-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.symptoms-hypertension-canvas-content {
+    padding-top: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+/* Treatment hypertension CSS */
+
+.canvas-treatment-hypertension canvas{
+    touch-action: none; 
+    
+}
+
+.treatment-hypertension-container {
+    position: relative;
+    display: grid;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
+.treatment-hypertension-title {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.treatment-hypertension-text {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 500px;
+    text-align: right;
+
+    margin-bottom: 20px;
+}
+
+
+.treatment-hypertension-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.treatment-hypertension-container {
+    position: relative;
+    display: grid;
+}
+
+
+/* Precaution hypertension css */
+
+.precaution-hypertension-container {
+    display: grid;
+    width: 100%;
+    background-color: var(--color-secondary);
+    padding: 2rem 0;
+  }
+  .precaution-hypertension-content-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+  }
+  .precaution-hypertension-canvas-content {
+    flex: 0 0 500px;  
+    height: 300px;
+  }
+  .canvas-precaution-hypertension canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .precaution-hypertension-content {
+    flex: 1 1 300px;
+    max-width: 500px;
+    padding: 0 1rem;
+  }
+  .precaution-hypertension-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .precaution-hypertension-text {
+    color: var(--color-text);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* Precaution hypertension css */
+
+
+@media (max-width: 780px) {
+    .canvas-pulmonary-hypertension canvas{
+        width: 300px; 
+        height: 300px; 
+    }
+    .canvas-container{
+        width: 200px;
+        height: 400px;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 0.8rem; 
+    }
+    .pulmonary-hypertension-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 300px;
+    }
+    .canvas-treatment-hypertension canvas{
+        width: 300px; 
+        height: 500px;   
+    }
+
+    .treatment-hypertension-canvas-content{
+        padding-top: 20px;
+        width: 100%;
+        height: 500px;
+    }
+    .treatment-hypertension-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .treatment-hypertension-container {
+        display: grid;
+        height: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .treatment-hypertension-title {
+        font-size: 2rem;
+    }
+
+    .treatment-hypertension-text {
+        width: 300px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .what-is-hypertension-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-hypertension-container {
+        display: grid;
+        height: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        
+    }
+
+    .what-is-hypertension-title {
+        width: 300px;
+        font-size: 2rem;
+    }
+    .what-is-hypertension-text {
+        width: 300px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
+    }
+
+    .canvas-symptoms-hypertension canvas{
+        width: 200px; 
+        height: 400px;
+    }
+
+    .symptoms-hypertension-container {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        width: 350px;
+    }
+
+    .symptoms-hypertension-title {
+        font-size: 2rem;
+    }
+    .symptoms-hypertension-text {
+        width: 100%;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .symptoms-hypertension-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .symptoms-hypertension-canvas-content {
+        width: 200px;
+        height: 300px;
+    }
+    .symptoms-hypertension-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .precaution-hypertension-content-flex {
+        flex-direction: column;
+      }
+      .precaution-hypertension-canvas-content,
+      .precaution-hypertension-content {
+        max-width: 100%;
+      }
+      .precaution-hypertension-canvas-content {
+        height: 250px;
+      }
+    
+}
+
+@media (min-width: 790px) {
+    .canvas-pulmonary-hypertension canvas{
+        width: 600px; 
+        height: 500px; 
+    }
+    .canvas-container{
+        height: 100vh;
+
+    }
+    .move-icon-wrapper {
+        font-size: 1.5rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1rem; 
+    }
+    .pulmonary-hypertension-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(100px, 1fr));
+        width: 600px;
+    }
+    .canvas-treatment-hypertension canvas{
+        width: 300px; 
+        height: 100px;   
+    }
+
+    .treatment-hypertension-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .treatment-hypertension-canvas-content{ 
+        padding-top: 20px;
+        width: 150px;
+        height: 500px;
+    }
+    
+    .treatment-hypertension-container {
+        display: flex;
+    }
+    .treatment-hypertension-title {
+        font-size: 1.8rem;
+    }
+
+    .treatment-hypertension-text {
+        width: 600px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+
+    .what-is-hypertension-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-hypertension-container {
+        display: grid;
+        height: 600px;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        
+    }
+
+    .what-is-hypertension-title {
+        width: 100%;
+        font-size: 2rem;
+    }
+    .what-is-hypertension-text {
+        width: 600px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
+    }
+
+    .canvas-symptoms-hypertension canvas{
+        width: 200px; 
+        height: 400px;
+    }
+
+    .symptoms-hypertension-container {
+        display: flex;
+    }
+
+    .symptoms-hypertension-title {
+        font-size: 2rem;
+    }
+    .symptoms-hypertension-text {
+        width: 450px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    .symptoms-hypertension-canvas-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:300px;
+    }
+
+    .symptoms-hypertension-canvas-content {
+        width: 250px;
+        height: 300px;
+    }
+    .symptoms-hypertension-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .canvas-pulmonary-hypertension canvas{
+        width: 700px; 
+        width: 700px;
+    }
+    .canvas-container{
+        height: 100vh;
+        padding-top: 5px;
+    }
+    .move-icon-wrapper {
+        font-size: 1.8rem; 
+    }
+    .move-icon-wrapper h1 {
+        font-size: 1.1rem; 
+    }
+    .pulmonary-hypertension-container {
+        grid-template-columns: 
+            repeat(auto-fit, minmax(200px, 1fr));
+        width: 1000px;
+    }
+    .canvas-treatment-hypertension canvas{
+        width: 400px; 
+        height: 300px;   
+    }
+
+    .treatment-hypertension-content-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .treatment-hypertension-canvas-content{ 
+        padding-top: 20px;
+        width: 400px;
+        height: 500px;
+    }
+    
+    .treatment-hypertension-container {
+        display: flex;
+    }
+    .treatment-hypertension-title {
+        font-size: 1.8rem;
+    }
+
+    .treatment-hypertension-text {
+        width: 600px;
+        align-items: center ;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+    
+    .what-is-hypertension-content-flex{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .what-is-hypertension-container {
+        display: grid;
+        height: 500px;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        
+    }
+
+    .what-is-hypertension-title {
+        width: 100%;
+        font-size: 2rem;
+    }
+    .what-is-hypertension-text {
+        width: 1100px;
+        justify-content: center;
+        align-items: center ;
+        font-size: 1.5rem;
+    }
+}
