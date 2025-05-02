@@ -2,7 +2,7 @@
 import LightsHypertension from "../lights-hypertension/LightsHypertension.jsx";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import "../PulmonaryHypertension.css";
+import "../pulmonaryHypertension.css";
 import LungSymptomsHypertension from "../modelos-3d-hypertension/LungSymptomsHypertension.jsx";
 import Recipe from "../modelos-3d-hypertension/Recipe.jsx"
 

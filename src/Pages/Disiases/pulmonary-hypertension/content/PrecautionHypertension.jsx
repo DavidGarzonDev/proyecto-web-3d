@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import LightsHypertension from "../lights-hypertension/LightsHypertension.jsx";
-import "../PulmonaryHypertension.css";
+import "../pulmonaryHypertension.css";
 import LoungMedicineHypertension from "../modelos-3d-hypertension/LungMedicineHypertension.jsx";
 import Recipe from "../modelos-3d-hypertension/Recipe.jsx";
 

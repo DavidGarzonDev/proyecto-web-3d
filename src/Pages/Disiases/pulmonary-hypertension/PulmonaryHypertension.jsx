@@ -1,5 +1,5 @@
 
-import "./PulmonaryHypertension.css";
+import "./pulmonaryHypertension.css";
 import CanvasPulmonaryHypertension from "./content/CanvasPulmonaryHypertension.jsx";
 import { IoIosMove } from "react-icons/io";
 import TreatmentHypertension from "./content/TreatmentHypertension.jsx";
