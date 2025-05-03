@@ -48,8 +48,8 @@ const Home = () => {
       <section className="quiz-section">
         <h2>¿ESTÁS LISTO PARA UN PEQUEÑO QUIZ?</h2>
         <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quandit dictum nugua eget ligula sollicitudin non ultrices ipsum dique.
-          Nam dictum est vibed, enem sodales patillum.
+          ¡Es hora de demostrar cuánto sabes sobre uno de los órganos más importantes del cuerpo humano! Antes de comenzar, recuerda que los pulmones no solo nos permiten respirar, sino que también cumplen un papel fundamental en el intercambio de gases que mantiene con vida a cada célula de nuestro cuerpo. Prepárate y responde con atención. ¡Comencemos el quiz!
+
         </p>
         <Link to="/quiz">
         <button className="quiz-btn">PONTE A PRUEBA</button>
