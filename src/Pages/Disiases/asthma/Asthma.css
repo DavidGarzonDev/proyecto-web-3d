@@ -52,6 +52,21 @@
   font-size: 1rem;
   color: #000000;
   font-weight: normal;
+  
+}
+.move-icon-wrapper svg {
+  margin: 0;
+  padding: 10px;
+  font-size: 2rem;
+  color: #000000;
+  font-weight: normal;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-5px);}
+  60% {transform: translateY(-3px);}
 }
 
 /* Sección: ¿Qué es el Asma? */
@@ -116,7 +131,7 @@
 
 .symptoms-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -157,7 +172,7 @@
 
 .treatment-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -198,7 +213,7 @@
 
 .precaution-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -231,8 +246,8 @@
   .symptoms-asthma-canvas-content,
   .treatment-asthma-canvas-content,
   .precaution-asthma-canvas-content {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin: 1rem auto;
   }
   

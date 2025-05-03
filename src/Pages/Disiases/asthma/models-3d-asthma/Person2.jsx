@@ -1,13 +1,14 @@
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-const Person = (props) => {
+const Person2 = (props) => {
     const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person-model.glb')
+  const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person2-model.glb')
   const { actions } = useAnimations(animations, group)
   
   return (
-    <group ref={group} {...props} dispose={null} scale={2} >
+    <group ref={group} {...props} dispose={null} scale={2}>
+      
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh
@@ -97,5 +98,5 @@ const Person = (props) => {
   )
 }
 
-export default Person
-useGLTF.preload('/models-3d-asthma/person-model.glb')
+export default Person2
+useGLTF.preload('/models-3d-asthma/person2-model.glb')
