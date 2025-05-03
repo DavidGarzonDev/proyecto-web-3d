@@ -10,8 +10,7 @@ const Footer = () => {
 
       <div className="footer-content">
         <p>
-          LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. NULLAM
-          HENDRERIT MAGNA ELEMENTUM DUI MAXIMUS LACINIA. SED LUCTUS EX IPSUM.
+          Somos un grupo de estudiantes apasiados con la programacion, buscamos resolver problemas y optimizar procesos.
         </p>
       </div>
 
