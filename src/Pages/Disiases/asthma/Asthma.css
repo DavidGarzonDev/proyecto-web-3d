@@ -116,7 +116,7 @@
 
 .symptoms-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -157,7 +157,7 @@
 
 .treatment-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -198,7 +198,7 @@
 
 .precaution-asthma-canvas-content {
   width: 400px;
-  height: 400px;
+  height: 600px;
   margin: 1rem;
 }
 
@@ -231,8 +231,8 @@
   .symptoms-asthma-canvas-content,
   .treatment-asthma-canvas-content,
   .precaution-asthma-canvas-content {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin: 1rem auto;
   }
   

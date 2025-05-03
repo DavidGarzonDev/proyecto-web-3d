@@ -12,9 +12,9 @@ const Lights = () => {
       <directionalLight
         ref={directionalLightRef}
         color="white"
-        intensity={1}
+        intensity={2}
         castShadow
-        position={[5, 10, 5]}
+        position={[5, 10, 6]}
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
         shadow-camera-near={0.5}
@@ -23,6 +23,7 @@ const Lights = () => {
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
+        shadow-bias={-0.0001}
       />
     </>
   );
