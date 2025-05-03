@@ -12,12 +12,12 @@ const Asthma = () => {
       
       <div className="canvas-container">
         <div className="canvas-content-flex">
+          <div className="canvas-asthma">
+            <CanvasAsthma />
+          </div>
           <div className="move-icon-wrapper" title="Mueve usando el mouse">
             <h1>Mueve con el ratón!</h1>
             <IoIosMove />
-          </div>
-          <div className="canvas-asthma">
-            <CanvasAsthma />
           </div>
         </div>
       </div>
