@@ -8,8 +8,7 @@ const Home = () => {
         <h1>Conoce tus Pulmones en 3D</h1>
         <p className="subtitle">El órgano clave para tu respiración</p>
         <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quandit dictum nugua eget ligula sollicitudin non ultrices ipsum dique.
-          Nam dictum est vibed, enem sodales patillum.
+          El pulmón es un órgano vital del sistema respiratorio encargado de intercambiar gases entre el aire y la sangre. Su principal función es absorber oxígeno y expulsar dióxido de carbono. Está formado por dos partes, el pulmón derecho y el izquierdo, y se encuentra protegido por la caja torácica. Su estructura es esponjosa y está compuesta por millones de alvéolos, donde ocurre el intercambio gaseoso.
         </p>
         <Link to="/explorar">
           <div className="info-link">Ver más información</div>
