@@ -9,18 +9,24 @@ import PrecautionAsthma from "./components/PrecautionAsthma";
 const Asthma = () => {
   return (
     <>
+      <h1 className="canvas-asthma-title">Asma</h1>
       
       <div className="canvas-container">
+        
         <div className="canvas-content-flex">
+          
           <div className="canvas-asthma">
+            
             <CanvasAsthma />
           </div>
-          <div className="move-icon-wrapper" title="Mueve usando el mouse">
+
+        </div>
+        <div className="move-icon-wrapper" title="Mueve usando el mouse">
             <h1>Mueve con el ratón!</h1>
             <IoIosMove />
           </div>
-        </div>
       </div>
+      
 
       {/* Sección: ¿Qué es el Asma? */}
       <div className="what-is-asthma-container">

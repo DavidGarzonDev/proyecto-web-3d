@@ -2,19 +2,20 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Person = (props) => {
-    const group = useRef()
+  const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person-model.glb')
   const { actions } = useAnimations(animations, group)
-
+  
   useEffect(() => {
     actions.Cough.play()
     return () => {
       actions.Cough.stop()
     };
   }, [actions]);
-  
+
   return (
-    <group ref={group} {...props} dispose={null} scale={2} >
+    <group ref={group} {...props} dispose={null} scale={3}>
+
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh
