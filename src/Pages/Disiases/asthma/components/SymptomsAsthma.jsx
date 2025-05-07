@@ -9,13 +9,13 @@ const SymptomsAsthma = () => {
   return (
     <Canvas
       className="canvas-symptoms-asthma"
-      camera={{ position: [0, 2, 5], fov: 50 }}
+      camera={{ position: [0, 2, 9], fov: 50 }}
       shadows={true}
     >
       <Lights />
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
-      <Person position={[0, -2, 0]} />
-      <Recipe/>
+      <Person position={[0, -5, 0]} />
+      <Recipe />
     </Canvas>
   );
 };

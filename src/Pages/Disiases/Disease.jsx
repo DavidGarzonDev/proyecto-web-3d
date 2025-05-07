@@ -7,7 +7,6 @@ const Disease = () => {
     <>
 
       <div className="body-disease">
-        <h1>Enfermedades</h1>
       </div>
 
       
