@@ -26,13 +26,14 @@ const CanvasAsthma = () => {
       <Lights />
       <Recipe />
       <Sparkles 
-        count={100}
+        count={200}
         size={2}
         color="#d32f2f"
-        speed={0.1}
+        speed={0.5}
         opacity={0.6}
         scale={[10, 10, 10]}
       />
+
       
       
       
