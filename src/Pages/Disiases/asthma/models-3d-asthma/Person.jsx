@@ -14,7 +14,7 @@ const Person = (props) => {
   }, [actions]);
 
   return (
-    <group ref={group} {...props} dispose={null} scale={3}>
+    <group ref={group} {...props} dispose={null} scale={5}>
 
       <group name="Scene">
         <group name="Armature">
