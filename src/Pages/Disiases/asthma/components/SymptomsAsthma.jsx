@@ -14,7 +14,8 @@ const SymptomsAsthma = () => {
       shadows={true}
     >
       <Lights />
-      <OrbitControls enableZoom={false} enablePan={true} enableRotate={true} />
+      <OrbitControls enableZoom={false} enablePan={true} enableRotate={false} 
+      />
       <Person position={[0, -7.5, 0]} rotation={[0, -3, 0]} />
 
       <Recipe />
