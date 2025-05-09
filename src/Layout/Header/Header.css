@@ -12,7 +12,16 @@
 .navbar {
   display: flex;
   align-items: center;
+  gap: 20rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
   justify-content: space-around;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
 .logo-img {
@@ -43,12 +52,16 @@
 
 .dropdown {
   position: relative;
+  color: var(--color-whithe);
+  cursor: pointer;
 }
 
 .dropdown-link {
   color: var(--color-whithe);
   cursor: pointer;
 }
+
+
 
 .dropdown-menu {
   display: none;

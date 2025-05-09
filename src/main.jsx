@@ -20,12 +20,10 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explorar" element={<KnowYourLungs />} />
-        <Route path="enfermedades" element={<Disease />}>
-          <Route path="fibrosis-pulmonar" element={<PulmonaryFibrosis />} />
-          <Route path="asma" element={<Asthma />} />
-          <Route path="cancer-pulmonar" element={<LungCancer />} />
-          <Route path="hipertension-pulmonar" element={<PulmonaryHypertension />} />  
-        </Route>
+        <Route path="fibrosis-pulmonar" element={<PulmonaryFibrosis />} />
+        <Route path="asma" element={<Asthma />} />
+        <Route path="cancer-pulmonar" element={<LungCancer />} />
+        <Route path="hipertension-pulmonar" element={<PulmonaryHypertension />} />  
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

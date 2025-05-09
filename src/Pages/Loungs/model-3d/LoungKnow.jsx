@@ -20,8 +20,8 @@ const LoungKnow = (props) => {
         receiveShadow
         geometry={nodes.LoungCancer.geometry}
         material={materials.LoungCancerMaterial}
-        scale={4.2}
-        position={[1, -0.6, 0]}
+        scale={1.8}
+        position={[0, 0.2, 0]}
         rotation={[-Math.PI / 0.5, 0.32, 0]}
       />
     </group>
