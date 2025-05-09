@@ -25,27 +25,27 @@ const Header = () => {
             </NavLink>
           </li>
           <li className="dropdown">
-            <NavLink to="/enfermedades" className={({isActive}) => isActive ? 'dropdown-link active' : 'dropdown-link'} end>
+            <div className={({isActive}) => isActive ? 'dropdown-link active' : 'dropdown-link'} end>
               Enfermedades
-            </NavLink>
+            </div>
             <ol className="dropdown-menu">
               <li>
-                <NavLink to="/enfermedades/fibrosis-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/fibrosis-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
                   Fibrosis Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/enfermedades/asma" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/asma" className={({isActive}) => isActive ? 'active' : ''}>
                   Asma
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/enfermedades/cancer-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/cancer-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
                   Cancer Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/enfermedades/hipertension-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
+                <NavLink to="/hipertension-pulmonar" className={({isActive}) => isActive ? 'active' : ''}>
                   Hipertension Pulmonar
                 </NavLink>
               </li>

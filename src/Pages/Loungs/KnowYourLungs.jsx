@@ -1,10 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import "./KnowYourLongs.css";
 import CanvasLoungKnow from "./content/CanvasLoungKnow";
-
+import { FaChevronDown } from "react-icons/fa";
+import { DiJava } from "react-icons/di";
 
 const KnowYourLungs = () => {
   const gridRef = useRef(null);
+  const infoRef = useRef(null);
+  const [showButton, setShowButton] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80) setShowButton(false);
+      else setShowButton(true);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScrollToInfo = () =>  {
+    if (infoRef.current) {
+      const y = infoRef.current.getBoundingClientRect().top + window.scrollY -70; // 80px de margen superior
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -15,25 +34,22 @@ const KnowYourLungs = () => {
               <h1 className="title">
                 NUESTROS
                 <br />
-                PULMONES
+                PULMONES 
               </h1>
               <p className="subtitle">El organo clave para tu respiracion</p>
-              <p className="text-loungs">
-                Nuestros pulmones son esenciales para respirar, ya que toman el
-                oxígeno del aire y expulsan el dióxido de carbono. Tienen una
-                estructura flexible y esponjosa que les permite expandirse con
-                cada inhalación, trabajando en equipo con otros órganos como la
-                tráquea y los bronquios. Sin ellos, nuestro cuerpo no recibiría
-                el aire vital que necesita.
-              </p>
             </div>
             <div className="content-3d">
                 <CanvasLoungKnow />
             </div>
-            
           </div>
         </div>
-
+        {showButton && (
+          <button className="scroll-down-btn" onClick={handleScrollToInfo} aria-label="Ver más información">
+            <span>Ver más información</span>
+            <FaChevronDown size={24} />
+          </button>
+        )}
+        <div ref={infoRef}></div>
         <div className="highlight-box">
           <div className="highlight-content">
             <h1 className="highlight-title">¿Como funcionan?</h1>
@@ -66,6 +82,10 @@ const KnowYourLungs = () => {
               papel en la producción de sonido. Los pulmones son órganos
               fascinantes que desempeñan un papel crucial en nuestra salud.
             </p>
+            <div className="label-scroll-down">
+              <span>Ver curiosidades</span>
+              <FaChevronDown size={24}  />
+            </div>
           </div>
           <div className="cuosirity-content">
             <div className="scroll-container">
