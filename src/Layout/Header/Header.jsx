@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className={`header-container${shrink ? ' shrink' : ''}${menuOpen ? ' menu-open' : ''}`}>
-      <nav className="navbar">
+      <nav className={`navbar${shrink ? ' shrink' : ''}${menuOpen ? ' menu-open' : ''}`}>
         <Link to="/" className="logo-link">
           <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
