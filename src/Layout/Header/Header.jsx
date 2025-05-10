@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 import "./Header.css";
 
 const Header = () => {
 
   const [shrink, setShrink] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => setShrink(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll);
@@ -13,11 +15,18 @@ const Header = () => {
 
 
   return (
-    <header className={`header-container${shrink ? ' shrink' : ''}`}>
+    <header className={`header-container${shrink ? ' shrink' : ''}${menuOpen ? ' menu-open' : ''}`}>
       <nav className="navbar">
         <Link to="/" className="logo-link">
           <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
+        <button
+          className="nav-toggle"
+          onClick={() => setMenuOpen(open => !open)}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+        >
+          {menuOpen ? <FiX /> : <FiMenu />}
+        </button>
         <ul>
           <li>
             <NavLink to="/" className={({isActive}) => isActive ? 'active' : ''} end>

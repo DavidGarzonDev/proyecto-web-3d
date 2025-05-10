@@ -6,62 +6,51 @@
   z-index: 1000;
   background-color: var(--color-primary);
   transition: padding 0.8s ease, background-color 0.8s ease;
-  /* padding: 1rem 2rem; */
+  padding: 1rem 0rem;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  gap: 20rem;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  justify-content: space-around;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  justify-content: left;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
 }
 
 .logo-img {
-  width: 60%;
-  transition: width 0.8s ease;
-  height: auto;
+  height: 100px;            
+  
+  transition: height 0.4s ease;
+}
+
+.logo-img img {
+  width: 100%;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 .navbar ul li a,
 .dropdown-menu {
   color: var(--color-whithe);
-}
-
-/* Remove underline from all navbar links */
-.navbar ul li a,
-.navbar ul li .dropdown-link,
-.navbar ul li .dropdown-menu li a {
   text-decoration: none;
 }
 
 .dropdown {
   position: relative;
   color: var(--color-whithe);
-  cursor: pointer;
 }
 
 .dropdown-link {
   color: var(--color-whithe);
   cursor: pointer;
+  
 }
-
-
 
 .dropdown-menu {
   display: none;
@@ -100,12 +89,157 @@
 }
 
 .header-container.shrink {
-  padding: 0.5rem 2rem;
+  padding: 0.8rem 0rem;
   background-color: var(--color-primary);
 }
 
 .header-container.shrink .logo-img {
-  width: 30%;
-  transition: width 0.8s ease;
+  height: 70px;          
+}
+
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  .logo-link {
+    margin-bottom: 0;
+  }
+  .navbar ul {
+    flex-wrap: nowrap;
+  }
+  .logo-img {
+    height: 100px;
+  }
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+  .navbar ul li {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+  .navbar ul li a,
+  .navbar ul li .dropdown-link {
+    width: 100%;
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  .dropdown-menu {
+    position: static;
+    background-color: var(--color-primary);
+    box-shadow: none;
+    margin-top: 0.25rem;
+    width: 100%;
+    background: transparent;
+    padding-left: 1rem;
+  }
+  .dropdown-menu li a {
+    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
+  }
+  
+  .nav-toggle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: auto;
+    margin: 0;           
+  }
+  
+  .header-container.menu-open .navbar ul {
+    display: flex;
+  }
+  
+  .logo-link, .nav-toggle {
+    flex-shrink: 0;
+  }
+  .header-container,
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar {
+    flex-wrap: nowrap;
+  }
+  .logo-img {
+    height: 70px;
+  }
+  .nav-toggle {
+    display: block;
+    font-size: 1.8rem;
+    margin-left: auto;
+  }
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--color-primary);
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+  .header-container.menu-open .navbar ul {
+    display: flex;
+  }
+  .navbar ul li {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.5rem 0rem;
+  }
+  .navbar ul li a,
+  .navbar ul li .dropdown-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.5rem;
+  }
+  .logo-img {
+    height: 70px;
+  }
+}
+
+@media (min-width: 769px) {
+  
+  .navbar ul {
+    display: flex !important;
+    position: static;
+    box-shadow: none;
+    gap: 1.5rem;
+    margin-left: 1rem;    
+  }
+  .nav-toggle { display: none; }
 }
 
