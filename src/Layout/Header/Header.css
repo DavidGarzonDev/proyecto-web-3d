@@ -3,22 +3,24 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100px;
   z-index: 1000;
   background-color: var(--color-primary);
   transition: padding 0.8s ease, background-color 0.8s ease;
-  padding: 1rem 0rem;
+  transition: 0.8s;
 }
 
 .navbar {
   display: flex;
+  height: 90px;
+  transition: 0.8s;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
 }
 
 .logo-img {
   height: 100px;            
-  
   transition: height 0.4s ease;
 }
 
@@ -89,8 +91,14 @@
 }
 
 .header-container.shrink {
-  padding: 0.8rem 0rem;
+  height: 80px;
+  transition: 0.8s;
   background-color: var(--color-primary);
+}
+
+.navbar.shrink {
+  transition: 0.8s;
+  height: 70px;
 }
 
 .header-container.shrink .logo-img {
