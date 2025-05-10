@@ -1,12 +1,19 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function PersonCoughtModel3D(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-fibrosis/Person-coughing.glb')
   const { actions } = useAnimations(animations, group)
+
+   useEffect(() => {
+      actions.Cough.play()
+      return () => {
+        actions.Cough.stop()
+      };
+    }, [actions]);
+    
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
