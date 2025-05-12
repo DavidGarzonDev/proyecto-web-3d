@@ -13,24 +13,20 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleToggleMenu = () => {
-    setMenuOpen((open) => !open);
-  };
-
-  const handleCloseMenu = () => {
+  const handleLinkClick = () => {
     setMenuOpen(false);
   };
 
   return (
     <header className={`header-container${shrink ? " shrink" : ""}${menuOpen ? " menu-open" : ""}`}>
       <nav className={`navbar${shrink ? " shrink" : ""}${menuOpen ? " menu-open" : ""}`}>
-        <Link to="/" className="logo-link">
-          <img src="/Logo/JACO-LOGO-BLANCO.webp" alt="Logo" className="logo-img" />
+        <Link to="/" className="logo-link" onClick={handleLinkClick}>
+          <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
 
         <button
           className="nav-toggle"
-          onClick={handleToggleMenu}
+          onClick={() => setMenuOpen(open => !open)}
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
@@ -38,31 +34,31 @@ const Header = () => {
 
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")} end onClick={handleCloseMenu}>
+            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} end onClick={handleLinkClick}>
               Inicio
             </NavLink>
           </li>
 
-          <li className="dropdown always-open">
-            <span className="dropdown-link">Enfermedades</span>
+          <li className="dropdown">
+            <div className="dropdown-link">Enfermedades</div>
             <ol className="dropdown-menu">
               <li>
-                <NavLink to="/fibrosis-pulmonar" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleCloseMenu}>
+                <NavLink to="/fibrosis-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
                   Fibrosis Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/asma" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleCloseMenu}>
+                <NavLink to="/asma" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
                   Asma
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cancer-pulmonar" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleCloseMenu}>
+                <NavLink to="/cancer-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
                   Cáncer Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/hipertension-pulmonar" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleCloseMenu}>
+                <NavLink to="/hipertension-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
                   Hipertensión Pulmonar
                 </NavLink>
               </li>
@@ -70,7 +66,7 @@ const Header = () => {
           </li>
 
           <li>
-            <NavLink to="/quiz" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleCloseMenu}>
+            <NavLink to="/quiz" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
               Quiz
             </NavLink>
           </li>
