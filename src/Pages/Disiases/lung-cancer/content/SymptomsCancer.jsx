@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import "../lungCancer.css";
 import LoungSymptoms from "../modelos-3d-cancer/LoungSymptoms.jsx";
 import Recipe from "../modelos-3d-cancer/Recipe.jsx";
+import DripParticles from "./DripParticles.jsx";
 
 
 const SymptomsCancer = () => {
@@ -16,6 +17,10 @@ const SymptomsCancer = () => {
     >
       {/* Tilt the directional light for side shadow */}
       <Lights lightPosition={[0, 5, 0]} />
+      {/* Dripping blood particles */}
+      <DripParticles  scale={[4, 0.9, 1.9]} size={0.3} opacity={0.2} coun={60} />
+      <DripParticles  scale={[5, -0.05, 1.9]} size={0.3} opacity={0.5} coun={30}/>
+      
       <OrbitControls enableZoom={true} enablePan={true} enableRotate={true} />
       <LoungSymptoms />
       <Recipe />

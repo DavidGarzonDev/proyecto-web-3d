@@ -2,6 +2,7 @@ import React from "react";
 import "./lungCancer.css";
 import CanvasLoungCancer from "./content/CanvasLoungCancer.jsx";
 import { IoIosMove } from "react-icons/io";
+import { GiLungs } from "react-icons/gi";
 import TreatmentCancer from "./content/TreatmentCancer.jsx";
 import SymptomsCancer from "./content/SymptomsCancer.jsx";
 import PrecautionCancer from "./content/PrecautionCancer.jsx";
@@ -10,11 +11,10 @@ const LungCancer = () => {
   return (
     <>
       <div className="canvas-container">
+
+        <h1 className="canvas-title-loung">Cáncer de Pulmón</h1>
+        
         <div className="canvas-content-flex">
-          <div className="move-icon-wrapper" title="Mueve usando el mouse">
-            <h1>Mueve con el raton!</h1>
-            <IoIosMove />
-          </div>
           <div className="canvas-loung-cancer">
             <CanvasLoungCancer />
           </div>

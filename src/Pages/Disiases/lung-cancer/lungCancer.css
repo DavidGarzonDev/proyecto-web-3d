@@ -16,7 +16,28 @@
     align-items: center;
 }
 
+.canvas-title-loung {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1rem, 2vw, 4rem);
+    color: var(--color-primary);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.85;
+}
 
+.canvas-container .canvas-title-loung {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .canvas-title-loung {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+        top: 1rem;
+    }
+}
 
 .move-icon-wrapper {
     position: absolute; 

@@ -15,7 +15,7 @@ const TreatmentCancer = () => {
     >
       <Lights lightPosition={[5, 5, 7]} />
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} enableDamping={false} />
-        <LoungTreatmentCancer />
+      <LoungTreatmentCancer />
       <Recipe position={[0, 0, 0]}/>
     </Canvas>
   );
