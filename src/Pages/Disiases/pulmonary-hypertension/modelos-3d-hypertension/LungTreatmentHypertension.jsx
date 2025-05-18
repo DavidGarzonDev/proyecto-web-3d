@@ -9,11 +9,16 @@ const LungTreatmentHypertension = (props) => {
   const meshRef = useRef();
 
   // Rotación animada en el eje Y
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
+    const t = state.clock.getElapsedTime();
     if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.4; // velocidad ajustable
+      
+      //meshRef.current.rotation.y += delta * 0.4; // velocidad ajustable
+      meshRef.current.position.y = Math.sin(t * 1.5) * 0.3; // flotación
     }
   });
+
+  materials.MaterialInhaler.color.set("white");
 
   return (
     <group {...props} dispose={null}>
@@ -23,7 +28,7 @@ const LungTreatmentHypertension = (props) => {
         receiveShadow
         geometry={nodes.Inhaler.geometry}
         material={materials.MaterialInhaler}
-        rotation={[-Math.PI / -1, -1.5, -3]} // posición inicial
+        rotation={[-Math.PI / -1, -1, -3]} // posición inicial
         scale={3}
       />
     </group>

@@ -1,5 +1,5 @@
 
-import LightsHypertension from "../lights-hypertension/LightsHypertension.jsx";
+import LightsHypertensionTreatment from "../lights-hypertension/LightsHypertensionTreatment.jsx";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import "../pulmonaryHypertension.css";
@@ -13,7 +13,7 @@ const TreatmentHypertension = () => {
       shadows={true}                   
       camera={{ position: [0, 2, 5], fov: 50 }}
     >
-      <LightsHypertension lightPosition={[5, 5, 7]} />
+      <LightsHypertensionTreatment lightPosition={[5, 5, 7]} />
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} enableDamping={false} />
         <LungTreatmentHypertension />
       <Recipe position={[0, 0, 0]}/>
