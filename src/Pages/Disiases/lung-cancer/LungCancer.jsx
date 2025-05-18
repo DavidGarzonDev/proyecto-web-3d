@@ -54,6 +54,7 @@ const LungCancer = () => {
               especialmente si se tiene un historial de tabaquismo o exposición
               a sustancias tóxicas.
             </p>
+            <p>Prueba dando click en el modelo 3D para escuchar la tos.</p>
           </div>
           <div className="symptoms-cancer-canvas-container">
             <div className="symptoms-cancer-canvas-content">

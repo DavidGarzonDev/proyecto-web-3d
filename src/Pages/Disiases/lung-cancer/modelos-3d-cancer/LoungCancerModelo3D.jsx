@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 const LoungCancerModelo3D = (props) => {
   const { nodes, materials } = useGLTF('/models-3d-cancer/loung-cancer.glb')
   const loung = useGLTF('/models-3d-cancer/loung-cancer.glb')
-
+  const [hovered, setHovered] = useState(false);
   const refLoung = useRef()
 
   useFrame((state) => {
@@ -23,7 +23,10 @@ const LoungCancerModelo3D = (props) => {
         receiveShadow
         geometry={nodes.LoungCancer.geometry}
         material={materials.LoungCancerMaterial}
-        scale={2.2}      />
+        scale={hovered ? 2.3 : 2.2}      
+        onPointerOut={() => setHovered(false)}
+        onPointerOver={() => setHovered(true)}
+        />
     </group>
   )
 }

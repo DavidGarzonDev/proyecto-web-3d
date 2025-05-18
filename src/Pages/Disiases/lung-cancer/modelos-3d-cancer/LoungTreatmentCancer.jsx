@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
@@ -7,6 +7,7 @@ import { useFrame } from '@react-three/fiber'
 const LoungTreatmentCancer = (props) => {
 
   const reftTreatment = useRef()
+  const [hovered, setHovered] = useState(false);
 
   useFrame(() => {
     if (reftTreatment.current) {
@@ -24,7 +25,9 @@ const LoungTreatmentCancer = (props) => {
         material={materials.IvPoleMaterial}
         rotation={[-Math.PI / 2.2, 0, 3]}
         position={[0, -2, 0]}
-        scale={0.35}
+        scale={hovered ? 0.35 : 0.30}
+        onPointerOver={() => setHovered(true)}
+        onPointerOut={() => setHovered(false)}
       />
     </group>
   )

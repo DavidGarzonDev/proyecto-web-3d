@@ -21,8 +21,8 @@ const DripParticles = ({ scale , size , opacity, coun}) => {
     const posArr = ref.current.geometry.attributes.position.array;
     for (let i = 0; i < count; i++) {
       const yi = i * 3 + 1;
-      posArr[yi] -= 0.02;             // fall speed
-      if (posArr[yi] < 0) {           // reset to top
+      posArr[yi] -= 0.02;             
+      if (posArr[yi] < 0) {           
         posArr[yi] = Math.random() * 2 + 1;
       }
     }
