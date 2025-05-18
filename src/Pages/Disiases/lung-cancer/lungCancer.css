@@ -164,9 +164,9 @@ lung-cancer-content-flex {
 .symptoms-cancer-text {
     color: var(--color-text);
     font-size: 1.2rem;
-    width: 500px;
+    width: 600px;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -190,7 +190,7 @@ lung-cancer-content-flex {
 
 .symptoms-cancer-canvas-content {
     padding-top: 20px;
-    width: 400px;
+    width: 500px;
     height: 500px;
 }
 
@@ -504,7 +504,7 @@ lung-cancer-content-flex {
         font-size: 2rem;
     }
     .symptoms-cancer-text {
-        width: 450px;
+        width: 590px;
         align-items: center ;
         justify-content: center;
         font-size: 1.5rem;

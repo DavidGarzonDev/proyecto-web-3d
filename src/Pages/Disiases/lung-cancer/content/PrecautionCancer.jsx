@@ -1,11 +1,10 @@
-import React from "react";
+
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Lights from "../lights-cancer/Lights.jsx";
 import "../lungCancer.css";
 import LoungMedicine from "../modelos-3d-cancer/LoungMedicine.jsx";
 import LoungMedicine2 from "../modelos-3d-cancer/LoungMedicine2.jsx";
-import Recipe from "../modelos-3d-cancer/Recipe.jsx";
 import StagingPrecaution from "../staging/StagingPrecaution.jsx";
 import RecipeForPrecaution from "../modelos-3d-cancer/RecipeForPrecaution.jsx";
 
