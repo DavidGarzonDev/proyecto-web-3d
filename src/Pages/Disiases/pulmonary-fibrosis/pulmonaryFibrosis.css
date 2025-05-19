@@ -2,34 +2,25 @@
 [class^="canvas-"] canvas {
   touch-action: none;
 }
-
 /* Generic container */
 .canvas-container {
-  position: relative;
-  display: flex;
   justify-content: center;
-  align-items: flex-start;
-  overflow: visible;
-  width: 60vh; /* Asegúrate de que el contenedor ocupe todo el ancho */
+  width: 80vh; /* Asegúrate de que el contenedor ocupe todo el ancho */
 }
 .canvas-pulmonary-fibrosis {
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Añade una altura fija o una altura mínima según necesites */
-    height: 520px; /* Ejemplo de altura fija */
-    /* min-height: 400px; /* Ejemplo de altura mínima */
-  }
+  align-items: flex-start;
+  justify-content: center;
+  height: 530px;
+  z-index: 0;
+}
 
-  .canvas-pulmonary-fibrosis canvas {
-    touch-action: none;
-    width: 100% !important;
-    height: 100% !important; /* Ahora el canvas ocupa toda la altura de .canvas-pulmonary-fibrosis */
-    display: block;
-    object-fit: contain; /* Para mantener la proporción */
-    object-position: top center; /* Intenta alinear el contenido del canvas en la parte superior */
-  }
+.canvas-pulmonary-fibrosis canvas {
+  touch-action: none;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain; /* Para mantener la proporción */
+  object-position: top center; /* Intenta alinear el contenido del canvas en la parte superior */
+}
 
 /* Centered flex content groups */
 .canvas-content-flex,
@@ -38,29 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Move icon button */
-.move-icon-wrapper {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.7);
-  color: #000;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.move-icon-wrapper h1 {
-  margin: 0;
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: normal;
 }
 
 /* Lung Fibrosis Section */
