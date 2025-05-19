@@ -17,9 +17,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 30px;
     /* Añade una altura fija o una altura mínima según necesites */
-    height: 450px; /* Ejemplo de altura fija */
+    height: 520px; /* Ejemplo de altura fija */
     /* min-height: 400px; /* Ejemplo de altura mínima */
   }
 

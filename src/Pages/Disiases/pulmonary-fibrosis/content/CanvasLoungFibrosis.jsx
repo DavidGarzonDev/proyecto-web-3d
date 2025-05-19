@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import "../pulmonaryFibrosis.css";
 import LoungFibrosis from "../models-3d-fibrosis/LoungFibrosisModel3D";
 import RecipeFibrosis from "../models-3d-fibrosis/RecipeFibrosis";
+import Title from "../text3D/Title";
 
 const CanvasLoungFibrosis = () => {
   return (
@@ -20,6 +21,7 @@ const CanvasLoungFibrosis = () => {
       <OrbitControls enableZoom={true} enablePan={false} enableRotate={true} />
       <LoungFibrosis position={[0, 0, 0]} />
       <RecipeFibrosis position={[0, 0, 0]} />
+      <Title title={"Fibrosis Pulmonar"} />
     </Canvas>
   );
 };

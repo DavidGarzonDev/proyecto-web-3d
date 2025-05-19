@@ -4,7 +4,7 @@ import { useHelper } from "@react-three/drei";
 import { useRef } from "react";
 import { DirectionalLight } from "three";
 
-const LightsFibrosis = ({ lightPosition = [0, 3, 0]}) => {
+const LightsFibrosis = ({ lightPosition = [0, 5, 0]}) => {
     const directionalLightRef = useRef(null);
     useHelper(directionalLightRef, DirectionalLight);
 
