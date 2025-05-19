@@ -1,6 +1,5 @@
 import "./pulmonaryFibrosis.css";
 import CanvasLoungFibrosis from "./content/CanvasLoungFibrosis.jsx";
-import { IoIosMove } from "react-icons/io";
 import TreatmentFibrosis from "./content/TreatmentFibrosis.jsx";
 import SymptomsFibrosis from "./content/SymptomsFibrosis.jsx";
 import PrecautionFibrosis from "./content/PrecautionFibrosis.jsx";
@@ -9,10 +8,6 @@ const PulmonaryFibrosis = () => {
   return (
     <>
       <div className="canvas-container">
-        <div className="move-icon-wrapper" title="Mueve usando el mouse">
-          <h1>¡Mueve con el raton!</h1>
-          <IoIosMove />
-        </div>
         <div className="canvas-pulmonary-fibrosis">
           <CanvasLoungFibrosis />
         </div>
