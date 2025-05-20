@@ -32,39 +32,6 @@
   width: 100%;
 }
 
-.move-icon-wrapper {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 10;
-  color: #000000;
-  font-size: 2rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.move-icon-wrapper h1 {
-  margin: 0;
-  padding: 10px;
-  font-size: 1rem;
-  color: #000000;
-  font-weight: normal;
-  
-}
-.move-icon-wrapper svg {
-  margin: 0;
-  padding: 10px;
-  font-size: 2rem;
-  color: #000000;
-  font-weight: normal;
-  animation: bounce 2s infinite;
-}
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
   40% {transform: translateY(-5px);}
@@ -240,6 +207,7 @@
   .canvas-asthma canvas {
     width: 800px;
     height: 500px;
+    
   }
 }
 
@@ -259,6 +227,7 @@
   .canvas-asthma canvas {
     width: 900px;
     height: 300px;
+    ;
   }
   
   .symptoms-asthma-canvas-content,
