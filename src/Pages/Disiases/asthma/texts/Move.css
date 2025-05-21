@@ -9,6 +9,7 @@
 .move-icon-wrapper svg {
   font-size: 2rem;
   animation: bounce 2s infinite;
+  
 }
 
 /* Clase para animar también el texto 3D usando Drei + CSS */

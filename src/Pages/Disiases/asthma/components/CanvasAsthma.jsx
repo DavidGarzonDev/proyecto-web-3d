@@ -1,12 +1,15 @@
-import React from "react";
+
 import { Canvas } from "@react-three/fiber";
 import Lungs from "../models-3d-asthma/Lungs";
 import Lights from "../lights-asthma/Ligths";
-import { OrbitControls, Sky, SoftShadows, Sparkles, Stars } from "@react-three/drei";
+import { OrbitControls,  SoftShadows, Sparkles,  } from "@react-three/drei";
 import Recipe from "../models-3d-asthma/Recipe";
 import Move from "../texts/Move";
-import { Environment } from "@react-three/drei";
 import { useState } from "react";
+
+
+
+
 const CanvasAsthma = () => {
   const [moving, setMoving] = useState(false);
   const promptText = "Toca y mueve \n   el modelo";
@@ -15,9 +18,9 @@ const CanvasAsthma = () => {
       className="canvas-asthma"
       camera={{ position: [0, 2, 7], fov: 55 }}
       shadows={true}>
-      <SoftShadows frustum={3.75} size={50} near={9.5} samples={17} rings={7} 
-      onPointerEnter={() => setMoving(true)}
-      onPointerLeave={() => setMoving(false)}/>
+      <SoftShadows frustum={3.75} size={50} near={9.5} samples={17} rings={7}
+        onPointerEnter={() => setMoving(true)}
+        onPointerLeave={() => setMoving(false)} />
       <OrbitControls
         enableZoom={false}
         enablePan={true}
@@ -31,18 +34,19 @@ const CanvasAsthma = () => {
       <Lungs />
       <Lights />
       <Recipe />
-      <Sparkles 
-        count={200}
-        size={2}
+      <Sparkles
+        count={50}
+        size={4}
         color="#d32f2f"
-        speed={0.5}
+        speed={0.4}
         opacity={0.6}
-        scale={[10, 10, 10]}
+        scale={[5, 10, 5]}
+        position={[0, 0, 0]}
       />
 
-      
-      
-      
+
+
+
     </Canvas>
 
   );

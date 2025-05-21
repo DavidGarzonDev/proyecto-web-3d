@@ -26,8 +26,10 @@ const Move = ({ text, hidden }) => {
         />
       </Text3D>
       
-      <Html center position={[1.2, -0.7, 0]}>  
-        <IoIosMove size={34} color="#d32f2f" />
+      <Html center position={[1.2, -0.9, 0]}>  
+        <div className="move-text-animated">
+        <IoIosMove  size={34} color="#d32f2f" />
+        </div>
       </Html>
     </Center>
   );

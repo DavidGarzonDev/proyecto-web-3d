@@ -1,11 +1,34 @@
-import React, { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+
+const useAudio = () => {
+  const audioRef = useRef(null);
+  const playSquishSound = useCallback(() => {
+    try {
+      if (!audioRef.current) {
+        const audioContext = new Audio('/sounds/coughing.mp3');
+        audioContext.play();
+        return;
+      }
+    } catch (error) {
+      console.error("Error reproduciendo sonido:", error);
+    }
+  }, []);
+  return { playSquishSound };
+};
+
 
 const Person = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person-model.glb')
   const { actions } = useAnimations(animations, group)
-  
+
+  const { playSquishSound } = useAudio();
+  const handleClick = () => {
+    playSquishSound();
+  };
+
+
   useEffect(() => {
     actions.Cough.play()
     return () => {
@@ -14,7 +37,9 @@ const Person = (props) => {
   }, [actions]);
 
   return (
-    <group ref={group} {...props} dispose={null} scale={5}>
+    <group ref={group} {...props} dispose={null} scale={5}
+      onClick={handleClick}
+    >
 
       <group name="Scene">
         <group name="Armature">
