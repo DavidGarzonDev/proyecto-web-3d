@@ -1,13 +1,37 @@
 import { useGLTF } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useEffect } from 'react';
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+
+
+const useAudio = () => {
+    const audioRef = useRef(null);
+    const playSquishSound = useCallback(() => {
+        try {
+            if (!audioRef.current) {
+                const audioContext = new Audio('/sounds/breathing-fast.mp3');
+                audioContext.play();
+                return;
+            }
+        } catch (error) {
+            console.error("Error reproduciendo sonido:", error);
+        }
+    }, []);
+    return { playSquishSound };
+};
+
 const Lungs = (props) => {
+
+    const { playSquishSound } = useAudio();
+    const handleClick = () => {
+        playSquishSound();
+    };
+
     const { nodes, materials } = useGLTF('/models-3d-asthma/lungs-model.glb');
     const { camera } = useThree();
-    
+
     useEffect(() => {
         camera.position.set(0, 0, 5);
         camera.lookAt(0, 0, 0);
@@ -15,7 +39,7 @@ const Lungs = (props) => {
     }, [camera, materials.LungsMaterial]);
 
     const refLoung = useRef()
-    
+
     useFrame((state) => {
         const t = state.clock.getElapsedTime()
         const scaleValue = 20 + Math.sin(t * 9) * 0.5
@@ -24,9 +48,10 @@ const Lungs = (props) => {
 
 
     return (
-        <group {...props} dispose={null} scale={20} position={[0, 0, 0]} ref={refLoung}>
-            <mesh 
-                geometry={nodes.Lungs.geometry} 
+        <group {...props} dispose={null} scale={20} position={[0, 0, 0]} ref={refLoung}
+            onClick={handleClick}>
+            <mesh
+                geometry={nodes.Lungs.geometry}
                 material={materials.LungsMaterial}
                 castShadow
                 receiveShadow
