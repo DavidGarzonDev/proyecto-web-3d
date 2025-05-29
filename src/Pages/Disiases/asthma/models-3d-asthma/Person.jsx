@@ -3,27 +3,52 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const useAudio = () => {
   const audioRef = useRef(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio('/sounds/coughing.mp3');
+  }, []);
+
   const playSquishSound = useCallback(() => {
     try {
-      if (!audioRef.current) {
-        const audioContext = new Audio('/sounds/coughing.mp3');
-        audioContext.play();
-        return;
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0; // Reinicia el audio para reproducir desde el inicio
+        audioRef.current.play();
       }
     } catch (error) {
       console.error("Error reproduciendo sonido:", error);
     }
   }, []);
+
   return { playSquishSound };
 };
 
 
+
+
 const Person = (props) => {
+  const { playSquishSound } = useAudio();
+  
+  useEffect(() => {
+
+
+      const handleKeyDown = (event) => {
+        if (event.key === 't' || event.key === 'T') {
+          playSquishSound();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [playSquishSound]);
+
+
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person-model.glb')
   const { actions } = useAnimations(animations, group)
 
-  const { playSquishSound } = useAudio();
+  
   const handleClick = () => {
     playSquishSound();
   };
