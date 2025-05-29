@@ -4,6 +4,8 @@ import { Canvas } from "@react-three/fiber";
 import Person from "../models-3d-asthma/Person";
 import Recipe from "../models-3d-asthma/Recipe";
 import StagingSymptoms from "../staging/StagingSymptoms";
+import LigthsNight from "../lights-asthma/LigthsNight";
+import { SoftShadows } from "@react-three/drei";
 
 const SymptomsAsthma = () => {
   return (
@@ -12,9 +14,11 @@ const SymptomsAsthma = () => {
       camera={{ position: [-3,3, -10], fov: 70 }}
       shadows={true}
     >
-      <Lights />
+      
+      <LigthsNight/>
       
       <Person position={[0, -7.5, 0]} rotation={[0, -3, 0]} />
+      
 
       <Recipe />
       <StagingSymptoms />
