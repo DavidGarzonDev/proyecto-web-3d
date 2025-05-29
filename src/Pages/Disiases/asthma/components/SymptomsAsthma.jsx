@@ -5,7 +5,8 @@ import Person from "../models-3d-asthma/Person";
 import Recipe from "../models-3d-asthma/Recipe";
 import StagingSymptoms from "../staging/StagingSymptoms";
 import LigthsNight from "../lights-asthma/LigthsNight";
-import { SoftShadows } from "@react-three/drei";
+import TextSymptoms from "../texts/TextSymtomps";
+
 
 const SymptomsAsthma = () => {
   return (
@@ -18,8 +19,8 @@ const SymptomsAsthma = () => {
       <LigthsNight/>
       
       <Person position={[0, -7.5, 0]} rotation={[0, -3, 0]} />
-      
 
+      <TextSymptoms/>
       <Recipe />
       <StagingSymptoms />
     </Canvas>
