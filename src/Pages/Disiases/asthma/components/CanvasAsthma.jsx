@@ -30,7 +30,8 @@ const CanvasAsthma = () => {
         onStart={() => setMoving(true)}
         onEnd={() => setMoving(false)}
       />
-      <Move text={promptText} hidden={moving} />
+      <Move text={promptText} hidden={moving} 
+      />
       <Lungs />
       <Lights />
       <Recipe />
