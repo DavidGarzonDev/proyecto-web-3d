@@ -5,7 +5,10 @@ const LightsNight = () => {
 
   return (
     <>
-      
+      <ambientLight
+        color="white"
+        intensity={0.2}
+      />
       <directionalLight
         ref={directionalLightRef}
         color="white"
