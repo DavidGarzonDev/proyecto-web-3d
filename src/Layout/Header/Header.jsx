@@ -70,6 +70,12 @@ const Header = () => {
               Quiz
             </NavLink>
           </li>
+          <li>
+            <Link to="/login" onClick={handleLinkClick} className="login-button">
+              Inicia Sesión
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </header>
