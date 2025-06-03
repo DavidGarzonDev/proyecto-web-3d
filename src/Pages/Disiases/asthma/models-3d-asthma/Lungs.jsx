@@ -8,17 +8,22 @@ import * as THREE from 'three';
 
 const useAudio = () => {
     const audioRef = useRef(null);
+
+    useEffect(() => {
+        audioRef.current = new Audio('/sounds/breathing-fast.mp3');
+    }, []);
+
     const playSquishSound = useCallback(() => {
         try {
-            if (!audioRef.current) {
-                const audioContext = new Audio('/sounds/breathing-fast.mp3');
-                audioContext.play();
-                return;
+            if (audioRef.current) {
+                audioRef.current.currentTime = 0;
+                audioRef.current.play();
             }
         } catch (error) {
             console.error("Error reproduciendo sonido:", error);
         }
     }, []);
+
     return { playSquishSound };
 };
 
