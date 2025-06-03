@@ -20,25 +20,25 @@ const Home = () => {
         <h2>Enfermedades Pulmonares</h2>
         
         <div className="bento-grid">
-          <Link to="/enfermedades/cancer-pulmonar" className="bento-item bento-item-0 red-card">
+          <Link to="/cancer-pulmonar" className="bento-item bento-item-0 red-card">
             <h3>CANCER PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
           
-          <Link to="/enfermedades/fibrosis-pulmonar" className="bento-item bento-item-1 white-card">
+          <Link to="/fibrosis-pulmonar" className="bento-item bento-item-1 white-card">
             <h3>FIBROSIS PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
           
-          <Link to="/enfermedades/asma" className="bento-item bento-item-2 white-card">
+          <Link to="/asma" className="bento-item bento-item-2 white-card">
             <h3>ASMA</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
           
-          <Link to="/enfermedades/hipertension-pulmonar" className="bento-item bento-item-3 red-card">
+          <Link to="/hipertension-pulmonar" className="bento-item bento-item-3 red-card">
             <h3>HIPERTENSION PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
@@ -52,7 +52,7 @@ const Home = () => {
 
         </p>
         <Link to="/quiz">
-        <button className="quiz-btn">PONTE A PRUEBA</button>
+        <button className="quiz-btn">Ponte a Prueba</button>
         </Link>
         
       </section>

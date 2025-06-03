@@ -17,7 +17,7 @@
 
 body {
     margin: 0;
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--color-text);
 }
 
@@ -196,11 +196,9 @@ body {
     background-color: var(--color-secondary);
     color: var(--color-text);
     padding: 1.25rem 1.25rem;
-    /* 20px 20px */
     border-radius: 60px;
     font-weight: bold;
     font-size: 1rem;
-    /* 16px */
     border: none;
     cursor: pointer;
     transition: all var(--transition-time) ease;
@@ -217,7 +215,6 @@ body {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 1.25rem;
-        /* 20px */
     }
 
     .bento-item-0 {
