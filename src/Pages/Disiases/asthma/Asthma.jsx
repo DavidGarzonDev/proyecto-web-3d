@@ -1,13 +1,15 @@
-import React from "react";
+
 import "./Asthma.css";
 import CanvasAsthma from "./components/CanvasAsthma";
-import { IoIosMove } from "react-icons/io";
 import TreatmentAsthma from "./components/TreatmentAsthma";
 import SymptomsAsthma from "./components/SymptomsAsthma";
 import PrecautionAsthma from "./components/PrecautionAsthma";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 const Asthma = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Reinicia el scroll al cargar
+  }, []);
   return (
     <>
       <h1 className="canvas-asthma-title">Asma</h1>
