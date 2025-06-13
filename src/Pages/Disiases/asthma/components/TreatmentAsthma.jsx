@@ -4,7 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Inhaler from "../models-3d-asthma/Inhaler";
 import Recipe from "../models-3d-asthma/Recipe";
-
+import { Sky } from "@react-three/drei";
 const TreatmentAsthma = () => {
   return (
     <Canvas
@@ -16,6 +16,7 @@ const TreatmentAsthma = () => {
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
       <Inhaler position={[0, -1, 0]} />
       <Recipe position= {[0,0,0]} />
+      <Sky/>
       
     </Canvas>
   );
