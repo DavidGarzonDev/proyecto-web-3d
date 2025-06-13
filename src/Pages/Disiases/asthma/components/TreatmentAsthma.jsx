@@ -1,4 +1,4 @@
-import React from "react";
+
 import Lights from "../lights-asthma/Ligths";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -16,6 +16,7 @@ const TreatmentAsthma = () => {
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
       <Inhaler position={[0, -1, 0]} />
       <Recipe position= {[0,0,0]} />
+      
     </Canvas>
   );
 };
