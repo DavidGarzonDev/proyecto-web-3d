@@ -11,7 +11,7 @@ const useAudio = () => {
   const playSquishSound = useCallback(() => {
     try {
       if (audioRef.current) {
-        audioRef.current.currentTime = 0; // Reinicia el audio para reproducir desde el inicio
+        audioRef.current.currentTime = 0; // 
         audioRef.current.play();
       }
     } catch (error) {
@@ -27,28 +27,28 @@ const useAudio = () => {
 
 const Person = (props) => {
   const { playSquishSound } = useAudio();
-  
+
   useEffect(() => {
 
 
-      const handleKeyDown = (event) => {
-        if (event.key === 't' || event.key === 'T') {
-          playSquishSound();
-        }
-      };
+    const handleKeyDown = (event) => {
+      if (event.key === 't' || event.key === 'T') {
+        playSquishSound();
+      }
+    };
 
-      window.addEventListener('keydown', handleKeyDown);
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-      };
-    }, [playSquishSound]);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [playSquishSound]);
 
 
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person-model.glb')
   const { actions } = useAnimations(animations, group)
 
-  
+
   const handleClick = () => {
     playSquishSound();
   };

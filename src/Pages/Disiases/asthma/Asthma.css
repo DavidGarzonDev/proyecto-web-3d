@@ -7,7 +7,7 @@
   --color-gray: #808080;
 }
 
-/* Estilos generales del canvas */
+
 .canvas-asthma canvas,
 .canvas-symptoms-asthma canvas,
 .canvas-treatment-asthma canvas,
@@ -41,15 +41,13 @@
   color : var(--color-primary);
   font-weight: bold;
   margin-bottom: 0px;
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: center;
   font-size: 3rem;
   padding: 0 1rem;
-  animation: bounce 2s infinite;
   z-index: 1;
-
 }
-/* Sección: ¿Qué es el Asma? */
+
 .what-is-asthma-container {
   position: relative;
   display: grid;
@@ -155,7 +153,7 @@
 }
 
 .treatment-asthma-canvas-content {
-  width: 400px;
+  width: 600px;
   height: 600px;
   margin: 1rem;
 }
@@ -225,8 +223,8 @@
 
 @media (max-width: 768px) {
   .canvas-asthma canvas {
-    width: 900px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
     ;
   }
   

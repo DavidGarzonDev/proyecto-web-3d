@@ -5,6 +5,7 @@ import { IoIosMove } from "react-icons/io";
 import TreatmentAsthma from "./components/TreatmentAsthma";
 import SymptomsAsthma from "./components/SymptomsAsthma";
 import PrecautionAsthma from "./components/PrecautionAsthma";
+import { Suspense } from "react";
 
 const Asthma = () => {
   return (
@@ -12,18 +13,12 @@ const Asthma = () => {
       <h1 className="canvas-asthma-title">Asma</h1>
       
       <div className="canvas-container">
-        
         <div className="canvas-content-flex">
-          
           <div className="canvas-asthma">
-            
             <CanvasAsthma />
           </div>
-
         </div>
-        
       </div>
-      
 
       {/* Sección: ¿Qué es el Asma? */}
       <div className="what-is-asthma-container">
@@ -53,7 +48,9 @@ const Asthma = () => {
           </div>
           <div className="symptoms-asthma-canvas-container">
             <div className="symptoms-asthma-canvas-content">
-              <SymptomsAsthma />
+              <Suspense fallback={<div>Cargando escena de síntomas...</div>}>
+                <SymptomsAsthma key="symptoms-canvas" />
+              </Suspense>
             </div>
           </div>
         </div>
@@ -63,7 +60,9 @@ const Asthma = () => {
       <div className="treatment-asthma-container">
         <div className="treatment-asthma-content-flex">
           <div className="treatment-asthma-canvas-content">
-            <TreatmentAsthma />
+            <Suspense fallback={<div>Cargando escena de tratamiento...</div>}>
+              <TreatmentAsthma key="treatment-canvas" />
+            </Suspense>
           </div>
           <div className="treatment-asthma-content">
             <h1 className="treatment-asthma-title">Tratamiento</h1>
@@ -77,11 +76,13 @@ const Asthma = () => {
         </div>
       </div>
 
-      {/* Nueva sección: Prevención */}
+      {/* Sección: Prevención */}
       <div className="precaution-asthma-container">
         <div className="precaution-asthma-content-flex">
           <div className="precaution-asthma-canvas-content">
-          <PrecautionAsthma />
+            <Suspense fallback={<div>Cargando escena de prevención...</div>}>
+              <PrecautionAsthma key="precaution-canvas" />
+            </Suspense>
           </div>
           <div className="precaution-asthma-content">
             <h1 className="precaution-asthma-title">Prevención</h1>

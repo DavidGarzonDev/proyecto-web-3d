@@ -12,10 +12,69 @@
   text-align: center;
 }
 
-.text-symptom h3 {
+.text-symptom button {
+  font-family: poppins, sans-serif;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.text-symptom button:hover {
+  background-color: #b71c1c;
+}
+
+/* Estilos del modal */
+.modal-overlay {
+  position: fixed;
+  margin-top: 0;
+
+  top:80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  padding: 5px;
+}
+
+.modal-close:hover {
+  color: #d32f2f;
+}
+
+.modal-content h3 {
   color: #d32f2f;
   font-size: 20px;  
   font-weight: bold;
   padding-inline: 20px; 
   line-height: 1.4;
+  margin-top: 20px;
 }
