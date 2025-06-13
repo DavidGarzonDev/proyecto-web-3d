@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function PillsModel3D(props) {
