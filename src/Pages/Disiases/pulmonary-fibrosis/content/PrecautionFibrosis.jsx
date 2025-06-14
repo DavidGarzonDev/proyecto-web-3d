@@ -4,7 +4,7 @@ import Lights from "../lights-fibrosis/LightsFibrosis.jsx";
 import "../pulmonaryFibrosis.css";
 import FibrosisSalad from "../models-3d-fibrosis/SaladFibrosis.jsx";
 import RecipeFibrosis from "../models-3d-fibrosis/RecipeFibrosis.jsx";
-import Rotating from "../text3D/Rotating.jsx"
+import InfoPreventionFibrosis from "../text3D/InfoPreventionFibrosis.jsx";
 
 
 
@@ -18,7 +18,7 @@ const PrecautionFibrosis = () => (
     <Lights lightPosition={[-5,5,-5]} ambIntensity={10} dirIntensity={10} />
     <OrbitControls enableZoom={false} enablePan={false} />
     <FibrosisSalad position={[0,-2,0]}/>
-    <Rotating text={"Dale clic para girar!!"}/>
+    <InfoPreventionFibrosis />
     <RecipeFibrosis position={[0, 0, 0]} />
   </Canvas>
 );
