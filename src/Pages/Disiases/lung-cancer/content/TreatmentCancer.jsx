@@ -7,6 +7,7 @@ import LoungTreatmentCancer from "../modelos-3d-cancer/LoungTreatmentCancer.jsx"
 import Recipe from "../modelos-3d-cancer/Recipe.jsx";
 import { Text } from "@react-three/drei";
 import VideoTreatmentCancer from "../videos/VideoTreatmentCancer.jsx";
+import TextTreatmentCancer from "../texts/TextTreatmentCancer.jsx";
 
 
 const VideoController = ({ onVideoToggle, isVideoVisible }) => {
@@ -54,7 +55,9 @@ const TreatmentCancer = () => {
         className="canvas-treatment-cancer"
         shadows={true}                   
         camera={{ position: [0, 2, 5], fov: 50 }}
-      >        <Lights lightPosition={[5, 5, 7]} />        <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} enableDamping={false} />
+      >        
+      <Lights lightPosition={[5, 5, 7]} />        
+      <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} enableDamping={false} />
         <LoungTreatmentCancer  visible={!showVideo}/>
         <Recipe position={[0, 0, 0]}/>
         
@@ -62,7 +65,7 @@ const TreatmentCancer = () => {
           onVideoToggle={toggleVideo} 
           isVideoVisible={showVideo} 
         />
-        
+        <TextTreatmentCancer></TextTreatmentCancer>
         <Text
           
           position={[0, -1.5, 0.2]}

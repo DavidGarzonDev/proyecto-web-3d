@@ -6,11 +6,12 @@ import Lights from "../lights-cancer/Lights.jsx";
 import { OrbitControls } from "@react-three/drei";
 import Recipe from "../modelos-3d-cancer/Recipe.jsx";
 import Move from "../texts/Move.jsx";
+import TextSymptomsCancer from "../texts/TextSymtompsCancer.jsx";
 
 
 const CanvasLoungCancer = () => {
   const [moving, setMoving] = useState(false);
-  const promptText = "Mueve con el raton!";
+  const promptText = "Cancer de Pulmon!";
   return (
     <Canvas
       className="canvas-loung-cancer"
@@ -19,6 +20,7 @@ const CanvasLoungCancer = () => {
       onPointerEnter={() => setMoving(true)}
       onPointerLeave={() => setMoving(false)}
     >
+      <TextSymptomsCancer />
       <Move text={promptText} hidden={moving} />
       <Lights />
       <OrbitControls

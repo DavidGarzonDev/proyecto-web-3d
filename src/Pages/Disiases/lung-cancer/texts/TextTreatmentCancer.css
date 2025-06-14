@@ -1,0 +1,59 @@
+.text-container-cancer-treatment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-treatment-cancer-treatment {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: 350px;
+    text-align: center;
+}
+
+.text-treatment-cancer-treatment button {
+    font-family: poppins, sans-serif;
+    background-color: #c0c0c0;
+    color: rgb(255, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.text-treatment-cancer-treatment button:hover {
+    background-color: #ffffff;
+}
+
+
+.modal-overlay-cancer-treatment {
+    position: bottom;
+    margin-top: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 200px;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.modal-content-cancer-treatment {
+    margin-top: -60px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 80%;
+    position: relative;
+}
+
+.modal-close-cancer-treatment {
+    position: flex;
+    top:0;
+}

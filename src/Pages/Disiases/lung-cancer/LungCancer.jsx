@@ -11,9 +11,6 @@ const LungCancer = () => {
   return (
     <>
       <div className="canvas-container">
-
-        <h1 className="canvas-title-loung">Cáncer de Pulmón</h1>
-        
         <div className="canvas-content-flex">
           <div className="canvas-loung-cancer">
             <CanvasLoungCancer />
