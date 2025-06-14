@@ -1,4 +1,4 @@
-import { Environment, Sky } from '@react-three/drei'
+import { Sky } from '@react-three/drei'
 
 
 const StagingTwo = () => {
@@ -9,7 +9,7 @@ const StagingTwo = () => {
         azimuth={180}
         mieCoefficient={0.005}
         mieDirectionalG={0.07}
-        rayleigh={3}
+        rayleigh={1}
         turbidity={10}
     />
   )

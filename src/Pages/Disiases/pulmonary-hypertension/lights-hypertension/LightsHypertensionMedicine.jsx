@@ -2,11 +2,11 @@
 /* eslint-disable react/no-unknown-property */
 import { useHelper } from "@react-three/drei";
 import { useRef } from "react";
-import { DirectionalLight } from "three";
+import { DirectionalLightHelper } from "three";
 
-const LightsHypertensionMedicine = ({ lightPosition = [0, 5, 0], ambIntensity = 2, dirIntensity = 0.5 }) => {
-    const directionalLightRef = useRef(null);
-    useHelper(directionalLightRef, DirectionalLight);
+const LightsHypertensionMedicine = ({ lightPosition = [5, 10, 5], ambIntensity = 0.5, dirIntensity = 1 }) => {
+  const directionalLightRef = useRef(null);
+  //useHelper(directionalLightRef, DirectionalLightHelper, 1, "hotpink");
 
   return (
     <>
@@ -15,15 +15,20 @@ const LightsHypertensionMedicine = ({ lightPosition = [0, 5, 0], ambIntensity = 
         ref={directionalLightRef}
         color="white"
         intensity={dirIntensity}
-        castShadow={true}
+        castShadow
         position={lightPosition}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-near={0.5}
-        shadow-camera-far={20}
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-near={1}
+        shadow-camera-far={50}
+        shadow-camera-left={-20}
+        shadow-camera-right={20}
+        shadow-camera-top={20}
+        shadow-camera-bottom={-20}
       />
     </>
   );
 };
+
 
 export default LightsHypertensionMedicine;

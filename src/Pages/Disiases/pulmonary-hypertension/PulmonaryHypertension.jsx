@@ -11,10 +11,7 @@ const PulmonaryHypertension = () => {
     <>
       <div className="canvas-container">
         <div className="canvas-content-flex">
-          <div className="move-icon-wrapper" title="Mueve usando el mouse">
-            <h1>Mueve con el raton!</h1>
-            <IoIosMove />
-          </div>
+          
           <div className="canvas-pulmonary-hypertension">
             <CanvasPulmonaryHypertension />
           </div>
@@ -28,14 +25,9 @@ const PulmonaryHypertension = () => {
               ¿Que es la hipertension pulmonar?
             </h1>
             <p className="what-is-hypertension-text">
-            La hipertensión pulmonar es una condición médica que afecta las arterias 
-            de los pulmones y el lado derecho del corazón. Se caracteriza por un aumento 
-            anormal de la presión en las arterias pulmonares. Existen varios tipos de 
-            hipertensión pulmonar, dependiendo de su causa. Los síntomas pueden incluir 
-            dificultad para respirar, fatiga, dolor en el pecho, mareos e hinchazón en 
-            las piernas o el abdomen. Los factores de riesgo incluyen enfermedades 
-            cardíacas o pulmonares, trastornos autoinmunes y antecedentes familiares 
-            de hipertensión pulmonar.
+            La hipertensión pulmonar (HP) es una enfermedad que afecta las arterias de los pulmones
+             y el corazón (lado derecho), causando un aumento anormal de la presión en las arterias
+              pulmonares.
             </p>
           </div>
         </div>
@@ -46,12 +38,11 @@ const PulmonaryHypertension = () => {
           <div className="symptoms-hypertension-content">
             <h1 className="symptoms-hypertension-title">Sintomas</h1>
             <p className="symptoms-hypertension-text">
-            Los síntomas de la hipertensión pulmonar pueden incluir dificultad para respirar, 
-            fatiga, dolor en el pecho, mareos, desmayos, hinchazón en las piernas o el abdomen 
-            y latidos cardíacos acelerados o irregulares. Estos síntomas tienden a empeorar 
-            con el tiempo a medida que avanza la enfermedad. Es importante consultar a un 
-            médico si se presentan estos signos, especialmente si existe un historial de 
-            enfermedades cardíacas, pulmonares o factores de riesgo asociados.
+            - Dificultad para respirar<br />
+            - Fatiga<br />
+            - Dolor en el pecho<br />
+            - Mareos<br />
+            - Hinchazón en piernas o abdomen
             </p>
           </div>
           <div className="symptoms-hypertension-canvas-container">
@@ -70,12 +61,9 @@ const PulmonaryHypertension = () => {
           <div className="treatment-hypertension-content">
             <h1 className="treatment-hypertension-title">Tratamiento</h1>
             <p className="treatment-hypertension-text">
-               El tratamiento de la hipertensión pulmonar puede incluir medicamentos para 
-               dilatar los vasos sanguíneos pulmonares, anticoagulantes, diuréticos, 
-               oxigenoterapia y, en casos más avanzados, trasplante de pulmón. La elección 
-               del tratamiento depende de la causa subyacente, la gravedad de la enfermedad 
-               y el estado general del paciente. Es fundamental consultar a un especialista 
-               en hipertensión pulmonar para determinar el mejor enfoque terapéutico.
+               El tratamiento de la hipertensión pulmonar incluye medicamentos (vasodilatadores, 
+               anticoagulantes, diuréticos), oxigenoterapia y, en casos graves, trasplante de pulmón.
+                Siempre bajo supervisión médica especializada.
             </p>
           </div>
         </div>
@@ -89,14 +77,9 @@ const PulmonaryHypertension = () => {
           <div className="precaution-hypertension-content">
             <h1 className="precaution-hypertension-title">Precaución</h1>
             <p className="precaution-hypertension-text">
-            Para prevenir la hipertensión pulmonar y mantener una buena salud respiratoria 
-            y cardiovascular, es fundamental evitar factores de riesgo como el tabaquismo, 
-            la exposición prolongada a contaminantes ambientales y el sedentarismo. Adoptar 
-            un estilo de vida saludable, que incluya una alimentación balanceada, ejercicio 
-            físico regular y un buen control del estrés, puede ayudar significativamente a 
-            reducir el riesgo. Realiza actividad física moderada de forma constante y acude 
-            a chequeos médicos periódicos para una detección temprana y seguimiento adecuado. 
-            Siempre sigue las indicaciones de tu médico.
+            Evita tabaquismo, contaminantes y sedentarismo. Mantén una vida saludable con alimentación 
+            balanceada, ejercicio regular y control médico periódico. Sigue siempre las recomendaciones 
+            de tu especialista.
             </p>
           </div>
         </div>

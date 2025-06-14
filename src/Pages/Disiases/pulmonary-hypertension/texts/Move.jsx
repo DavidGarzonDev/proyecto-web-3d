@@ -1,19 +1,21 @@
+/* eslint-disable react/no-unknown-property */
 import { Center, Text3D, Html } from "@react-three/drei";
 import { IoIosMove } from "react-icons/io";
 import './Move.css';
 
-// Renders rotating prompt text and icon. Hides on pointer enter.
+// Renders prompt text and icon. Hides on pointer enter.
 const Move = ({ text, hidden }) => {
   if (hidden) return null;
+  
   return (
-    <Center position={[0, 12, 0]} rotation={[-0.2, 0, 0]}>
+    <Center position={[0, 2, 10]} rotation={[-0.2, 0, 0]}>
       <Text3D
         font="/fonts/Heavitas.json"
         bevelEnabled
         bevelSize={0.05}
         bevelThickness={0.2}
-        size={20} // Aumentado para que sea visible desde lejos
-        height={0.3}
+        size={0.5}                // Aumentado para ser visible desde lejos
+        height={0.5}
         curveSegments={12}
         castShadow
         receiveShadow
@@ -24,12 +26,12 @@ const Move = ({ text, hidden }) => {
           emissive="#1E1C1E"
           emissiveIntensity={0.7}
           roughness={0.3}
-          metalness={0.6} // Esto antes estaba en 6, lo cual no tiene sentido (el valor máximo es 1)
+          metalness={0.6}       // Corregido el valor
         />
       </Text3D>
-      {/* Icon below text */}
-      <Html center position={[0, -2, 0]}>
-        <IoIosMove size={80} color="#3A373A" />
+
+      <Html center position={[-1, 0.2, 0]}>
+        <IoIosMove size={20} color="#3A373A" />
       </Html>
     </Center>
   );

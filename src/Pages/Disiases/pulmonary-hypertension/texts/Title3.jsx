@@ -5,7 +5,7 @@ const Title3 = ({ title3 }) => {
   return (
     <Html
     center
-    position={[-0.5, 2, 1]}
+    position={[-0.5, 1.5, 1]}
     transform
     distanceFactor={2}
     wrapperClass="title3"

@@ -33,13 +33,13 @@ const SymptomsHypertension = () => {
     <Canvas
       className="canvas-symptoms-hypertension"
       shadows={true}
-      camera={{ position: [4, 3, 9], fov: 50 }}
+      camera={{ position: [4, 2, 6.5], fov: 50 }}
     >
       <LightsHypertensionSymptoms lightPosition={[0, 5, 0]} />
       <OrbitControls enableZoom enablePan enableRotate />
       <LungSymptomsHypertension toggleActivation={handleModelActivation} />
       <Recipe />
-      <Title2 title2={"OXIMETER"} />
+      <Title2 title2={"OXIMETRO"} />
       {step === 0 && <Title3 title3={"Presione doble click"} />}
       {step === 1 && <Title3 title3={`Presione la letra "o"`} />}
     </Canvas>
