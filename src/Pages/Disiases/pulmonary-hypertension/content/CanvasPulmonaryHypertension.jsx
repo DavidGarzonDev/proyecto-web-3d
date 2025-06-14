@@ -7,7 +7,7 @@ import { OrbitControls } from "@react-three/drei";
 import Recipe from "../modelos-3d-hypertension/Recipe.jsx";
 import StagingOne from "./staging/StagingOne.jsx";
 import Title from "../texts/Title.jsx";
-import Move from "../texts/Move.jsx"; // Asegúrate de tener este componente
+import MoveHypertension from "../texts/MoveHypertension.jsx";
 
 const CanvasPulmonaryHypertension = () => {
   const [moving, setMoving] = useState(false);
@@ -21,7 +21,7 @@ const CanvasPulmonaryHypertension = () => {
       onPointerEnter={() => setMoving(true)}
       onPointerLeave={() => setMoving(false)}
     >
-      <Move text={promptText} hidden={moving} />
+      <MoveHypertension text={promptText} hidden={moving} />
 
       <LightsHypertension />
 

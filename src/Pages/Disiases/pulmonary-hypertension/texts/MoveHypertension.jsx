@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import { Center, Text3D, Html } from "@react-three/drei";
 import { IoIosMove } from "react-icons/io";
-import './Move.css';
+import './MoveHypertension.css';
 
-// Renders prompt text and icon. Hides on pointer enter.
+
+
 const Move = ({ text, hidden }) => {
   if (hidden) return null;
   
