@@ -38,3 +38,4 @@ const LungTreatmentHypertension = (props) => {
 export default LungTreatmentHypertension;
 
 useGLTF.preload('/models-3d-hypertension/inhaler-model.glb');
+
