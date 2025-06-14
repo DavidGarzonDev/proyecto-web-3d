@@ -5,8 +5,8 @@ import { Canvas } from "@react-three/fiber";
 import "../pulmonaryFibrosis.css";
 import LoungFibrosis from "../models-3d-fibrosis/LoungFibrosisModel3D";
 import RecipeFibrosis from "../models-3d-fibrosis/RecipeFibrosis";
-import Title from "../text3D/Title";
 import Move from "../text3D/Move.jsx";
+import InfoPulmonaryFirbosis from "../text3D/InfoPulmonaryFibrosis.jsx";
 
 const CanvasLoungFibrosis = () => {
   const [moving, setMoving] = useState(false);
@@ -32,9 +32,9 @@ const CanvasLoungFibrosis = () => {
         onEnd={() => setMoving(false)}
       />
       <LoungFibrosis position={[0, 0, 0]} />
+      <InfoPulmonaryFirbosis />
       <RecipeFibrosis position={[0, 0, 0]} />
-      <Title title={"Fibrosis Pulmonar"} />
-      <Move text={"Mueve dando clic"} hidden={moving} />
+      <Move text={"Fibrosis Pulmonar"} hidden={moving} />
     </Canvas>
   );
 };
