@@ -6,13 +6,13 @@ import './Move.css';
 const Move = ({ text, hidden }) => {
   if (hidden) return null;
   return (
-    <Center position={[0, 12, 0]} rotation={[-0.2, 0, 0]}>
+    <Center position={[0, -1, 1]} rotation={[-0.5, 0, 0]}>
       <Text3D
         font="/fonts/Heavitas.json"
         bevelEnabled
         bevelSize={0.05}
         bevelThickness={0.2}
-        size={20} // Aumentado para que sea visible desde lejos
+        size={0.3} // Aumentado para que sea visible desde lejos
         height={0.3}
         curveSegments={12}
         castShadow
@@ -20,7 +20,7 @@ const Move = ({ text, hidden }) => {
       >
         {text}
         <meshStandardMaterial 
-          color="#3A3A3A"
+          color="red"
           emissive="#1E1C1E"
           emissiveIntensity={0.7}
           roughness={0.3}
