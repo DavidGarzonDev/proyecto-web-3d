@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./Header.css";
+import useAuthStore from "../../stores/use-auth-store";
+import { useNavigate } from "react-router";
 
 const Header = () => {
+  const { loginGoogleWithPopUp, logout, userLooged } = useAuthStore(); // Obtiene el usuario y las funciones
+  const navigate = useNavigate();
+
   const [shrink, setShrink] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,6 +20,18 @@ const Header = () => {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
+  };
+
+  const handleLogin = async () => {
+    const result = await loginGoogleWithPopUp();
+    if (result && result.user) {
+      navigate("/"); // inicio de sesion después del login
+    }
+  };
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/"); // Opcional: redirige tras logout
   };
 
   return (
@@ -70,12 +87,18 @@ const Header = () => {
               Quiz
             </NavLink>
           </li>
-          <li>
-            <Link to="/login" onClick={handleLinkClick} className="login-button">
-              Inicia Sesión
-            </Link>
-          </li>
 
+          <li>
+            {userLooged ? (
+              <button onClick={handleLogout} className="login-button">
+                Cerrar Sesión
+              </button>
+            ) : (
+              <button onClick={handleLogin} className="login-button">
+                Inicia Sesión
+              </button>
+            )}
+          </li>
         </ul>
       </nav>
     </header>
