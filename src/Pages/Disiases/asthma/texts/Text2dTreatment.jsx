@@ -3,9 +3,9 @@ import './Text2dPrevention.css';
 
 const Text2dPrevention = () => {
     return (
-        <Html center position={[0, -2.8, 0]} className="text-container">
+        <Html center position={[0, -4, 0]} className="text-container">
             <div className="text-treatment">
-                El ejercicio moderado también puede ser parte del manejo del asma.
+                El inhalador: clave en el control y tratamiento del asma.
             </div>
         </Html>
     );
