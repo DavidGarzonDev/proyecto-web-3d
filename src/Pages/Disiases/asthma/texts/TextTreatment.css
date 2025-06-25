@@ -20,7 +20,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
     transition: background-color 0.3s;
 }
 
@@ -28,6 +28,21 @@
     background-color: #d32f2f;
 }
 
+.info-button {
+  background-color: #d32f2f;       
+  color: white;                    
+  font-size: 50px;                 
+  border: none;
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
 
 .modal-overlay {
     position: top;
