@@ -5,7 +5,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: var(--color-text);
-    
+    z-index: 1;
     
 
 }
