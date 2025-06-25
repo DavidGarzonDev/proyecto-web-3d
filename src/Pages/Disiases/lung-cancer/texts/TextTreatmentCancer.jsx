@@ -11,7 +11,7 @@ const TextTreatmentCancer = () => {
     return (
         <Html center position={[0, 2, 0]} className="text-container-cancer-treatment">
             <div className="text-treatment-cancer-treatment">
-                <button onClick={openModal}>Información</button>
+                <button onClick={openModal}><strong>ⓘ</strong></button>
 
                 {isModalOpen && (
                     <div className="modal-overlay-cancer-treatment" onClick={closeModal}>

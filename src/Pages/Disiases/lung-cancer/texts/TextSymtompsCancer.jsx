@@ -1,7 +1,6 @@
 import { Html } from "@react-three/drei";
 import { useState } from "react";
 import './TextSymtompsCancer.css';
-import { CiCircleInfo } from "react-icons/ci";
 
 const TextSymptomsCancer = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
