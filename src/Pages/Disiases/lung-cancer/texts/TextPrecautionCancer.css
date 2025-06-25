@@ -1,0 +1,165 @@
+.text-container-cancer-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-symptom-cancer {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  min-width: 400px; 
+  text-align: center;
+}
+
+.text-symptom-cancer button {
+  font-family: poppins, sans-serif;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 1px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: background-color 0.3s;
+}
+
+.text-symptom-cancer button:hover {
+  background-color: #b71c1c;
+}
+
+/* TextPrecautionCancer styles */
+.text-precaution-cancer2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-precaution-cancer2 button {
+  font-family: poppins, sans-serif;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 0px 0px;
+  border-radius: 20%;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-precaution-cancer2 button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.1);
+}
+
+/* Estilos del modal */
+.modal-overlay-cancer-principal {
+  position: fixed;
+  
+  margin-top: 0;
+
+  top:80px;
+  left: 0;
+  right: 100px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content-cancer-principal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-close-cancer-principal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  padding: 5px;
+}
+
+.modal-close-cancer-principal:hover {
+  color: #d32f2f;
+}
+
+
+
+.modal-overlay-precaution {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content-precaution {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-precaution {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+.modal-close-precaution:hover {
+  color: #d32f2f;
+}
+
+.modal-content-precaution h3 {
+  color: #d32f2f;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.4;
+}
