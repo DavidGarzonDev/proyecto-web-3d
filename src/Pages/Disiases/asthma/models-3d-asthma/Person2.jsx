@@ -5,17 +5,23 @@ const Person2 = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/models-3d-asthma/person2-model.glb')
   const { actions } = useAnimations(animations, group)
-  
+
   useEffect(() => {
-    actions.Exercise.play()
+    const action = actions?.Exercise
+
+    if (action) {
+      action.play()
+    }
+
     return () => {
-      actions.Exercise.stop()
-    };
-  }, [actions]);
+      if (action) {
+        action.stop()
+      }
+    }
+  }, [actions])
 
   return (
     <group ref={group} {...props} dispose={null} scale={2}>
-
       <group name="Scene">
         <group name="Armature">
           <skinnedMesh

@@ -41,7 +41,7 @@ const Asthma = () => {
         <div className="symptoms-asthma-content-flex">
           <div className="symptoms-asthma-content">
             <h1 className="symptoms-asthma-title">Síntomas</h1>
-            <p className="symptoms-asthma-text">
+            <div className="symptoms-asthma-text">
               <div className="symptoms-asthma-list">
                 <h3>Síntomas comunes:</h3>
                 <ul>
@@ -67,7 +67,7 @@ const Asthma = () => {
                 </ul>
               </div>
 
-            </p>
+            </div>
 
           </div>
           <div className="symptoms-asthma-canvas-container">
