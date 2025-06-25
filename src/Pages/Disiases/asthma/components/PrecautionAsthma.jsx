@@ -9,10 +9,10 @@ import Person2 from "../models-3d-asthma/Person2.jsx";
 const PrecautionAsthma = () => {
     return (
         <Canvas
-      className="canvas-precaution-asthma"
-      camera={{ position: [0, 2, 5], fov: 50 }}
-      shadows
-    >
+            className="canvas-precaution-asthma"
+            camera={{ position: [0, 2, 5], fov: 50 }}
+            shadows
+        >
             <Lights lightPosition={[-5, 5, -5]} ambIntensity={10} dirIntensity={10} />
             <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
             <Person2 position={[0, -2, 0]} />

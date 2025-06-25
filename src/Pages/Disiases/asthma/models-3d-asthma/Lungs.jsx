@@ -33,6 +33,21 @@ const Lungs = (props) => {
     const handleClick = () => {
         playSquishSound();
     };
+    useEffect(() => {
+
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'a' || event.key === 'A') {
+                playSquishSound();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [playSquishSound]);
+
 
     const { nodes, materials } = useGLTF('/models-3d-asthma/lungs-model.glb');
     const { camera } = useThree();

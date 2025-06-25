@@ -1,17 +1,17 @@
 import { Html } from "@react-three/drei";
 import { useState } from "react";
-import './TextSymtomps.css'; // Usa tu archivo de estilos ajustado
+import './TextTreatment.css';
 
-const TextSymptoms = () => {
+const TextTreatment = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const closeModal = () => setIsModalOpen(false);
     const openModal = () => setIsModalOpen(true);
     
     return (
-        <Html center position={[-3.5, 5, 0]} className="text-container">
+        <Html center position={[-1, 2.1, 0]} className="text-container">
             <div className="text-treatment">
-                <button className="info-button" onClick={openModal}>ⓘ</button>
+                <button className = "info-button" onClick={openModal}>ⓘ</button>
 
                 {isModalOpen && (
                     <div className="modal-overlay" onClick={closeModal}>
@@ -19,13 +19,13 @@ const TextSymptoms = () => {
                             <button className="modal-close" onClick={closeModal}>
                                 &times;
                             </button>
-                            <h3>Toca el modelo o presiona la tecla T para escuchar</h3>
+                            <h3>Toca el modelo o presiona la tecla A para escuchar</h3>
                         </div>
                     </div>
                 )}
             </div>
         </Html>
     );
-};
+};  
 
-export default TextSymptoms;
+export default TextTreatment;

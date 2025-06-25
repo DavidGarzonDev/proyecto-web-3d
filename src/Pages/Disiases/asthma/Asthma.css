@@ -258,3 +258,10 @@
     padding: 0px;
   }
 }
+
+@media (max-width: 1900px) {
+  .canvas-asthma canvas {
+    width: 800px;
+    height: 500px;
+  }
+}
