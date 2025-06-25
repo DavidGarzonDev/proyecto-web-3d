@@ -19,7 +19,7 @@ const TextTreatment = () => {
                             <button className="modal-close" onClick={closeModal}>
                                 &times;
                             </button>
-                            <h3>Toca el modelo o presiona la tecla I para escuchar</h3>
+                            <h3>Mueve , Toca el modelo o presiona la tecla I para escuchar</h3>
                         </div>
                     </div>
                 )}
