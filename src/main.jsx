@@ -13,6 +13,7 @@ import PulmonaryHypertension from "./Pages/Disiases/pulmonary-hypertension/Pulmo
 
 import "./index.css";
 import KnowYourLungs from "./Pages/Loungs/KnowYourLungs.jsx";
+import Quiz from "./Pages/quiz/Quiz.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="asma" element={<Asthma />} />
         <Route path="cancer-pulmonar" element={<LungCancer />} />
         <Route path="hipertension-pulmonar" element={<PulmonaryHypertension />} />  
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
