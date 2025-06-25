@@ -54,6 +54,7 @@
   width: 100%;
   background-color: var(--color-primary);
   padding: 2rem 0;
+  
 }
 
 .what-is-asthma-title {
@@ -68,8 +69,8 @@
   font-size: 1.2rem;
   max-width: 900px;
   margin: 0 auto;
-  text-align: center;
-  padding: 0 1rem;
+  text-align: left;
+  padding:  0.5rem;
 }
 
 /* Sección: Síntomas */
@@ -91,13 +92,14 @@
 
 }
 
-.symptoms-asthma-text {
+.symptoms-asthma-text  {
   color: var(--color-text);
   font-size: 1.2rem;
   max-width: 500px;
   margin: 0 auto;
   text-align: left;
-  padding: 0 1rem;
+  padding:  0.5rem;
+
 }
 
 .symptoms-asthma-content-flex {
