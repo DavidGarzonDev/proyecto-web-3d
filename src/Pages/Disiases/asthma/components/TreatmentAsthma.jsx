@@ -6,7 +6,7 @@ import Inhaler from "../models-3d-asthma/Inhaler";
 import Recipe from "../models-3d-asthma/Recipe";
 import { Sky } from "@react-three/drei";
 import TextTreatment from "../texts/TextTreatment";
-import Text2dTreatment from "../texts/Text2dTreatment";
+import Text2dTreatment from "../texts/TextTreatmentCanvas";
 
 const TreatmentAsthma = () => {
   return (

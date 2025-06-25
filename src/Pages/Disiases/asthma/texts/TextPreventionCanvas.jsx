@@ -1,11 +1,11 @@
 import { Html } from "@react-three/drei";
-import './Text2dPrevention.css';
+import './TextPreventionCanvas.css';
 
 const Text2dPrevention = () => {
     return (
-        <Html center position={[0, -4, 0]} className="text-container">
+        <Html center position={[0, -2.8, 0]} className="text-container">
             <div className="text-treatment">
-                El inhalador: clave en el control y tratamiento del asma.
+                El ejercicio moderado también puede ser parte del manejo del asma.
             </div>
         </Html>
     );

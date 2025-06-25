@@ -6,7 +6,7 @@ import Recipe from "../models-3d-asthma/Recipe.jsx";
 import Person2 from "../models-3d-asthma/Person2.jsx";
 import TogglePersonVideoAsthma from "../videos/TogglePersonVideoAsthma.jsx";
 import TextPrevention from "../texts/TextPrevention.jsx";
-import Text2dPrevention from "../texts/Text2dPrevention.jsx";
+import Text2dPrevention from "../texts/TextPreventionCanvas.jsx";
 
 const PrecautionAsthma = () => {
     return (
