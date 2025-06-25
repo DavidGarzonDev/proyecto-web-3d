@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei";
-import './Text2dPrevention.css';
+import './TextPreventionCanvas.css';
 
 const TextPreventionCanvas = () => {
     return (
