@@ -17,3 +17,26 @@
   animation: bounce 2s infinite;
   display: inline-block;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.modal-content h3 {
+    color: #d32f2f;
+    font-size: 20px;
+    font-weight: bold;
+    padding-inline: 20px;
+    line-height: 1.4;
+    margin-top: 20px;
+    
+    animation: float 3s ease-in-out infinite; /* 💫 Flotar suavemente */
+}
