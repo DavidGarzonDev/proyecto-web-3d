@@ -104,7 +104,7 @@ const Quiz = () => {
           showQuestion: true
         }));
       }
-    }, 2000); // Esperar 2 segundos para dar tiempo al jugador a pasar a la siguiente plataforma
+    }, 3000); // Esperar 2 segundos para dar tiempo al jugador a pasar a la siguiente plataforma
   };
 
   const handleGameOver = (message = "¡Has caído al vacío!") => {

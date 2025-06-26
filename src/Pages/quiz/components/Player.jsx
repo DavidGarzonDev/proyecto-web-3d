@@ -16,8 +16,8 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef, isPaus
   
   const [canJump, setCanJump] = useState(true);
   const [hasActiveFloor, setHasActiveFloor] = useState(false);
-  const FORWARD_SPEED = 5;
-  const LATERAL_SPEED = 5;
+  const FORWARD_SPEED =3;
+  const LATERAL_SPEED = 3;
   const JUMP_FORCE = 8;
   const MAX_LATERAL_POSITION = 8; // Aumentado de 3 a 8 para permitir más movimiento lateral
   
