@@ -5,6 +5,8 @@ import "../pulmonaryFibrosis.css";
 import LoungSymptoms from "../models-3d-fibrosis/PersonCoughtModel3D";
 import Recipe from "../models-3d-fibrosis/RecipeFibrosis";
 import StagingSymptoms from "../staging/StagingSymptoms";
+import SymptomsText from "../text3D/SymtompsText";
+import InfoSymtompsFibrosis from "../text3D/InfoSymtompsFibrosis";
 
 const SymptomsFibrosis = () => {
   return (
@@ -25,7 +27,9 @@ const SymptomsFibrosis = () => {
         dirIntensity={10}
       />
       <Recipe />
+      <SymptomsText text={"Ve al hospital si tienes algún sintoma"} />
       <LoungSymptoms position={[0, -3, 0]} scale={[5, 5, 5]} castShadow />
+      <InfoSymtompsFibrosis />
       <StagingSymptoms />
     </Canvas>
   );
