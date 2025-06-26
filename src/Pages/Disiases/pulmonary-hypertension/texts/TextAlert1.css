@@ -1,0 +1,81 @@
+.text-container-hypertension-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-principal-hypertension {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  min-width: 0; /* Eliminamos ancho mínimo forzado */
+  text-align: center;
+  transform: scale(1); /* Sin escalado excesivo */
+  transform-origin: center;
+}
+
+.text-principal-hypertension button {
+  font-family: poppins, sans-serif;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 4px 8px; 
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 20px; 
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.text-principal-hypertension button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.1);
+}
+
+.modal-overlay-hypertension-principal {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 100px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content-hypertension-principal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.modal-close-hypertension-principal {
+  position: absolute;
+  top: 0.2px;
+  right: 0.2px;
+  background: none;
+  border: none;
+  font-size: 5px;
+  cursor: pointer;
+  color: #555;
+  padding: 4px;
+}
+
+.modal-close-hypertension-principal:hover {
+  color: #d32f2f;
+}
+
+.modal-content-hypertension-principal h3 {
+  color: #d32f2f;
+  font-size: 14px; 
+  font-weight: bold;
+  padding: 0 8px;
+  line-height: 1.4;
+  margin-top: 10px;
+}
