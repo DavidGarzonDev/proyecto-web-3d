@@ -5,6 +5,7 @@ import "../pulmonaryFibrosis.css";
 import LoungTreatmentFibrosis from "../models-3d-fibrosis/PillsModel3D";
 import RecipeFibrosis from "../models-3d-fibrosis/RecipeFibrosis";
 import StagingTreatment from "../staging/StagingTreatment";
+import TreatmentText from "../text3D/TreatmentText";
 
 const TreatmentFibrosis = () => {
   return (
@@ -20,6 +21,7 @@ const TreatmentFibrosis = () => {
       />
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
 
+      <TreatmentText text={"Lo más común es medicamentos"}/>
       <LoungTreatmentFibrosis position={[0, -2, 0]} />
       <StagingTreatment />
 

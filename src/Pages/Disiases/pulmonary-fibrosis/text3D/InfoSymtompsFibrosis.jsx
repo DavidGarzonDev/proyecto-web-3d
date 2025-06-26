@@ -2,14 +2,14 @@ import { Html } from "@react-three/drei";
 import { useState } from "react";
 import "./InfoPulmonaryFibrosis.css";
 
-const InfoPreventionFibrosis = () => {
+const InfoSymtompsFibrosis = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const closeModal = () => setIsModalOpen(false);
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <Html center position={[2, 1.3, 0]} className="text-container">
+    <Html center position={[10, 6, 0]} className="text-container">
       <div className="text-treatment">
         <button onClick={openModal}>ⓘ</button>
 
@@ -20,8 +20,7 @@ const InfoPreventionFibrosis = () => {
                 &times;
               </button>
               <h3>
-                Rota el modelo con el mouse, Dale clic o a la tecla G para
-                animar
+                Rota el modelo con el mouse o pulsa E para escucharlo toser
               </h3>
             </div>
           </div>
@@ -31,4 +30,4 @@ const InfoPreventionFibrosis = () => {
   );
 };
 
-export default InfoPreventionFibrosis;
+export default InfoSymtompsFibrosis;
