@@ -9,9 +9,9 @@ const TextSymptomsCancer2 = () => {
     const openModal = () => setIsModalOpen(true);
     
     return (
-        <Html center position={[0, -2.5, 0]} className="text-container-cancer2">
+        <Html center position={[0, 2, 0]} className="text-container-cancer2">
             <div className="text-symptom-cancer2">
-                <button onClick={openModal}>Información</button>
+                <button onClick={openModal}>ⓘ</button>
                 
                 {isModalOpen && (
                     <div className="modal-overlay-cancer2" onClick={closeModal}>
@@ -19,7 +19,8 @@ const TextSymptomsCancer2 = () => {
                             <button className="modal-close-cancer2" onClick={closeModal}>
                                 &times;
                             </button>
-                            <h3>Toca el modelo, para esucharlo tocer!</h3>
+                            <h3>Toca el modelo para escucharlo toser!</h3>
+                            <h3>Presiona la tecla R para rotar el modelo</h3>
                         </div>
                     </div>
                 )}

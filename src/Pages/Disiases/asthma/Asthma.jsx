@@ -1,4 +1,3 @@
-
 import "./Asthma.css";
 import CanvasAsthma from "./components/CanvasAsthma";
 import TreatmentAsthma from "./components/TreatmentAsthma";
@@ -10,10 +9,11 @@ const Asthma = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Reinicia el scroll al cargar
   }, []);
+
   return (
     <>
       <h1 className="canvas-asthma-title">Asma</h1>
-      
+
       <div className="canvas-container">
         <div className="canvas-content-flex">
           <div className="canvas-asthma">
@@ -28,8 +28,8 @@ const Asthma = () => {
           <div className="what-is-asthma-content">
             <h1 className="what-is-asthma-title">¿Qué es el Asma?</h1>
             <p className="what-is-asthma-text">
-              El asma es una enfermedad crónica de las vías respiratorias que causa inflamación 
-              y estrechamiento de los bronquios. Es una condición común que afecta a personas 
+              El asma es una enfermedad crónica de las vías respiratorias que causa inflamación
+              y estrechamiento de los bronquios. Es una condición común que afecta a personas
               de todas las edades y puede variar en severidad desde leve hasta potencialmente mortal.
             </p>
           </div>
@@ -41,12 +41,30 @@ const Asthma = () => {
         <div className="symptoms-asthma-content-flex">
           <div className="symptoms-asthma-content">
             <h1 className="symptoms-asthma-title">Síntomas</h1>
-            <p className="symptoms-asthma-text">
-              Los síntomas del asma incluyen dificultad para respirar, opresión en el pecho, 
-              silbidos al respirar y tos persistente, especialmente por la noche o temprano 
-              en la mañana. Estos síntomas pueden empeorar con el ejercicio o la exposición 
-              a alérgenos.
-            </p>
+            <div className="symptoms-asthma-text">
+              <h3>Síntomas comunes:</h3>
+              <ul>
+                <li>Tos con o sin flema</li>
+                <li>Silbidos o sibilancias al respirar</li>
+                <li>Dificultad para respirar, especialmente al hacer ejercicio</li>
+                <li>Dolor o presión en el pecho</li>
+                <li>Dificultad para dormir</li>
+                <li>Retracción de la piel entre las costillas</li>
+                <li>Respiración anormal (exhalación más larga que la inhalación)</li>
+              </ul>
+
+              <h3>Síntomas de emergencia:</h3>
+              <ul>
+                <li>Labios o cara con color azulado (cianosis)</li>
+                <li>Dificultad respiratoria extrema</li>
+                <li>Somnolencia o confusión durante un ataque</li>
+                <li>Dificultad para hablar</li>
+                <li>Pulso muy rápido</li>
+                <li>Ansiedad intensa por falta de aire</li>
+                <li>Sudoración excesiva</li>
+                <li>Paro respiratorio (la respiración se detiene)</li>
+              </ul>
+            </div>
           </div>
           <div className="symptoms-asthma-canvas-container">
             <div className="symptoms-asthma-canvas-content">
@@ -69,10 +87,11 @@ const Asthma = () => {
           <div className="treatment-asthma-content">
             <h1 className="treatment-asthma-title">Tratamiento</h1>
             <p className="treatment-asthma-text">
-              El tratamiento del asma incluye medicamentos de control a largo plazo 
-              (corticosteroides inhalados) y medicamentos de alivio rápido (broncodilatadores). 
-              También es importante identificar y evitar los desencadenantes y tener un plan 
-              de acción para ataques agudos.
+              El tratamiento del asma incluye medicamentos de control a largo plazo
+              (como los corticosteroides inhalados) y medicamentos de alivio rápido (como los broncodilatadores).
+              Además, es importante identificar y evitar los desencadenantes individuales y
+              tener un plan de acción en caso de crisis. Si se sigue el tratamiento correctamente,
+              la mayoría de las personas pueden llevar una vida normal y activa.
             </p>
           </div>
         </div>
@@ -81,21 +100,23 @@ const Asthma = () => {
       {/* Sección: Prevención */}
       <div className="precaution-asthma-container">
         <div className="precaution-asthma-content-flex">
+          
+          <div className="precaution-asthma-content">
+            <h1 className="precaution-asthma-title">Prevención</h1>
+            <p className="precaution-asthma-text">
+              Para prevenir crisis de asma se recomienda evitar alérgenos como ácaros, polen o mascotas;
+              reducir la exposición al humo de tabaco y la contaminación; mantener una buena higiene en casa;
+              seguir adecuadamente el tratamiento médico y usar correctamente los inhaladores.
+              También es útil realizar ejercicio moderado regularmente, ya que fortalece los pulmones
+              y mejora la capacidad respiratoria en personas con el asma bien controlada.
+            </p>
+          </div>
+
+          
           <div className="precaution-asthma-canvas-content">
             <Suspense fallback={<div>Cargando escena de prevención...</div>}>
               <PrecautionAsthma key="precaution-canvas" />
             </Suspense>
-          </div>
-          <div className="precaution-asthma-content">
-            <h1 className="precaution-asthma-title">Prevención</h1>
-            <p className="precaution-asthma-text">
-              Para prevenir crisis de asma se recomienda: evitar desencadenantes 
-              como alérgenos (ácaros, polen, mascotas), humo de tabaco y contaminación; 
-              usar correctamente los medicamentos prescritos; vacunarse contra la gripe; 
-              mantener un peso saludable; realizar ejercicio moderado; y tener un plan 
-              de acción para crisis. Es fundamental seguir las indicaciones médicas y 
-              llevar siempre el inhalador de rescate.
-            </p>
           </div>
         </div>
       </div>

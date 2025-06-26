@@ -9,9 +9,9 @@ const TextTreatment = () => {
     const openModal = () => setIsModalOpen(true);
     
     return (
-        <Html center position={[0, -3, 0]} className="text-container">
+        <Html center position={[2.5, -2.9, 0]} className="text-container">
             <div className="text-treatment">
-                <button onClick={openModal}>Información</button>
+                <button className = "info-button" onClick={openModal}>ⓘ</button>
 
                 {isModalOpen && (
                     <div className="modal-overlay" onClick={closeModal}>
@@ -19,7 +19,7 @@ const TextTreatment = () => {
                             <button className="modal-close" onClick={closeModal}>
                                 &times;
                             </button>
-                            <h3>Toca el modelo o presiona la tecla I para escuchar</h3>
+                            <h3>Mueve , Toca el modelo o presiona la tecla I para escuchar</h3>
                         </div>
                     </div>
                 )}

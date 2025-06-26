@@ -1,0 +1,113 @@
+.quiz-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.quiz-ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.quiz-ui h3 {
+  margin: 5px 0;
+}
+
+.quiz-question {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  max-width: 80%;
+}
+
+.controls-help {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  z-index: 100;
+  text-align: center;
+}
+
+.controls-help p {
+  margin: 5px 0;
+}
+
+.quiz-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  min-width: 300px;
+}
+
+.quiz-controls h2 {
+  margin-bottom: 20px;
+}
+
+.quiz-controls button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quiz-controls button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.death-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.victory-message {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

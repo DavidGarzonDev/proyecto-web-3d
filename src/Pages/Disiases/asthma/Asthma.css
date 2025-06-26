@@ -54,6 +54,7 @@
   width: 100%;
   background-color: var(--color-primary);
   padding: 2rem 0;
+  
 }
 
 .what-is-asthma-title {
@@ -68,8 +69,8 @@
   font-size: 1.2rem;
   max-width: 900px;
   margin: 0 auto;
-  text-align: center;
-  padding: 0 1rem;
+  text-align: left;
+  padding:  0.5rem;
 }
 
 /* Sección: Síntomas */
@@ -91,13 +92,14 @@
 
 }
 
-.symptoms-asthma-text {
+.symptoms-asthma-text  {
   color: var(--color-text);
   font-size: 1.2rem;
   max-width: 500px;
   margin: 0 auto;
   text-align: left;
-  padding: 0 1rem;
+  padding:  0.5rem;
+
 }
 
 .symptoms-asthma-content-flex {
@@ -257,4 +259,36 @@
     font-size: 0.5rem;
     padding: 0px;
   }
+}
+
+@media (max-width: 1900px) {
+  .canvas-asthma canvas {
+    width: 800px;
+    height: 500px;
+  }
+}
+
+.symptoms-asthma-list {
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.symptoms-asthma-list h3 {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.symptoms-asthma-list ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.symptoms-asthma-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }

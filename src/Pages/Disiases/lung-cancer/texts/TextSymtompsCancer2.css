@@ -2,13 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 50;
 }
 
 .text-symptom-cancer2 {
   background: none;
   box-shadow: none;
   padding: 0;
-  min-width: 350px; 
+  min-width: 250px; 
   text-align: center;
 }
 
@@ -17,64 +19,81 @@
   background-color: #d32f2f;
   color: white;
   border: none;
-  padding: 7px 17px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .text-symptom-cancer2 button:hover {
   background-color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos del modal */
 .modal-overlay-cancer2 {
   position: fixed;
-  margin-top: 0;
-
-  top:0px;
+  top: 100px;
   left: 0;
   right: 0;
-  bottom: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .modal-content-cancer2 {
   background-color: white;
-  padding: 10px;
-  border-radius: 8px;
-  max-width: 200px;
-  width: 80%;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 85%;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  animation: modalAppear 0.3s ease-out;
 }
 
 .modal-close-cancer2 {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 50px;
+  right: 15px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 10px;
   cursor: pointer;
   color: #555;
   padding: 5px;
+  transition: all 0.2s ease;
 }
 
 .modal-close-cancer2:hover {
   color: #d32f2f;
+  transform: scale(1.1);
 }
 
 .modal-content-cancer2 h3 {
   color: #d32f2f;
-  font-size: 20px;  
+  font-size: 15px;  
   font-weight: bold;
-  padding-inline: 20px; 
-  line-height: 1.4;
-  margin-top: 20px;
+  padding-inline: 10px; 
+  line-height: 1.5;
+  margin: 10px 0;
+  text-align: center;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

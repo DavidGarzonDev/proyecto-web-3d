@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiUser } from "react-icons/fi";
 import "./Header.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router";
 
 const Header = () => {
-  const { loginGoogleWithPopUp, logout, userLooged } = useAuthStore(); // Obtiene el usuario y las funciones
+  const { loginGoogleWithPopUp, logout, userLooged } = useAuthStore();
   const navigate = useNavigate();
 
   const [shrink, setShrink] = useState(false);
@@ -25,13 +25,13 @@ const Header = () => {
   const handleLogin = async () => {
     const result = await loginGoogleWithPopUp();
     if (result && result.user) {
-      navigate("/"); // inicio de sesion después del login
+      navigate("/");
     }
   };
 
   const handleLogout = async () => {
     await logout();
-    navigate("/"); // Opcional: redirige tras logout
+    navigate("/");
   };
 
   return (
@@ -88,11 +88,17 @@ const Header = () => {
             </NavLink>
           </li>
 
-          <li>
+          <li className="user-auth-section">
             {userLooged ? (
-              <button onClick={handleLogout} className="login-button">
-                Cerrar Sesión
-              </button>
+              <>
+                <div className="user-name-button">
+                  <FiUser className="user-icon" />
+                  <span>{userLooged.displayName}</span>
+                </div>
+                <button onClick={handleLogout} className="login-button">
+                  Cerrar Sesión
+                </button>
+              </>
             ) : (
               <button onClick={handleLogin} className="login-button">
                 Inicia Sesión

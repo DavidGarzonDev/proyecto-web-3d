@@ -1,6 +1,6 @@
 import { Html } from "@react-three/drei";
 import { useState } from "react";
-import './TextSymtomps.css';
+import './TextSymtomps.css'; // Usa tu archivo de estilos ajustado
 
 const TextSymptoms = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,10 +9,10 @@ const TextSymptoms = () => {
     const openModal = () => setIsModalOpen(true);
     
     return (
-        <Html center position={[0, 5, 0]} className="text-container">
-            <div className="text-symptom">
-                <button onClick={openModal}>Información</button>
-                
+        <Html center position={[-3.5, 5, 0]} className="text-container">
+            <div className="text-treatment">
+                <button className="info-button" onClick={openModal}>ⓘ</button>
+
                 {isModalOpen && (
                     <div className="modal-overlay" onClick={closeModal}>
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -26,6 +26,6 @@ const TextSymptoms = () => {
             </div>
         </Html>
     );
-};  
+};
 
 export default TextSymptoms;
