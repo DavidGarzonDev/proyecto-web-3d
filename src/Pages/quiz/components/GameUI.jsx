@@ -1,7 +1,7 @@
 import React from "react";
 
 const GameUI = ({ gameState, onStartGame }) => {
-  const { isPlaying, gameOver, score, currentQuestion, deathMessage } = gameState;
+  const { isPlaying, gameOver, score, currentQuestion, deathMessage, isPaused } = gameState;
 
   return (
     <>
@@ -12,18 +12,38 @@ const GameUI = ({ gameState, onStartGame }) => {
           </div>
           
           <div className="quiz-question">
-            <h3>{currentQuestion?.question}</h3>
+            <h3>
+              {currentQuestion?.question.split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i < currentQuestion?.question.split('\n').length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </h3>
           </div>
+          
+          {isPaused && (
+            <div className="quiz-paused">
+              <p>Observa la pregunta...</p>
+              <div className="loading-bar">
+                <div className="loading-progress"></div>
+              </div>
+            </div>
+          )}
+          
+          {!isPaused && (
             <div className="controls-help">
-            <p>Usa A y D para moverte de lado a lado</p>
-            <p>Presiona ESPACIO o W para saltar</p>
-            <p>Elige la puerta con la respuesta correcta</p>
-          </div>
+              <p>Usa A y D para moverte de lado a lado</p>
+              <p>Presiona ESPACIO o W para saltar</p>
+              <p>Elige la puerta con la respuesta correcta</p>
+            </div>
+          )}
         </>
       )}
 
       {!isPlaying && (
-        <div className="quiz-controls">          {gameOver ? (
+        <div className="quiz-controls">
+          {gameOver ? (
             <>
               <h2>{score >= 500 ? "¡Victoria!" : "¡Juego terminado!"}</h2>
               {deathMessage && (

@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import GameLevel from "./components/GameLevel";
 import Player from "./components/Player";
 import GameUI from "./components/GameUI";
+import QuestionWall from "./components/QuestionWall";
 import "./Quiz.css";
 
 const Quiz = () => {
@@ -18,47 +19,62 @@ const Quiz = () => {
     score: 0,
     gameOver: false,
     currentQuestion: null,
-    deathMessage: ""
+    deathMessage: "",
+    isPaused: false,
+    showQuestion: false
   });
 
   const questions = [
     {
-      question: "¿Cuál de estos hábitos NO está relacionado con el cáncer de pulmón?",
+      question: "¿Cuál de estos hábitos\n NO está relacionado \ncon el cáncer de pulmón?",
       options: ["Fumar", "Beber agua", "Exposición al asbesto"],
       correctAnswer: 1
     },
     {
-      question: "¿Cuál es un síntoma común del asma?",
+      question: "¿Cuál es un síntoma\ncomún del asma?",
       options: ["Dificultad para respirar", "Dolor de cabeza", "Mareos"],
       correctAnswer: 0
     },
     {
-      question: "¿Qué órgano se ve afectado por la fibrosis pulmonar?",
+      question: "¿Qué órgano se ve afectado\n por la fibrosis pulmonar?",
       options: ["Corazón", "Pulmones", "Hígado"],
       correctAnswer: 1
     },
     {
-      question: "¿Qué ayuda a prevenir enfermedades respiratorias?",
+      question: "¿Qué ayuda a prevenir \nenfermedades respiratorias?",
       options: ["Fumar ocasionalmente", "Ejercicio regular", "Ambientes con polvo"],
       correctAnswer: 1
     },
     {
-      question: "¿Qué condición causa presión alta en las arterias pulmonares?",
+      question: "¿Qué condición causa\n presión alta en las\narterias pulmonares?",
       options: ["Asma", "Fibrosis", "Hipertensión pulmonar"],
       correctAnswer: 2
     },
   ];
 
   const handleStartGame = () => {
+    // Start with the game paused and question showing
     setGameState({
       ...gameState,
       isPlaying: true,
       gameOver: false,
       level: 0,
       score: 0,
-      currentQuestion: questions[0]
+      currentQuestion: questions[0],
+      isPaused: true,
+      showQuestion: true
     });
   };
+
+  // Handle when the question wall animation completes
+  const handleQuestionWallComplete = () => {
+    setGameState({
+      ...gameState,
+      isPaused: false,
+      showQuestion: false
+    });
+  };
+
   const handleCorrectAnswer = () => {
     const nextLevel = gameState.level + 1;
     
@@ -67,7 +83,8 @@ const Quiz = () => {
       ...prev,
       score: prev.score + 100,
     }));
-      // Luego esperar un tiempo antes de avanzar al siguiente nivel
+
+    // Luego esperar un tiempo antes de avanzar al siguiente nivel
     setTimeout(() => {
       if (nextLevel >= questions.length) {
         // Player won the game
@@ -78,15 +95,18 @@ const Quiz = () => {
           deathMessage: "¡Felicidades! Has completado todas las preguntas correctamente 🏆",
         }));
       } else {
-        // Move to next level
+        // Move to next level, but paused first to show question
         setGameState(prev => ({
           ...prev,
           level: nextLevel,
-          currentQuestion: questions[nextLevel]
+          currentQuestion: questions[nextLevel],
+          isPaused: true,
+          showQuestion: true
         }));
       }
     }, 2000); // Esperar 2 segundos para dar tiempo al jugador a pasar a la siguiente plataforma
   };
+
   const handleGameOver = (message = "¡Has caído al vacío!") => {
     setGameState({
       ...gameState,
@@ -96,8 +116,12 @@ const Quiz = () => {
     });
   };
 
+  // Calculate the player's current position in the level
+  const playerPosition = gameState.level * -20 + 3;
+
   return (
-    <div className="quiz-container">      <Canvas
+    <div className="quiz-container">
+      <Canvas
         shadows
       >
         <Suspense fallback={null}>
@@ -124,6 +148,7 @@ const Quiz = () => {
                 position={[0, 1, 0]} 
                 onGameOver={handleGameOver} 
                 cameraRef={cameraRef}
+                isPaused={gameState.isPaused}
               />
               <GameLevel 
                 level={gameState.level} 
@@ -131,6 +156,16 @@ const Quiz = () => {
                 onCorrectAnswer={handleCorrectAnswer}
                 onGameOver={handleGameOver}
               />
+              
+              {/* Question Wall - appears at the correct level position */}
+              {gameState.showQuestion && (
+                <QuestionWall
+                  text={gameState.currentQuestion?.question || ""}
+                  position={[0, 0.7, playerPosition - 10]}
+                  visible={gameState.showQuestion}
+                  onAnimationComplete={handleQuestionWallComplete}
+                />
+              )}
             </Physics>
           )}
           
