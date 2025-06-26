@@ -8,6 +8,7 @@ import Recipe from "../modelos-3d-hypertension/Recipe.jsx";
 import StagingOne from "./staging/StagingOne.jsx";
 import Title from "../texts/Title.jsx";
 import MoveHypertension from "../texts/MoveHypertension.jsx";
+import TextAlert1 from "../texts/TextAlert1.jsx";
 
 const CanvasPulmonaryHypertension = () => {
   const [moving, setMoving] = useState(false);
@@ -20,10 +21,13 @@ const CanvasPulmonaryHypertension = () => {
       shadows={true}
       onPointerEnter={() => setMoving(true)}
       onPointerLeave={() => setMoving(false)}
+      
     >
       <MoveHypertension text={promptText} hidden={moving} />
+      <TextAlert1 />
 
       <LightsHypertension />
+      
 
       <OrbitControls
         enableZoom={true}
