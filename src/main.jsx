@@ -15,8 +15,11 @@ import "./index.css";
 import KnowYourLungs from "./Pages/Loungs/KnowYourLungs.jsx";
 import Quiz from "./Pages/quiz/Quiz.jsx";
 
+import ScrollToTop from "./Pages/Home/ScrollToTop.jsx";
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+    <ScrollToTop />
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
