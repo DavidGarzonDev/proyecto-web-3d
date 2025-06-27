@@ -18,7 +18,7 @@ export const saveUserToFirestore = async (user, score) => {
     };
 
     if (typeof score === "number") {
-      userData.score = user.score;
+      userData.quizScore = score;
     }
 
     await setDoc(doc(db, "users", user.uid), userData, { merge: true });

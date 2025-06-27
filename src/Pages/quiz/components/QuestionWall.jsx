@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import { Text3D, Center } from "@react-three/drei";
 import { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
@@ -52,7 +54,7 @@ const QuestionWall = ({ text, position = [-10, 2, 0], visible = true, onAnimatio
       <mesh castShadow receiveShadow position={[0, 0, 0]}>
         <boxGeometry args={[20, 10, 0.5]} />
         <meshStandardMaterial
-          color="#34495e"
+          color="#e74c3c"
           metalness={0.2}
           roughness={0.8}
         />

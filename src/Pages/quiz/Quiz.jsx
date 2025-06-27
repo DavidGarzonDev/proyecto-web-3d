@@ -8,15 +8,15 @@ import GameLevel from "./components/GameLevel";
 import Player from "./components/Player";
 import GameUI from "./components/GameUI";
 import QuestionWall from "./components/QuestionWall";
-import useAuthStore from "../../stores/use-auth-store";
-import { saveUserToFirestore } from "../../Layout/Header/saveUser";
 import "./Quiz.css";
+import { saveUserToFirestore } from "../../Layout/Header/saveUser";
+import useAuthStore from "../../stores/use-auth-store";
 
 const Quiz = () => {
-  const { userLooged } = useAuthStore();
-  console.log("Usuario logueado:", userLooged);
   const playerRef = useRef();
   const cameraRef = useRef();
+  const { userLooged } = useAuthStore();
+  console.log("✔ Usuario logueado:", userLooged);
 
   const [gameState, setGameState] = useState({
     isPlaying: false,
@@ -90,31 +90,25 @@ const Quiz = () => {
     const nextLevel = gameState.level + 1;
     const updatedScore = gameState.score + 100;
 
-    // Si es el último nivel, guardar score y terminar juego
-    if (nextLevel >= questions.length) {
-      // Guarda el puntaje antes de cambiar el estado
-      if (userLooged) {
-        console.log("Guardando usuario:", userLooged);
-        console.log("Puntaje final:", updatedScore);
-        saveUserToFirestore(userLooged, updatedScore);
-      }
+    // Primero actualizar la puntuación
+    setGameState((prev) => ({
+      ...prev,
+      score: updatedScore,
+    }));
 
-      setGameState((prev) => ({
-        ...prev,
-        score: updatedScore,
-        gameOver: true,
-        isPlaying: false,
-        deathMessage:
-          "¡Felicidades! Has completado todas las preguntas correctamente 🏆",
-      }));
-    } else {
-      // Sube el puntaje y pasa al siguiente nivel
-      setGameState((prev) => ({
-        ...prev,
-        score: updatedScore,
-      }));
-
-      setTimeout(() => {
+    // Luego esperar un poco y actuar
+    setTimeout(() => {
+      if (nextLevel >= questions.length) {
+        // Juego terminado
+        setGameState((prev) => ({
+          ...prev,
+          gameOver: true,
+          isPlaying: false,
+          deathMessage:
+            "¡Felicidades! Has completado todas las preguntas correctamente 🏆",
+        }));
+      } else {
+        // Siguiente nivel
         setGameState((prev) => ({
           ...prev,
           level: nextLevel,
@@ -122,7 +116,20 @@ const Quiz = () => {
           isPaused: true,
           showQuestion: true,
         }));
-    }, 3000); // Esperar 2 segundos para dar tiempo al jugador a pasar a la siguiente plataforma
+      }
+      console.log(
+        "✔ Puntaje a guardar:",
+        updatedScore,
+        "Tipo:",
+        typeof updatedScore
+      );
+
+      // Guardar puntuación en Firestore
+      if (userLooged) {
+        saveUserToFirestore(userLooged, updatedScore);
+      }
+      
+    }, 3000);
   };
 
   const handleGameOver = (message = "¡Has caído al vacío!") => {

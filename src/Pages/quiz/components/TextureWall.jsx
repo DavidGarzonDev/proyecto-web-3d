@@ -1,4 +1,7 @@
-import React, { useMemo } from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
+import { useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 import { RepeatWrapping } from "three";
 import { RigidBody } from "@react-three/rapier";

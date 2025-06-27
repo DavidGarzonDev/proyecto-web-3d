@@ -1,29 +1,20 @@
 import React from "react";
-import "../KnowYourLungs.css"
+import "../KnowYourLungs.css";
 
-
-const props = {
-    
-}
-
-const ComponenCard = () => {
+const ComponenCard = ({ title, imageSrc, backTitle, description }) => {
   return (
     <div className="card-scroll">
       <div className="card-rotation">
         <div className="card-inner">
           <div className="card-curiosity-front">
             <h2 className="card-title">{title}</h2>
-            <div className="img-loungs-curiosity">img.png</div>
+            <div className="img-loungs-curiosity">
+              <img src={imageSrc} alt={title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </div>
           </div>
           <div className="card-curiosity-back">
-            <h2 className="card-title">Tamaño</h2>
-            <p className="card-text">
-              Los pulmones son órganos esponjosos y flexibles que ocupan la
-              mayor parte de la cavidad torácica. En un adulto promedio, los
-              pulmones tienen un volumen total de aproximadamente 6 litros,
-              aunque solo una parte de este volumen se utiliza para el
-              intercambio de gases.
-            </p>
+            <h2 className="card-title">{backTitle}</h2>
+            <p className="card-text">{description}</p>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
 import { useState, useRef, useEffect, useMemo } from "react";
 import { Text, useTexture } from "@react-three/drei";
 import { RepeatWrapping } from "three";
