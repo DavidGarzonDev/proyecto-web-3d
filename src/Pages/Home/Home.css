@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--color-text);
 }
 
@@ -51,8 +51,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .description {
   font-size: 1rem;
@@ -112,7 +110,8 @@ body {
   align-items: center;
   min-height: 240px;
   border: 1px solid var(--color-border);
-  transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+  transition: transform var(--transition-time) ease,
+    box-shadow var(--transition-time) ease;
   box-shadow: 0 4px 20px rgba(211, 47, 47, 0.1); /* blur rojo suave */
 }
 
@@ -203,6 +202,60 @@ button:active {
   box-shadow: none;
 }
 
+.login-alert-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.login-alert-modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-alert-modal h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.login-alert-modal p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.login-alert-modal button {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
+  border-radius: 60px;
+  padding: 0.625rem 1.25rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-time) ease;
+  margin: 0.5rem;
+}
+
+.login-alert-modal button:hover {
+  background-color: #b71c1c;
+  transform: scale(var(--scale-factor));
+}
+
 /* Responsive */
 @media (max-width: 767px) {
   .bento-grid {
@@ -229,11 +282,11 @@ button:active {
 }
 
 @keyframes upDown {
-  0%, 100% {
+  0%,
+  100% {
     top: 0;
   }
   50% {
     top: -10px;
   }
 }
-
