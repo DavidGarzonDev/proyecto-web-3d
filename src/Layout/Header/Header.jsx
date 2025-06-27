@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu, FiX, FiUser } from "react-icons/fi";
 import "./Header.css";
 import useAuthStore from "../../stores/use-auth-store";
 import { useNavigate } from "react-router";
+import { saveUserToFirestore } from "./saveUser";
 
 const Header = () => {
   const { loginGoogleWithPopUp, logout, userLooged } = useAuthStore();
@@ -25,6 +26,7 @@ const Header = () => {
   const handleLogin = async () => {
     const result = await loginGoogleWithPopUp();
     if (result && result.user) {
+      await saveUserToFirestore(result.user);
       navigate("/");
     }
   };
@@ -35,15 +37,23 @@ const Header = () => {
   };
 
   return (
-    <header className={`header-container${shrink ? " shrink" : ""}${menuOpen ? " menu-open" : ""}`}>
-      <nav className={`navbar${shrink ? " shrink" : ""}${menuOpen ? " menu-open" : ""}`}>
+    <header
+      className={`header-container${shrink ? " shrink" : ""}${
+        menuOpen ? " menu-open" : ""
+      }`}
+    >
+      <nav
+        className={`navbar${shrink ? " shrink" : ""}${
+          menuOpen ? " menu-open" : ""
+        }`}
+      >
         <Link to="/" className="logo-link" onClick={handleLinkClick}>
           <img src="/Logo/JACO-LOGO-BLANCO.webp" className="logo-img" />
         </Link>
 
         <button
           className="nav-toggle"
-          onClick={() => setMenuOpen(open => !open)}
+          onClick={() => setMenuOpen((open) => !open)}
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
@@ -51,7 +61,12 @@ const Header = () => {
 
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""} end onClick={handleLinkClick}>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              end
+              onClick={handleLinkClick}
+            >
               Inicio
             </NavLink>
           </li>
@@ -60,22 +75,38 @@ const Header = () => {
             <div className="dropdown-link">Enfermedades</div>
             <ol className="dropdown-menu">
               <li>
-                <NavLink to="/fibrosis-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
+                <NavLink
+                  to="/fibrosis-pulmonar"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={handleLinkClick}
+                >
                   Fibrosis Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/asma" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
+                <NavLink
+                  to="/asma"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={handleLinkClick}
+                >
                   Asma
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/cancer-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
+                <NavLink
+                  to="/cancer-pulmonar"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={handleLinkClick}
+                >
                   Cáncer Pulmonar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/hipertension-pulmonar" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
+                <NavLink
+                  to="/hipertension-pulmonar"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={handleLinkClick}
+                >
                   Hipertensión Pulmonar
                 </NavLink>
               </li>
@@ -83,7 +114,11 @@ const Header = () => {
           </li>
 
           <li>
-            <NavLink to="/quiz" className={({ isActive }) => isActive ? "active" : ""} onClick={handleLinkClick}>
+            <NavLink
+              to="/quiz"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={handleLinkClick}
+            >
               Quiz
             </NavLink>
           </li>

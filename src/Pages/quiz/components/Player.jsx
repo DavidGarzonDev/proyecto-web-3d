@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/display-name */
 import { useRef, useState, useEffect, forwardRef, useImperativeHandle } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
-import { RigidBody, useRapier } from "@react-three/rapier";
+import { RigidBody } from "@react-three/rapier";
 
 const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef, isPaused = false }, ref) => {
   // You can replace this with any of your existing models if desired

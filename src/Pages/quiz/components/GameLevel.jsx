@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import { useMemo } from "react";
 import { RigidBody } from "@react-three/rapier";
 import { useTexture } from "@react-three/drei";

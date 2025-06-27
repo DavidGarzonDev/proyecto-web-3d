@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import { Text3D, Center } from "@react-three/drei";
 import { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
