@@ -6,6 +6,10 @@
   --color-hover: rgba(255, 255, 255, 0.1);
   --color-gray: #808080;
 }
+.main-content {
+  margin-top: 5px;
+
+}
 
 
 .canvas-asthma canvas,

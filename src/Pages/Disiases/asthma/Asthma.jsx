@@ -11,7 +11,7 @@ const Asthma = () => {
   }, []);
 
   return (
-    <>
+    <> <div className="main-content">
       <h1 className="canvas-asthma-title">Asma</h1>
 
       <div className="canvas-container">
@@ -119,6 +119,7 @@ const Asthma = () => {
             </Suspense>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
