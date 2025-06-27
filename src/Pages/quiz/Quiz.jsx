@@ -2,7 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky, PerspectiveCamera } from "@react-three/drei";
 import { Physics } from "@react-three/rapier";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Suspense } from "react";
 import GameLevel from "./components/GameLevel";
 import Player from "./components/Player";
@@ -11,12 +11,36 @@ import QuestionWall from "./components/QuestionWall";
 import "./Quiz.css";
 import { saveUserToFirestore } from "../../Layout/Header/saveUser";
 import useAuthStore from "../../stores/use-auth-store";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "../../../firebase.config";
 
 const Quiz = () => {
   const playerRef = useRef();
   const cameraRef = useRef();
   const { userLooged } = useAuthStore();
-  console.log("✔ Usuario logueado:", userLooged);
+
+  const [podium, setPodium] = useState([]);
+
+  const fetchPodium = async () => {
+    try {
+      console.log("🔍 Ejecutando fetchPodium...");
+      const q = query(
+        collection(db, "users"),
+        orderBy("quizScore", "desc"),
+        limit(3)
+      );
+      const querySnapshot = await getDocs(q);
+      const topUsers = querySnapshot.docs.map((doc) => ({
+        name: doc.data().displayName,
+        score: doc.data().quizScore || 0,
+        uid: doc.id,
+      }));
+      console.log("🏆 Podio obtenido:", topUsers);
+      setPodium(topUsers);
+    } catch (error) {
+      console.error("❌ Error obteniendo el podio:", error);
+    }
+  };
 
   const [gameState, setGameState] = useState({
     isPlaying: false,
@@ -64,7 +88,6 @@ const Quiz = () => {
   ];
 
   const handleStartGame = () => {
-    // Start with the game paused and question showing
     setGameState({
       ...gameState,
       isPlaying: true,
@@ -77,7 +100,6 @@ const Quiz = () => {
     });
   };
 
-  // Handle when the question wall animation completes
   const handleQuestionWallComplete = () => {
     setGameState({
       ...gameState,
@@ -90,25 +112,20 @@ const Quiz = () => {
     const nextLevel = gameState.level + 1;
     const updatedScore = gameState.score + 100;
 
-    // Primero actualizar la puntuación
     setGameState((prev) => ({
       ...prev,
       score: updatedScore,
     }));
 
-    // Luego esperar un poco y actuar
     setTimeout(() => {
       if (nextLevel >= questions.length) {
-        // Juego terminado
         setGameState((prev) => ({
           ...prev,
           gameOver: true,
           isPlaying: false,
-          deathMessage:
-            "¡Felicidades! Has completado todas las preguntas correctamente 🏆",
+          deathMessage: "¡Felicidades! Has completado todas las preguntas 🏆",
         }));
       } else {
-        // Siguiente nivel
         setGameState((prev) => ({
           ...prev,
           level: nextLevel,
@@ -117,22 +134,15 @@ const Quiz = () => {
           showQuestion: true,
         }));
       }
-      console.log(
-        "✔ Puntaje a guardar:",
-        updatedScore,
-        "Tipo:",
-        typeof updatedScore
-      );
 
-      // Guardar puntuación en Firestore
       if (userLooged) {
         saveUserToFirestore(userLooged, updatedScore);
       }
-      
     }, 3000);
   };
 
   const handleGameOver = (message = "¡Has caído al vacío!") => {
+    console.log("💥 handleGameOver llamado:", message);
     setGameState({
       ...gameState,
       gameOver: true,
@@ -141,8 +151,15 @@ const Quiz = () => {
     });
   };
 
-  // Calculate the player's current position in the level
   const playerPosition = gameState.level * -20 + 3;
+
+  useEffect(() => {
+    if (gameState.gameOver) {
+      console.log("🎯 gameOver es true. Obteniendo podio...");
+
+      fetchPodium();
+    }
+  }, [gameState.gameOver]);
 
   return (
     <div className="quiz-container">
@@ -180,7 +197,6 @@ const Quiz = () => {
                 onGameOver={handleGameOver}
               />
 
-              {/* Question Wall - appears at the correct level position */}
               {gameState.showQuestion && (
                 <QuestionWall
                   text={gameState.currentQuestion?.question || ""}
@@ -205,7 +221,46 @@ const Quiz = () => {
         </Suspense>
       </Canvas>
 
-      <GameUI gameState={gameState} onStartGame={handleStartGame} />
+      {gameState.gameOver && (
+        <div className="quiz-end-screen">
+          <h2>🎮 ¡Juego Terminado!</h2>
+
+          <p className="quiz-message">
+            {gameState.deathMessage.includes("Felicidades") ? (
+              <span className="win-text">{gameState.deathMessage}</span>
+            ) : (
+              <span className="lose-text">❌ {gameState.deathMessage}</span>
+            )}
+          </p>
+
+          <p className="quiz-score">
+            Tu puntuación final: <strong>{gameState.score}</strong>
+          </p>
+
+          {podium.length > 0 && (
+            <div className="quiz-podium">
+              <h3>🏆 Podio de Mejores Puntajes</h3>
+              <ol>
+                {podium.map((user, index) => (
+                  <li key={user.uid}>
+                    #{index + 1} - {user.name} - {user.score} pts
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          <button className="quiz-restart-btn" onClick={handleStartGame}>
+            🔁 Jugar de nuevo
+          </button>
+        </div>
+      )}
+
+      <GameUI
+        gameState={gameState}
+        onStartGame={handleStartGame}
+        podium={podium}
+      />
     </div>
   );
 };
