@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom'; // Asegúrate de usar 'react-router-dom'
 import './Home.css';
 
 const Home = () => {
@@ -16,48 +16,41 @@ const Home = () => {
         
       </section>
 
-      <section className="diseases-section">
+      <section className="diseases-section" id="diseases">
         <h2>Enfermedades Pulmonares</h2>
         
         <div className="bento-grid">
-          <Link to="/cancer-pulmonar" className="bento-item bento-item-0 red-card">
+          <Link to="/cancer-pulmonar" className="bento-item red-card">
             <h3>CANCER PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
-          
-          <Link to="/fibrosis-pulmonar" className="bento-item bento-item-1 white-card">
+          <Link to="/fibrosis-pulmonar" className="bento-item white-card">
             <h3>FIBROSIS PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
-          
-          <Link to="/asma" className="bento-item bento-item-2 white-card">
+          <Link to="/asma" className="bento-item white-card">
             <h3>ASMA</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
           
-          
-          <Link to="/hipertension-pulmonar" className="bento-item bento-item-3 red-card">
+          <Link to="/hipertension-pulmonar" className="bento-item red-card">
             <h3>HIPERTENSION PULMONAR</h3>
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
-
         </div>
       </section>
-      <section className="quiz-section">
-        <h2>¿ESTÁS LISTO PARA UN PEQUEÑO QUIZ?</h2>
-        <p className="description">
-          ¡Es hora de demostrar cuánto sabes sobre uno de los órganos más importantes del cuerpo humano! Antes de comenzar, recuerda que los pulmones no solo nos permiten respirar, sino que también cumplen un papel fundamental en el intercambio de gases que mantiene con vida a cada célula de nuestro cuerpo. Prepárate y responde con atención. ¡Comencemos el quiz!
 
+      <section className="quiz-section">
+        <h2>¿LISTO PARA UN JUEGO 3D DE 5 PREGUNTAS?</h2>
+        <p className="description">
+          Pon a prueba tu conocimiento sobre los pulmones con este breve quiz interactivo. Responde 5 preguntas en un entorno 3D y demuestra cuánto has aprendido. ¡Es educativo y divertido!
         </p>
         <Link to="/quiz">
-        <button className="quiz-btn">Ponte a Prueba</button>
+          <button className="quiz-btn">¡Comenzar Juego!</button>
         </Link>
-        
       </section>
-      
-      
     </div>
   );
 }

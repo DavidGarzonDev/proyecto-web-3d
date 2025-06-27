@@ -3,12 +3,10 @@ import CanvasAsthma from "./components/CanvasAsthma";
 import TreatmentAsthma from "./components/TreatmentAsthma";
 import SymptomsAsthma from "./components/SymptomsAsthma";
 import PrecautionAsthma from "./components/PrecautionAsthma";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
 const Asthma = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0); // Reinicia el scroll al cargar
-  }, []);
+  
 
   return (
     <> <div className="main-content">

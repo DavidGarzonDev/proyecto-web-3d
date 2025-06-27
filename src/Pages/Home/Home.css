@@ -14,7 +14,6 @@
     --scale-factor: 1.05;
 }
 
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -26,7 +25,6 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 
 .section-common {
     text-align: center;
@@ -41,18 +39,14 @@ body {
 
 .main-section h1 {
     font-size: 2.625rem;
-    /* 42px */
     margin-bottom: 0.625rem;
-    /* 10px */
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .main-section .subtitle {
     font-size: 1.25rem;
-    /* 20px */
     margin-bottom: 1.875rem;
-    /* 30px */
     text-align: center;
     font-weight: 300;
     color: var(--color-text);
@@ -60,10 +54,8 @@ body {
 
 .main-section .description {
     font-size: 1rem;
-    /* 16px */
     max-width: 700px;
     margin: 0 auto 1.875rem;
-    /* 30px */
     line-height: 1.6;
     color: var(--color-text);
 }
@@ -74,7 +66,6 @@ body {
     font-weight: bold;
     display: inline-block;
     margin-top: 1.25rem;
-    /* 20px */
     padding: 0.75rem 1.5rem;
     border: 2px solid var(--color-primary);
     border-radius: 60px;
@@ -88,6 +79,21 @@ body {
 }
 
 
+
+
+
+@keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
 .diseases-section {
     background-color: var(--color-secondary);
     padding: var(--section-padding);
@@ -95,18 +101,14 @@ body {
 
 .diseases-section h2 {
     font-size: 2rem;
-    /* 32px */
     margin-bottom: 2.5rem;
-    /* 40px */
     color: var(--color-primary);
     font-weight: 700;
 }
 
 .bento-grid {
-    text-decoration: none ;
     display: grid;
-    gap: 1rem;
-    /* 16px */
+    gap: 1.25rem;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -139,12 +141,28 @@ body {
 
 .bento-item h3 {
     font-size: 1.375rem;
-    /* 22px */
     margin-bottom: 1.25rem;
-    /* 20px */
     font-weight: 600;
 }
 
+.explore-btn {
+    background-color: transparent;
+    border: 2px solid currentColor;
+    color: inherit;
+    padding: 0.625rem 1.25rem;
+    border-radius: 60px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin-top: 1.25rem;
+    align-self: center;
+    cursor: pointer;
+    transition: all var(--transition-time) ease;
+}
+
+.explore-btn:hover {
+    background-color: var(--color-hover);
+    transform: scale(var(--scale-factor));
+}
 
 .quiz-section {
     background-color: var(--color-primary);
@@ -154,42 +172,15 @@ body {
 
 .quiz-section h2 {
     font-size: 2rem;
-    /* 32px */
     margin-bottom: 1.875rem;
-    /* 30px */
     font-weight: 700;
 }
 
 .quiz-section .description {
     font-size: 1rem;
-    /* 16px */
     max-width: 700px;
     margin: 0 auto 1.875rem;
-    /* 30px */
     line-height: 1.6;
-}
-
-
-.explore-btn {
-    background-color: transparent;
-    border: 2px solid currentColor;
-    color: inherit;
-    padding: 0.625rem 1.25rem;
-    /* 10px 20px */
-    border-radius: 60px;
-    font-weight: bold;
-    font-size: 0.875rem;
-    /* 14px */
-    margin-top: 1.25rem;
-    /* 20px */
-    align-self: center;
-    cursor: pointer;
-    transition: all var(--transition-time) ease;
-}
-
-.explore-btn:hover {
-    background-color: var(--color-hover);
-    transform: scale(var(--scale-factor));
 }
 
 .quiz-btn {
@@ -209,32 +200,10 @@ body {
     transform: scale(var(--scale-factor));
 }
 
-
+/* Responsive */
 @media (min-width: 768px) {
     .bento-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1.25rem;
-    }
-
-    .bento-item-0 {
-        grid-column: 1 / span 2;
-        grid-row: 1;
-    }
-
-    .bento-item-1 {
-        grid-column: 3;
-        grid-row: 1;
-    }
-
-    .bento-item-2 {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .bento-item-3 {
-        grid-column: 2 / span 2;
-        grid-row: 2;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -244,7 +213,6 @@ body {
     }
 
     .bento-item {
-        grid-column: 1 / span 2 !important;
         min-height: 180px;
     }
 
@@ -257,4 +225,3 @@ body {
         font-size: 1.75rem;
     }
 }
-
