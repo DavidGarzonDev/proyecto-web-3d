@@ -122,8 +122,7 @@ const Quiz = () => {
           isPaused: true,
           showQuestion: true,
         }));
-      }, 2000);
-    }
+    }, 3000); // Esperar 2 segundos para dar tiempo al jugador a pasar a la siguiente plataforma
   };
 
   const handleGameOver = (message = "¡Has caído al vacío!") => {
