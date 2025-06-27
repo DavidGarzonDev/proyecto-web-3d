@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { RigidBody, useRapier } from "@react-three/rapier";
 
-const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref) => {
+const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef, isPaused = false }, ref) => {
   // You can replace this with any of your existing models if desired
   // For now we'll use a simple box as a placeholder
   const playerRef = useRef();
@@ -16,11 +16,12 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
   
   const [canJump, setCanJump] = useState(true);
   const [hasActiveFloor, setHasActiveFloor] = useState(false);
-    const FORWARD_SPEED = 5;
-  const LATERAL_SPEED = 5;
+  const FORWARD_SPEED =3;
+  const LATERAL_SPEED = 3;
   const JUMP_FORCE = 8;
   const MAX_LATERAL_POSITION = 8; // Aumentado de 3 a 8 para permitir más movimiento lateral
-    // Make ref available for parent components
+  
+  // Make ref available for parent components
   useImperativeHandle(ref, () => ({
     getPosition: () => {
       if (rigidBodyRef.current) {
@@ -30,7 +31,8 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
     },
     getRigidBody: () => rigidBodyRef.current
   }));
-    // Handle collision detection using frames
+  
+  // Handle collision detection using frames
   useFrame(() => {
     if (!rigidBodyRef.current) return;
     
@@ -49,6 +51,8 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
   // Handle keyboard input
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (isPaused) return; // Don't handle input if paused
+      
       if (e.key.toLowerCase() === "a") {
         setControls((prev) => ({ ...prev, left: true }));
       }
@@ -79,8 +83,9 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, []);
-    // Check if player fell and update camera position
+  }, [isPaused]);
+  
+  // Check if player fell and update camera position
   useFrame(() => {
     if (rigidBodyRef.current) {
       const position = rigidBodyRef.current.translation();
@@ -101,37 +106,46 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
         cameraRef.current.lookAt(position.x, position.y, position.z - 5);
       }
       
-      // Auto-move player forward
-      rigidBodyRef.current.setLinvel({ x: 0, y: rigidBodyRef.current.linvel().y, z: -FORWARD_SPEED }, true);
-      
-      // Handle left-right movement
-      let lateralVelocity = 0;
-      if (controls.left && position.x > -MAX_LATERAL_POSITION) {
-        lateralVelocity = -LATERAL_SPEED;
-      } else if (controls.right && position.x < MAX_LATERAL_POSITION) {
-        lateralVelocity = LATERAL_SPEED;
-      }
-      
-      // Handle jumping
-      if (controls.jump && canJump && hasActiveFloor) {
+      // Auto-move player forward only when not paused
+      if (!isPaused) {
+        rigidBodyRef.current.setLinvel({ x: 0, y: rigidBodyRef.current.linvel().y, z: -FORWARD_SPEED }, true);
+        
+        // Handle left-right movement
+        let lateralVelocity = 0;
+        if (controls.left && position.x > -MAX_LATERAL_POSITION) {
+          lateralVelocity = -LATERAL_SPEED;
+        } else if (controls.right && position.x < MAX_LATERAL_POSITION) {
+          lateralVelocity = LATERAL_SPEED;
+        }
+        
+        // Handle jumping
+        if (controls.jump && canJump && hasActiveFloor) {
+          rigidBodyRef.current.setLinvel({ 
+            x: rigidBodyRef.current.linvel().x, 
+            y: JUMP_FORCE, 
+            z: rigidBodyRef.current.linvel().z 
+          }, true);
+          
+          // Prevent multiple jumps
+          setCanJump(false);
+          setTimeout(() => {
+            setCanJump(true);
+          }, 1000); // Cooldown for jumping
+        }
+        
         rigidBodyRef.current.setLinvel({ 
-          x: rigidBodyRef.current.linvel().x, 
-          y: JUMP_FORCE, 
+          x: lateralVelocity, 
+          y: rigidBodyRef.current.linvel().y, 
           z: rigidBodyRef.current.linvel().z 
         }, true);
-        
-        // Prevent multiple jumps
-        setCanJump(false);
-        setTimeout(() => {
-          setCanJump(true);
-        }, 1000); // Cooldown for jumping
+      } else {
+        // When paused, stop lateral and forward movement, but keep gravity
+        rigidBodyRef.current.setLinvel({ 
+          x: 0, 
+          y: rigidBodyRef.current.linvel().y, 
+          z: 0 
+        }, true);
       }
-      
-      rigidBodyRef.current.setLinvel({ 
-        x: lateralVelocity, 
-        y: rigidBodyRef.current.linvel().y, 
-        z: rigidBodyRef.current.linvel().z 
-      }, true);
     }
   });
   
@@ -148,7 +162,7 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef }, ref)
     >
       <mesh ref={playerRef} castShadow>
         <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial color="#e74c3c" />
+        <meshStandardMaterial color="#e74c3c"   roughness={0.5}/>
       </mesh>
     </RigidBody>
   );

@@ -1,93 +1,149 @@
-import { useState, useRef, useEffect } from "react";
-import { Text } from "@react-three/drei";
+import { useState, useRef, useEffect, useMemo } from "react";
+import { Text, useTexture } from "@react-three/drei";
+import { RepeatWrapping } from "three";
 import { RigidBody, CuboidCollider } from "@react-three/rapier";
 import { useFrame } from "@react-three/fiber";
-import Platform from "./Platform";
 
-const Door = ({ position, doorText, isCorrect, onCorrectAnswer }) => {
+const Door = ({ position, doorText, isCorrect, onCorrectAnswer, onGameOver }) => {
   const [playerEntered, setPlayerEntered] = useState(false);
   const [floorCollapsed, setFloorCollapsed] = useState(false);
+  const [doorOpen, setDoorOpen] = useState(false);
+
   const floorRef = useRef();
-    // Handle player entering the door
-  const handleSensorEnter = () => {
-    if (playerEntered) return; // Prevent multiple triggers
+  const leftDoorRef = useRef();
+  const rightDoorRef = useRef();
+
+  // 🧱 Textura de pared
+  const WALL_PATH = useMemo(() => "/textures/door/", []);
+  const wallTexture = useTexture({
+    map: WALL_PATH + "door-color.png",
+    aoMap: WALL_PATH + "door-ao.png",
+    roughnessMap: WALL_PATH + "door-rough.png",
+    normalMap: WALL_PATH + "door-normal.png",
+  });
+
+  Object.values(wallTexture).forEach((tex) => {
+    tex.wrapS = RepeatWrapping;
+    tex.wrapT = RepeatWrapping;
     
+    tex.anisotropy = 16;
+  });
+
+  // Detectar entrada del jugador
+  const handleSensorEnter = () => {
+    if (playerEntered) return;
+
+    setDoorOpen(true);
     setPlayerEntered(true);
+
     if (isCorrect) {
       onCorrectAnswer();
     } else {
-      // Let the floor collapse after a short delay
       setTimeout(() => {
         setFloorCollapsed(true);
       }, 300);
-      
-      // Also trigger game over with custom message
+
       setTimeout(() => {
-        onCorrectAnswer("¡Respuesta incorrecta! Has caído.");
-      }, 1000);
+        onGameOver("¡Respuesta incorrecta! Has caído.");
+      }, 5000);
     }
-  };  // Make the floor collapse when necessary
+  };
+
+  // Colapsar el piso
   useEffect(() => {
     if (floorCollapsed && floorRef.current) {
-      // Simplemente mover el piso hacia abajo rápidamente
       floorRef.current.setTranslation({ x: position[0], y: -20, z: position[2] - 2 });
     }
   }, [floorCollapsed, position]);
-  
+
+  // Abrir las puertas
+  useFrame((_, delta) => {
+    if (doorOpen && leftDoorRef.current && rightDoorRef.current) {
+      if (leftDoorRef.current.rotation.y > -Math.PI / 1.5) {
+        leftDoorRef.current.rotation.y -= delta * 3;
+      }
+      if (rightDoorRef.current.rotation.y < Math.PI / 1.5) {
+        rightDoorRef.current.rotation.y += delta * 3;
+      }
+    }
+  });
+
   return (
     <group position={position}>
-      {/* Door frame */}
+      {/* Marco de la puerta */}
       <RigidBody type="fixed" colliders="cuboid">
-        {/* Left side */}
+        {/* Lado izquierdo */}
         <mesh position={[-1.1, 1.5, 0]} castShadow>
           <boxGeometry args={[0.2, 3, 0.5]} />
-          <meshStandardMaterial color={isCorrect ? "#27ae60" : "#e74c3c"} />
+          <meshStandardMaterial {...wallTexture} />
         </mesh>
-        
-        {/* Right side */}
+
+        {/* Lado derecho */}
         <mesh position={[1.1, 1.5, 0]} castShadow>
           <boxGeometry args={[0.2, 3, 0.5]} />
-          <meshStandardMaterial color={isCorrect ? "#27ae60" : "#e74c3c"} />
+          <meshStandardMaterial {...wallTexture} />
         </mesh>
-        
-        {/* Top */}
+
+        {/* Parte superior */}
         <mesh position={[0, 3, 0]} castShadow>
           <boxGeometry args={[2.4, 0.2, 0.5]} />
-          <meshStandardMaterial color={isCorrect ? "#27ae60" : "#e74c3c"} />
+          <meshStandardMaterial {...wallTexture} />
         </mesh>
-        
-        {/* Door text */}
-        <group position={[0, 3.5, 0]}>
-          <Text
-            color="white"
-            fontSize={0.3}
-            maxWidth={2}
-            textAlign="center"
-          >
+
+        {/* Texto de la puerta */}
+        <group position={[0, 3.5, 0.5]}>
+          <Text color="white" fontSize={0.3} maxWidth={2} textAlign="center">
             {doorText}
           </Text>
         </group>
       </RigidBody>
-      
-      {/* Floor after door that may collapse */}
-      <RigidBody 
-        ref={floorRef}
-        type="fixed"
-        position={[0, 0, -2]} 
-      >
+
+      {/* Puerta izquierda */}
+      <group ref={leftDoorRef} position={[-1, 1.5, 0]}>
+        <mesh castShadow position={[0.5, 0, 0]}>
+          <boxGeometry args={[1, 2.8, 0.2]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+        {/* Manija */}
+        <mesh castShadow position={[0.85, 0, 0.15]}>
+          <sphereGeometry args={[0.1, 16, 16]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+        <mesh castShadow position={[0.85, 0, 0.05]}>
+          <cylinderGeometry args={[0.03, 0.03, 0.15, 8]} rotation={[Math.PI / 2, 0, 0]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+      </group>
+
+      {/* Puerta derecha */}
+      <group ref={rightDoorRef} position={[1, 1.5, 0]}>
+        <mesh castShadow position={[-0.5, 0, 0]}>
+          <boxGeometry args={[1, 2.8, 0.2]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+        {/* Manija */}
+        <mesh castShadow position={[-0.85, 0, 0.15]}>
+          <sphereGeometry args={[0.1, 16, 16]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+        <mesh castShadow position={[-0.85, 0, 0.05]}>
+          <cylinderGeometry args={[0.03, 0.03, 0.15, 8]} rotation={[Math.PI / 2, 0, 0]} />
+          <meshStandardMaterial {...wallTexture} />
+        </mesh>
+      </group>
+
+      {/* Piso que colapsa */}
+      <RigidBody ref={floorRef} type="fixed" position={[0, 0, -2]}>
         <mesh receiveShadow>
           <boxGeometry args={[2, 0.2, 4]} />
-          <meshStandardMaterial 
-            color={isCorrect ? "#27ae60" : "#e74c3c"} 
-            opacity={0.8} 
-            transparent
-          />
+          <meshStandardMaterial {...wallTexture} />
         </mesh>
       </RigidBody>
-        {/* Sensor to detect player entering - ahora más ancho y profundo */}
-      <CuboidCollider 
-        position={[0, 1.5, 0]} 
-        args={[1.5, 1.5, 0.4]} /* Aumentada la anchura (1 a 1.5) y profundidad (0.2 a 0.4) */
+
+      {/* Sensor de entrada */}
+      <CuboidCollider
+        position={[0, 1.5, -1]}
+        args={[1.5, 1.5, 2]}
         sensor
         onIntersectionEnter={handleSensorEnter}
       />

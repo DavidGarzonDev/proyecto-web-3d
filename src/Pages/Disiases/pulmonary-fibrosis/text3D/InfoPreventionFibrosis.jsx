@@ -9,9 +9,9 @@ const InfoPreventionFibrosis = () => {
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <Html center position={[0, 1.3, 0]} className="text-container">
+    <Html center position={[2, 1.3, 0]} className="text-container">
       <div className="text-treatment">
-        <button onClick={openModal}>Información</button>
+        <button onClick={openModal}>ⓘ</button>
 
         {isModalOpen && (
           <div className="modal-overlay" onClick={closeModal}>
@@ -20,7 +20,8 @@ const InfoPreventionFibrosis = () => {
                 &times;
               </button>
               <h3>
-                Rota el modelo con el mouse, Dale clic o a la tecla G para animar
+                Rota el modelo con el mouse, Dale clic o a la tecla G para
+                animar
               </h3>
             </div>
           </div>

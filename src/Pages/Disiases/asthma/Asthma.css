@@ -6,6 +6,10 @@
   --color-hover: rgba(255, 255, 255, 0.1);
   --color-gray: #808080;
 }
+.main-content {
+  margin-top: 5px;
+
+}
 
 
 .canvas-asthma canvas,
@@ -291,4 +295,27 @@
 .symptoms-asthma-list li {
   margin-bottom: 0.5rem;
   line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .canvas-asthma canvas {
+    width: 100%;
+    height: 300px;
+  }
+  .symptoms-asthma-list {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  .symptoms-asthma-list h3 {
+    font-size: 1rem;
+  }
+  
+  .symptoms-asthma-list ul {
+    padding-left: 1rem;
+  }
+  
+  .symptoms-asthma-list li {
+    margin-bottom: 0.3rem;
+  }
 }

@@ -9,10 +9,9 @@ const InfoPulmonaryFirbosis = () => {
   const openModal = () => setIsModalOpen(true);
 
   return (
-    <Html center position={[0, 1.3, 0]} className="text-container">
+    <Html center position={[1, 1.3, 0]} className="text-container">
       <div className="text-treatment">
-        <button onClick={openModal}>Información</button>
-
+        <button onClick={openModal}>ⓘ</button>
         {isModalOpen && (
           <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>

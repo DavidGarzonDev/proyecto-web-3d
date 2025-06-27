@@ -1,83 +1,100 @@
+/* Contenedor principal del juego */
 .quiz-container {
   width: 100%;
   height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
 }
 
+/* Panel con la puntuación u otra info */
 .quiz-ui {
   position: absolute;
   top: 20px;
   left: 20px;
-  color: white;
-  font-size: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: rgba(255, 0, 0, 0.6);
+  padding: 10px 18px;
+  border-radius: 8px;
   z-index: 100;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .quiz-ui h3 {
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
+/* Pregunta principal */
 .quiz-question {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 14px 24px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.3rem;
   z-index: 100;
   text-align: center;
-  max-width: 80%;
+  max-width: 90%;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
 }
 
+/* AYUDA DE CONTROLES - PARTE SUPERIOR DERECHA */
 .controls-help {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 0, 0, 0.6);
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #fff;
   z-index: 100;
   text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
 .controls-help p {
-  margin: 5px 0;
+  margin: 0;
 }
 
+/* Controles iniciales */
 .quiz-controls {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px 40px;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
   color: white;
   z-index: 100;
   min-width: 300px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .quiz-controls h2 {
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .quiz-controls button {
   background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1.2rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 .quiz-controls button:hover {
@@ -85,24 +102,23 @@
   transform: scale(1.05);
 }
 
-.death-message {
-  background-color: #e74c3c;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
+/* Mensajes de muerte o victoria */
+.death-message,
+.victory-message {
+  padding: 10px 20px;
+  border-radius: 8px;
   margin: 15px 0;
   font-weight: bold;
   font-size: 1.2rem;
+  color: white;
+}
+
+.death-message {
+  background-color: #e74c3c;
 }
 
 .victory-message {
   background-color: #27ae60;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  margin: 15px 0;
-  font-weight: bold;
-  font-size: 1.2rem;
   animation: pulse 1.5s infinite;
 }
 
@@ -111,3 +127,88 @@
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+/* Pausa del juego */
+.quiz-paused {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  min-width: 300px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.quiz-paused p {
+  margin: 10px 0 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Barra de carga (observa la pregunta) */
+.loading-bar {
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #3498db;
+  animation: loading 5s linear forwards;
+}
+
+@keyframes loading {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .quiz-question,
+  .controls-help,
+  .quiz-controls,
+  .quiz-paused {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .quiz-controls button {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+
+  .quiz-ui {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .controls-help {
+    top: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación para el puntaje */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+.score-pop {
+  animation: pop 0.3s ease-in-out;
+}
+
