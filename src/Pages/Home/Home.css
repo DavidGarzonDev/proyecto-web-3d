@@ -1,227 +1,239 @@
 :root {
-    --color-primary: #d32f2f;
-    --color-secondary: #ffffff;
-    --color-text: #333333;
-    --color-border: #e0e0e0;
-    --color-hover: rgba(255, 255, 255, 0.1);
-    --color-gray: #808080;
+  --color-primary: #d32f2f;
+  --color-secondary: #ffffff;
+  --color-text: #333333;
+  --color-border: #e0e0e0;
+  --color-hover: rgba(255, 255, 255, 0.1);
+  --color-gray: #808080;
 
-    --section-padding: 80px 40px;
-    --card-padding: 40px;
-    --mobile-padding: 60px 24px;
+  --section-padding: 80px 40px;
+  --card-padding: 40px;
+  --mobile-padding: 60px 24px;
 
-    --transition-time: 0.3s;
-    --scale-factor: 1.05;
+  --transition-time: 0.3s;
+  --scale-factor: 1.05;
 }
 
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-text);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-common {
-    text-align: center;
-    padding: var(--section-padding);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .main-section {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
-    padding: var(--section-padding);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  padding: var(--section-padding);
+  text-align: center;
 }
 
 .main-section h1 {
-    font-size: 2.625rem;
-    margin-bottom: 0.625rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+  font-size: 2.625rem;
+  margin-bottom: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-.main-section .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 1.875rem;
-    text-align: center;
-    font-weight: 300;
-    color: var(--color-text);
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 0 auto 1.5rem;
+  max-width: 700px;
+  text-align: center;
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.main-section .description {
-    font-size: 1rem;
-    max-width: 700px;
-    margin: 0 auto 1.875rem;
-    line-height: 1.6;
-    color: var(--color-text);
+
+
+.description {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 1.875rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  text-align: center;
 }
 
 .info-link {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--color-primary);
-    border-radius: 60px;
-    transition: all var(--transition-time) ease;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 60px;
+  transition: all var(--transition-time) ease;
+  cursor: pointer;
 }
 
 .info-link:hover {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    transform: scale(var(--scale-factor));
-}
-
-
-
-
-
-@keyframes bounceDown {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(6px);
-    }
-    60% {
-        transform: translateY(3px);
-    }
+  background-color: #b71c1c;
+  transform: scale(var(--scale-factor));
 }
 
 .diseases-section {
-    background-color: var(--color-secondary);
-    padding: var(--section-padding);
+  background-color: var(--color-secondary);
+  padding: var(--section-padding);
 }
 
 .diseases-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-    color: var(--color-primary);
-    font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-align: center;
 }
 
 .bento-grid {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .bento-item {
-    text-decoration: none;
-    border-radius: 12px;
-    padding: var(--card-padding);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
-    transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 240px;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+  box-shadow: 0 4px 20px rgba(211, 47, 47, 0.1); /* blur rojo suave */
 }
 
 .bento-item:hover {
-    transform: scale(0.98);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
 }
 
-.red-card {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-}
-
-.white-card {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
+.bento-item img {
+  width: 90px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 .bento-item h3 {
-    font-size: 1.375rem;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
+  font-size: 1.375rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: center;
 }
 
 .explore-btn {
-    background-color: transparent;
-    border: 2px solid currentColor;
-    color: inherit;
-    padding: 0.625rem 1.25rem;
-    border-radius: 60px;
-    font-weight: bold;
-    font-size: 0.875rem;
-    margin-top: 1.25rem;
-    align-self: center;
-    cursor: pointer;
-    transition: all var(--transition-time) ease;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 60px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-time) ease;
 }
 
 .explore-btn:hover {
-    background-color: var(--color-hover);
-    transform: scale(var(--scale-factor));
+  background-color: #b71c1c;
+  transform: scale(var(--scale-factor));
 }
 
 .quiz-section {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    padding: var(--section-padding);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: var(--section-padding);
+  text-align: center;
 }
 
 .quiz-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.875rem;
-    font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.875rem;
+  font-weight: 700;
 }
 
-.quiz-section .description {
-    font-size: 1rem;
-    max-width: 700px;
-    margin: 0 auto 1.875rem;
-    line-height: 1.6;
+.quiz-description {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 1.875rem;
+  line-height: 1.6;
+  color: white;
 }
 
 .quiz-btn {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    padding: 1.25rem 1.25rem;
-    border-radius: 60px;
-    font-weight: bold;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: all var(--transition-time) ease;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 1.25rem 1.25rem;
+  border-radius: 60px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-time) ease;
 }
 
 .quiz-btn:hover {
-    background-color: var(--color-gray);
-    transform: scale(var(--scale-factor));
+  background-color: var(--color-gray);
+  transform: scale(var(--scale-factor));
+}
+
+/* Elimina líneas azules */
+a:focus,
+a:active,
+.bento-item:focus,
+.bento-item:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 767px) {
-    .section-common {
-        padding: var(--mobile-padding);
-    }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .bento-item {
-        min-height: 180px;
-    }
+  .main-section h1 {
+    font-size: 2rem;
+  }
 
-    .main-section h1 {
-        font-size: 2rem;
-    }
-
-    .diseases-section h2,
-    .quiz-section h2 {
-        font-size: 1.75rem;
-    }
+  .diseases-section h2,
+  .quiz-section h2 {
+    font-size: 1.75rem;
+  }
 }
+
+.slide-hint {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  animation: upDown 2s ease-in-out infinite;
+  position: relative;
+  margin-top: 70px;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+}
+

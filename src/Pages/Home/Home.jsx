@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Asegúrate de usar 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -6,37 +6,40 @@ const Home = () => {
     <div className="container">
       <section className="main-section">
         <h1>Conoce tus Pulmones en 3D</h1>
-        <p className="subtitle">El órgano clave para tu respiración</p>
+        <p className="subtitle">El órgano vital que respira por ti</p>
         <p className="description">
-          El pulmón es un órgano vital del sistema respiratorio encargado de intercambiar gases entre el aire y la sangre. Su principal función es absorber oxígeno y expulsar dióxido de carbono. Está formado por dos partes, el pulmón derecho y el izquierdo, y se encuentra protegido por la caja torácica. Su estructura es esponjosa y está compuesta por millones de alvéolos, donde ocurre el intercambio gaseoso.
+          Descubre cómo funcionan tus pulmones, cómo se ven por dentro y qué los puede afectar.
         </p>
         <Link to="/explorar">
-          <div className="info-link">Ver más información</div>
+          <div className="info-link">¿Cómo funcionan los pulmones?</div>
         </Link>
-        
+        <h2 className='slide-hint'>desliza 🢃</h2>
       </section>
 
       <section className="diseases-section" id="diseases">
         <h2>Enfermedades Pulmonares</h2>
-        
         <div className="bento-grid">
-          <Link to="/cancer-pulmonar" className="bento-item red-card">
-            <h3>CANCER PULMONAR</h3>
+          <Link to="/cancer-pulmonar" className="bento-item">
+            <h3>CÁNCER PULMONAR</h3>
+            <img src="/iconsHome/cancer.png" alt="Ícono cáncer pulmonar" />
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
-          
-          <Link to="/fibrosis-pulmonar" className="bento-item white-card">
+
+          <Link to="/fibrosis-pulmonar" className="bento-item">
             <h3>FIBROSIS PULMONAR</h3>
+            <img src="/iconsHome/fibrosis.png" alt="Ícono fibrosis pulmonar" />
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
-          
-          <Link to="/asma" className="bento-item white-card">
+
+          <Link to="/asma" className="bento-item">
             <h3>ASMA</h3>
+            <img src="/iconsHome/asma.png" alt="Ícono asma" />
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
-          
-          <Link to="/hipertension-pulmonar" className="bento-item red-card">
-            <h3>HIPERTENSION PULMONAR</h3>
+
+          <Link to="/hipertension-pulmonar" className="bento-item">
+            <h3>HIPERTENSIÓN PULMONAR</h3>
+            <img src="/iconsHome/hipertension.png" alt="Ícono hipertensión pulmonar" />
             <button className="explore-btn">Explorar en 3D</button>
           </Link>
         </div>
@@ -44,8 +47,8 @@ const Home = () => {
 
       <section className="quiz-section">
         <h2>¿LISTO PARA UN JUEGO 3D DE 5 PREGUNTAS?</h2>
-        <p className="description">
-          Pon a prueba tu conocimiento sobre los pulmones con este breve quiz interactivo. Responde 5 preguntas en un entorno 3D y demuestra cuánto has aprendido. ¡Es educativo y divertido!
+        <p className="quiz-description">
+          Responde preguntas interactivas sobre tus pulmones y demuestra cuánto sabes de una forma divertida.
         </p>
         <Link to="/quiz">
           <button className="quiz-btn">¡Comenzar Juego!</button>
@@ -53,6 +56,6 @@ const Home = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Home;
