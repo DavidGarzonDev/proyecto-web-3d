@@ -6,6 +6,7 @@ import LoungMedicineHypertension from "../modelos-3d-hypertension/LungMedicineHy
 import Recipe from "../modelos-3d-hypertension/Recipe.jsx";
 import StaginTwo from "./staging/StagingTwo.jsx";
 import "../pulmonaryHypertension.css";
+import TextAlert3 from "../texts/TextAlert3.jsx";
 
 const PrecautionHypertension = () => {
   const meshRef = useRef();
@@ -37,6 +38,7 @@ const PrecautionHypertension = () => {
         />
         <Recipe position={[0, 0, 0]} />
         <StaginTwo />
+        <TextAlert3 />
       </Canvas>
     </div>
   );

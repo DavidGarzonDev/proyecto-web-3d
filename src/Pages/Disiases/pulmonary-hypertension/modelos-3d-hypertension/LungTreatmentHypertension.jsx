@@ -1,23 +1,35 @@
 /* eslint-disable react/no-unknown-property */
-
 import { useGLTF } from '@react-three/drei';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
 const LungTreatmentHypertension = (props) => {
   const { nodes, materials } = useGLTF('/models-3d-hypertension/inhaler-model.glb');
   const meshRef = useRef();
+  const [animate, setAnimate] = useState(false);
 
-  // Rotación animada en el eje Y
+  // Toggle animación con tecla F
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key.toLowerCase() === 'f') {
+        setAnimate((prev) => !prev); // Toggle
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Animación: rotación y flotación
   useFrame((state, delta) => {
+    if (!animate || !meshRef.current) return;
+
     const t = state.clock.getElapsedTime();
-    if (meshRef.current) {
-      
-      //meshRef.current.rotation.y += delta * 0.4; // velocidad ajustable
-      meshRef.current.position.y = Math.sin(t * 1.5) * 0.3; // flotación
-    }
+    meshRef.current.rotation.y += delta * 0.4;
+    meshRef.current.position.y = Math.sin(t * 1.5) * 0.3;
   });
 
+  // Color del material
   materials.MaterialInhaler.color.set("white");
 
   return (
