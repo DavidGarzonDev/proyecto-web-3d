@@ -11,7 +11,6 @@ main {
   padding-top: 100px; /* asegura espacio debajo del header fijo */
 }
 
-
 .header-container {
   position: fixed;
   top: 0;
@@ -174,6 +173,43 @@ main {
   z-index: 2000;
 }
 
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.custom-modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.custom-modal-overlay button {
+  margin-top: 1.5rem;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.custom-modal-overlay button:hover {
+  background-color: #d32f2f;
+}
+
 /* ------------------- Media Queries ------------------- */
 
 @media (max-width: 768px) {
@@ -188,7 +224,7 @@ main {
 
   .logo-link {
     margin-bottom: 0;
-    z-index:  2000;
+    z-index: 2000;
   }
 
   .navbar ul {
@@ -205,7 +241,7 @@ main {
     background-color: var(--color-primary);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-    z-index:  2000;
+    z-index: 2000;
   }
 
   .header-container.menu-open .navbar ul {
@@ -254,7 +290,7 @@ main {
     display: block;
     font-size: 1.8rem;
     margin-left: auto;
-    z-index: 2000 ;
+    z-index: 2000;
   }
 
   .logo-link,
@@ -311,13 +347,11 @@ main {
 
 .user-name-button {
   font-family: poppins, sans-serif;
-  margin-top: ;
   display: relative;
   align-items: center;
   gap: 0.5rem;
   background-color: var(--color-primary);
   color: var(--color-secondary);
-  
   border-radius: 4px;
   font-weight: bold;
   pointer-events: none;
@@ -326,4 +360,3 @@ main {
 .user-icon {
   font-size: 1.2rem;
 }
-
