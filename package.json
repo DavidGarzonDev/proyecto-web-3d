@@ -12,7 +12,7 @@
     "login": "vercel login"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.6",
+    "@react-three/drei": "^10.3.0",
     "@react-three/fiber": "^9.1.2",
     "@react-three/rapier": "^2.1.0",
     "@types/three": "^0.175.0",

@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import { useGLTF, Html } from '@react-three/drei';
+import { useGLTF, PositionalAudio } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
+import { useEffect, useRef } from 'react';
 
 const LoungMedicineHypertension = ({
   meshRef,
@@ -12,21 +13,28 @@ const LoungMedicineHypertension = ({
   ...props
 }) => {
   const { nodes, materials } = useGLTF('/models-3d-hypertension/football-ball.glb');
+  const audioGoal = useRef();
 
+  // Reproduce rebote animado
   useFrame((_, delta) => {
     if (bouncing && meshRef.current) {
-      velocityRef.current -= 9.8 * delta; // gravedad
+      velocityRef.current -= 9.8 * delta;
       positionYRef.current += velocityRef.current * delta;
 
       if (positionYRef.current < 1) {
         positionYRef.current = 1;
-        velocityRef.current = -velocityRef.current * 0.7; // rebote con pérdida
+        velocityRef.current = -velocityRef.current * 0.7;
 
         if (Math.abs(velocityRef.current) < 0.5) {
           velocityRef.current = 0;
           positionYRef.current = 1;
           meshRef.current.position.y = 1;
           setBouncing(false);
+
+          // 👇 Detener el audio si está sonando
+          if (audioGoal.current?.isPlaying) {
+            audioGoal.current.stop();
+          }
         }
       }
 
@@ -34,12 +42,38 @@ const LoungMedicineHypertension = ({
     }
   });
 
-  const handleBounce = () => {
-    if (!bouncing) {
-      velocityRef.current = 10; // Rebote inicial más alto
-      setBouncing(true);
+  // Configura audio 3D al cargar
+  useEffect(() => {
+    if (audioGoal.current) {
+      audioGoal.current.setRefDistance(5);
+      audioGoal.current.setRolloffFactor(2);
+      audioGoal.current.setDistanceModel("linear");
     }
-  };
+  }, []);
+
+  // Teclas F y G
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const key = e.key.toLowerCase();
+      if (!bouncing) {
+        if (key === 'f') {
+          velocityRef.current = 8;
+          setBouncing(true);
+        } else if (key === 'g') {
+          velocityRef.current = 15;
+          setBouncing(true);
+
+          if (audioGoal.current) {
+            audioGoal.current.stop(); // reinicia
+            audioGoal.current.play(); // reproduce
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [bouncing, setBouncing]);
 
   return (
     <group {...props} dispose={null} ref={meshRef}>
@@ -59,36 +93,14 @@ const LoungMedicineHypertension = ({
         rotation={[-Math.PI / -1, -1.5, -3]}
         scale={100}
       />
-
-      {/* Botón fijo en la esquina superior derecha */}
-      {!bouncing && (
-        <Html
-          position={[0, 0, 0]}
-          transform={false}
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            pointerEvents: "auto",
-          }}
-        >
-          <button
-            onClick={handleBounce}
-            style={{
-              padding: "8px 16px",
-              backgroundColor: "red",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontWeight: "bold",
-              boxShadow: "0 2px 5px rgba(0,0,0,0.3)",
-            }}
-          >
-            Presione
-          </button>
-        </Html>
-      )}
+      <PositionalAudio
+        ref={audioGoal}
+        url="/sounds/Goal.mp3"
+        distance={10}
+        loop={false}
+        autoplay={false}
+        position={[0, 0, 0]}
+      />
     </group>
   );
 };
