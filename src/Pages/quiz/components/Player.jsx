@@ -162,7 +162,7 @@ const Player = forwardRef(({ position = [0, 1, 0], onGameOver, cameraRef, isPaus
     >
       <mesh ref={playerRef} castShadow>
         <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial color="#e74c3c" />
+        <meshStandardMaterial color="#e74c3c"   roughness={0.5}/>
       </mesh>
     </RigidBody>
   );
