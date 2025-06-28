@@ -33,7 +33,7 @@ const SymptomsHypertension = () => {
     <Canvas
       className="canvas-symptoms-hypertension"
       shadows={true}
-      camera={{ position: [4, 2, 6.5], fov: 50 }}
+      camera={{ position: [1.5, 2, 6.5], fov: 50 }}
     >
       <LightsHypertensionSymptoms lightPosition={[0, 5, 0]} />
       <OrbitControls enableZoom enablePan enableRotate />

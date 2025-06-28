@@ -11,7 +11,7 @@ const LungTreatmentHypertension = (props) => {
   // Toggle animación con tecla F
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key.toLowerCase() === 'f') {
+      if (event.key.toLowerCase() === 'd') {
         setAnimate((prev) => !prev); // Toggle
       }
     };
