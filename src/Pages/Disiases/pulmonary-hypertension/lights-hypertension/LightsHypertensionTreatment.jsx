@@ -18,9 +18,9 @@ const LightsHypertensionTreatment = ({ lightPosition = [0, 10, 0] }) => {
       <spotLight
         ref={spotLightRef}
         color={"blue"}
-        position={[4, 2, -2]}
-        distance={6}
-        intensity={100}
+        position={[7, 1, -2]}
+        distance={10}
+        intensity={200}
         angle={Math.PI / 14}
         penumbra={10}
         castShadow

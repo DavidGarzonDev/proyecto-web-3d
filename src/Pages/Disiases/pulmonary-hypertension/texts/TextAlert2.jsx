@@ -29,7 +29,7 @@ const TextAlert2 = () => {
               >
                 &times;
               </button>
-              <h3>¡Presions "F" para flotar!</h3>
+              <h3>¡Presions "D" para flotar!</h3>
             </div>
           </div>
         )}
