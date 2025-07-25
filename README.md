@@ -63,6 +63,10 @@ npm run dev
 ## 🏫 Desarrollado por
 
 Este proyecto fue creado por estudiantes de la **Universidad del Valle** como parte de un trabajo académico enfocado en tecnología educativa interactiva y desarrollo web moderno.
+Oscar David Estrada
+Andres Giovanni Molina
+Juan Camilo Taborda 
+Juan David Garzon
 
 ---
 
