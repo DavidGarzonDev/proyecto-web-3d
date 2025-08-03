@@ -1,7 +1,7 @@
 
 # 🌐 Proyecto Web 3D Educativo
 
-[![Estado del Proyecto](https://img.shields.io/badge/estado%20terminado-green)](https://proyecto-web-3d-davidgarzondevs-projects.vercel.app)
+[![Estado del Proyecto](https://img.shields.io/badge/%20terminado-green)](https://proyecto-web-3d-davidgarzondevs-projects.vercel.app)
 [![Licencia](https://img.shields.io/badge/licencia-MIT-blue)](#licencia)
 
 Este es un sitio web educativo desarrollado por estudiantes de la **Universidad del Valle**, utilizando tecnologías modernas para enseñar de forma interactiva sobre enfermedades del sistema respiratorio mediante contenido explicativo y animaciones en 3D.
