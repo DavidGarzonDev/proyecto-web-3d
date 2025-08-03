@@ -36,8 +36,8 @@ https://proyecto-web-3d-davidgarzondevs-projects.vercel.app
 
 1. Clonar el repositorio:  
 ```bash
-git clone https://github.com/DavidGarzonDev/proyecto-web-3d.git```
-
+git clone https://github.com/DavidGarzonDev/proyecto-web-3d.git
+---
 2. Instalar dependencias:
 
 
