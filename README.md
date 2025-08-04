@@ -1,87 +1,75 @@
-
-
 # 🌐 Proyecto Web 3D Educativo
 
-![Estado del Proyecto](https://img.shields.io/badge/Terminado-%2312B886?style=for-the-badge&logoColor=white) [![Licencia](https://img.shields.io/badge/licencia-MIT-blue)](#licencia)
+![Estado del Proyecto](https://img.shields.io/badge/Terminado-%2312B886?style=for-the-badge&logoColor=white)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-blue?style=flat-square)](#licencia)
 
-Este es un sitio web educativo desarrollado por estudiantes de la **Universidad del Valle**, utilizando tecnologías modernas para enseñar de forma interactiva sobre enfermedades del sistema respiratorio mediante contenido explicativo y animaciones en 3D. Actualmente, el proyecto **ya está terminado** e incluye una sección dedicada al **asma**, con posibilidad de expansión a otras enfermedades en el futuro.
+Este sitio web educativo fue desarrollado por estudiantes de la **Universidad del Valle** con el objetivo de enseñar de forma interactiva sobre enfermedades del sistema respiratorio. Gracias al uso de tecnologías modernas y visuales en 3D, el aprendizaje se vuelve más atractivo y accesible.  
+Actualmente, el proyecto **ya está terminado** y se enfoca en el **asma**, con la posibilidad de incluir otras enfermedades en futuras actualizaciones.
 
-🔗 **Link al proyecto**:  
-https://proyecto-web-3d-davidgarzondevs-projects.vercel.app
-
----
-
-## ✨ Características
-
-- Información clara y precisa sobre enfermedades respiratorias.  
-- Diseño responsivo, accesible desde cualquier dispositivo.  
-- Navegación fluida mediante rutas con React Router.  
-- Integración de ilustraciones y diseño 3D.  
-- Arquitectura preparada para futuras expansiones.  
+🔗 **Explora el proyecto aquí**:  
+👉 https://proyecto-web-3d-davidgarzondevs-projects.vercel.app
 
 ---
 
-## ⚙️ Tecnologías Utilizadas
+## ✨ Características principales
 
-- React.js  
-- React Router DOM  
-- React Icons  
-- CSS (Flexbox y Grid)  
-- Vite  
-- Vercel  
+- ✅ Contenido claro y educativo sobre enfermedades respiratorias  
+- ✅ Diseño responsivo, adaptable a cualquier dispositivo  
+- ✅ Navegación fluida mediante React Router  
+- ✅ Integración de ilustraciones interactivas en 3D  
+- ✅ Arquitectura lista para crecer y escalar  
 
 ---
 
-## 🚀 Instalación y Uso Local
+## ⚙️ Tecnologías implementadas
 
-1. Clonar el repositorio:  
+- 🧠 **React.js**  
+- 🚏 **React Router DOM**  
+- 🎨 **React Icons**  
+- 🧱 **CSS moderno (Flexbox y Grid)**  
+- ⚡ **Vite**  
+- ☁️ **Vercel** (deploy)
+
+---
+
+## 🚀 Instalación y ejecución local
+
+Sigue estos pasos para probar el proyecto en tu máquina:
+
 ```bash
+# 1. Clona el repositorio
 git clone https://github.com/DavidGarzonDev/proyecto-web-3d.git
----
-2. Instalar dependencias:
 
-
-
+# 2. Entra al directorio
 cd proyecto-web-3d
+
+# 3. Instala las dependencias
 npm install
 
-3. Ejecutar el servidor de desarrollo:
-
-
-
+# 4. Ejecuta el servidor de desarrollo
 npm run dev
+```
 
-4. Abre http://localhost:5173 en tu navegador.
-
-
-
+Luego, abre tu navegador en `http://localhost:5173`
 
 ---
 
-🏫 Desarrollado por
+## 👨‍💻 Equipo de desarrollo
 
-Este proyecto fue creado por estudiantes de la Universidad del Valle como parte de un trabajo académico enfocado en tecnología educativa interactiva y desarrollo web moderno:
+Proyecto realizado por estudiantes de la **Universidad del Valle** como parte de una iniciativa académica en tecnología educativa:
 
-Oscar David Estrada
-
-Andrés Giovanni Molina
-
-Juan Camilo Taborda
-
-Juan David Garzón
-
-
+- 🎓 Oscar David Estrada  
+- 🎓 Andrés Giovanni Molina  
+- 🎓 Juan Camilo Taborda  
+- 🎓 Juan David Garzón  
 
 ---
 
-📄 Licencia
+## 📄 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT.
-
+Este proyecto se encuentra bajo la licencia MIT.  
+Consulta más detalles en el repositorio oficial.
 
 ---
 
-Gracias por visitar este proyecto. ¡Tu apoyo y feedback son muy importantes! 💙
-
-¿Te gustaría que te lo pase también como archivo descargable `.md` o subirlo directo a un repositorio de GitHub?
-
+> 💙 Gracias por visitar nuestro proyecto. Cualquier comentario, sugerencia o apoyo es más que bienvenido.
